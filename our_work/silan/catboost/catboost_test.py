@@ -4,7 +4,7 @@ import numpy as np
 from sklearn.preprocessing import LabelEncoder
 
 # 加载训练好的模型
-model_path = 'gboost_model.pkl'
+model_path = 'catboost_model.pkl'
 with open(model_path, 'rb') as f:
     model_GBoost = pickle.load(f)
 
@@ -63,6 +63,6 @@ submission = pd.DataFrame({
 })
 
 # 保存提交文件，确保格式符合要求
-submission.to_csv('submission_version_one_group20.csv', index=False)
+submission.to_csv('submission_catboost.csv', index=False)
 
-print("Prediction Completed. Submission saved to 'submission_version_one_group20.csv'")
+print("Prediction Completed. Submission saved to 'submission_catboost.csv'")

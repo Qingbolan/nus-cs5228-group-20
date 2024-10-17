@@ -150,3 +150,149 @@ def impute_missing_values_1(data, target_columns, estimation_features, n_neighbo
         for col in available_target_columns:
             imputation_stats[col]['error'] = str(e)
         return data, imputation_stats
+    
+    
+    
+import pandas as pd
+import numpy as np
+from sklearn.impute import KNNImputer
+from sklearn.feature_selection import mutual_info_regression
+from sklearn.preprocessing import OneHotEncoder
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+def impute_missing_values_2(data, target_columns, estimation_features=None, n_neighbors=5, z_threshold=3, min_features=3, correlation_threshold=0.1):
+    # 确保 target_columns 是列表
+    if isinstance(target_columns, str):
+        target_columns = [target_columns]
+
+    # 检查哪些目标列实际存在于数据中
+    available_target_columns = [col for col in target_columns if col in data.columns]
+    if not available_target_columns:
+        raise ValueError(f"None of the specified target columns {target_columns} are present in the data. Available columns are: {data.columns.tolist()}")
+    
+    print(f"Available target columns: {available_target_columns}")
+    print(f"Missing target columns: {set(target_columns) - set(available_target_columns)}")
+
+    # 如果没有提供estimation_features，使用所有数值列作为特征
+    if estimation_features is None:
+        estimation_features = data.select_dtypes(include=['int64', 'float64']).columns.tolist()
+
+    # 检查哪些估算特征实际存在于数据中
+    available_estimation_features = [col for col in estimation_features if col in data.columns]
+    if not available_estimation_features:
+        raise ValueError(f"None of the specified estimation features are present in the data. Available columns are: {data.columns.tolist()}")
+    
+    print(f"Available estimation features: {available_estimation_features}")
+    print(f"Missing estimation features: {set(estimation_features) - set(available_estimation_features)}")
+
+    imputation_stats = {col: {
+        'initial_missing': 0,
+        'final_missing': 0,
+        'filled_values': 0,
+        'outliers_detected': 0,
+        'outliers_replaced': 0,
+        'small_values_adjusted': 0
+    } for col in available_target_columns}
+
+    try:
+        data = data.copy()
+
+        # 对分类变量进行独热编码
+        categorical_features = data[available_estimation_features].select_dtypes(include=['object', 'category']).columns
+        if not categorical_features.empty:
+            encoder = OneHotEncoder(sparse_output=False, handle_unknown='ignore')
+            encoded_features = encoder.fit_transform(data[categorical_features])
+            encoded_feature_names = encoder.get_feature_names_out(categorical_features)
+            encoded_df = pd.DataFrame(encoded_features, columns=encoded_feature_names, index=data.index)
+            data = pd.concat([data, encoded_df], axis=1)
+            available_estimation_features = list(set(available_estimation_features) - set(categorical_features)) + list(encoded_feature_names)
+
+        # 计算相关性矩阵
+        correlation_matrix = data[available_estimation_features + available_target_columns].corr()
+
+        # 绘制热力图
+        plt.figure(figsize=(12, 10))
+        sns.heatmap(correlation_matrix, annot=False, cmap='coolwarm', vmin=-1, vmax=1, center=0)
+        plt.title("Feature Correlation Heatmap")
+        plt.tight_layout()
+        plt.show()
+
+        for target_column in available_target_columns:
+            print(f"\nProcessing {target_column}")
+            imputation_stats[target_column]['initial_missing'] = data[target_column].isnull().sum()
+            print(f"Initial missing {target_column} values: {imputation_stats[target_column]['initial_missing']}")
+
+            if not pd.api.types.is_numeric_dtype(data[target_column]):
+                print(f"Warning: Target column '{target_column}' is not numeric. Skipping.")
+                continue
+
+            # 确定目标列的合理最小值
+            valid_values = data[target_column].dropna()
+            min_valid_value = valid_values.min()
+            reasonable_min = max(min_valid_value * 0.5, 1)  # 使用有效值的一半或1，取较大者
+            print(f"Determined reasonable minimum value for {target_column}: {reasonable_min}")
+
+            # 基于相关性选择特征
+            correlations = correlation_matrix[target_column].abs().sort_values(ascending=False)
+            selected_features = correlations[correlations > correlation_threshold].index.tolist()
+            selected_features = [f for f in selected_features if f != target_column]  # 移除目标列本身
+            selected_features = selected_features[:min_features] if len(selected_features) > min_features else selected_features
+            
+            print(f"Selected features for estimation: {selected_features}")
+
+            # 计算KNN权重
+            weights = correlations[selected_features].values
+            weights = weights / weights.sum()  # 归一化权重
+            
+            # KNN估算
+            impute_data = data[selected_features + [target_column]].copy()
+            non_missing_count = impute_data[target_column].notna().sum()
+            if non_missing_count > n_neighbors:
+                imputer = KNNImputer(n_neighbors=n_neighbors, weights='distance')
+                imputed_values = imputer.fit_transform(impute_data)
+                
+                mask = data[target_column].isnull()
+                estimated_values = imputed_values[mask, -1]
+                
+                # 应用加权平均
+                weighted_estimates = np.average(imputed_values[mask, :-1], axis=1, weights=weights)
+                
+                # 结合KNN估计和加权平均
+                final_estimates = (estimated_values + weighted_estimates) / 2
+                
+                small_estimates = final_estimates < reasonable_min
+
+                if small_estimates.any():
+                    print(f"Warning: {small_estimates.sum()} values were estimated below {reasonable_min}. Adjusting these values.")
+                    final_estimates[small_estimates] = reasonable_min
+                    imputation_stats[target_column]['small_values_adjusted'] = small_estimates.sum()
+
+                data.loc[mask, target_column] = final_estimates
+            else:
+                print(f"Not enough non-missing values for KNN imputation. Using median imputation.")
+                data[target_column].fillna(max(data[target_column].median(), reasonable_min), inplace=True)
+
+            # 最终检查，确保没有不合理的小值
+            small_values = data[target_column] < reasonable_min
+            if small_values.any():
+                print(f"Warning: {small_values.sum()} values are still below {reasonable_min}. Adjusting these values.")
+                data.loc[small_values, target_column] = reasonable_min
+                imputation_stats[target_column]['small_values_adjusted'] += small_values.sum()
+
+            imputation_stats[target_column]['final_missing'] = data[target_column].isnull().sum()
+            imputation_stats[target_column]['filled_values'] = imputation_stats[target_column]['initial_missing'] - imputation_stats[target_column]['final_missing']
+            print(f"After processing, missing {target_column} values: {imputation_stats[target_column]['final_missing']}")
+            print(f"Filled missing values: {imputation_stats[target_column]['filled_values']}")
+            print(f"Small values adjusted: {imputation_stats[target_column]['small_values_adjusted']}")
+
+            print(f"\n{target_column} statistics:")
+            print(data[target_column].describe())
+
+        return data, imputation_stats
+    
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
+        for col in available_target_columns:
+            imputation_stats[col]['error'] = str(e)
+        return data, imputation_stats

@@ -23,7 +23,8 @@ def preprocess_features(X, num_imputer=None, cat_imputer=None, label_encoders=No
     categorical_features = X.select_dtypes(include=['object']).columns
     
     # Specific columns to standardize
-    columns_to_standardize = ['curb_weight', 'power', 'engine_cap','depreciation']
+    columns_to_standardize = ['curb_weight', 'power', 'engine_cap', 'depreciation']
+    columns_to_standardize = [col for col in columns_to_standardize if col in X.columns]
     
     # Handle numeric features
     if num_imputer is None:
@@ -33,39 +34,44 @@ def preprocess_features(X, num_imputer=None, cat_imputer=None, label_encoders=No
         X[numeric_features] = num_imputer.transform(X[numeric_features])
     
     # Standardize specific numeric features
-    if scaler is None:
-        scaler = StandardScaler()
-        X[columns_to_standardize] = scaler.fit_transform(X[columns_to_standardize])
-    else:
-        X[columns_to_standardize] = scaler.transform(X[columns_to_standardize])
+    if columns_to_standardize:
+        if scaler is None:
+            scaler = StandardScaler()
+            X[columns_to_standardize] = scaler.fit_transform(X[columns_to_standardize])
+        else:
+            X[columns_to_standardize] = scaler.transform(X[columns_to_standardize])
     
     # Handle categorical features
-    if cat_imputer is None:
-        cat_imputer = SimpleImputer(strategy='constant', fill_value='unknown')
-        X[categorical_features] = cat_imputer.fit_transform(X[categorical_features])
+    if len(categorical_features) > 0:
+        if cat_imputer is None:
+            cat_imputer = SimpleImputer(strategy='constant', fill_value='unknown')
+            X[categorical_features] = cat_imputer.fit_transform(X[categorical_features])
+        else:
+            X[categorical_features] = cat_imputer.transform(X[categorical_features])
+        
+        # Label encode categorical features
+        if label_encoders is None:
+            label_encoders = {}
+            for col in categorical_features:
+                le = LabelEncoder()
+                X[col] = le.fit_transform(X[col].astype(str))
+                label_encoders[col] = le
+        else:
+            for col in categorical_features:
+                # Handle new categories
+                le = label_encoders[col]
+                new_categories = set(X[col]) - set(le.classes_)
+                if new_categories:
+                    print(f"New categories found in {col}: {new_categories}")
+                    new_label = len(le.classes_)
+                    le.classes_ = np.append(le.classes_, list(new_categories))
+                X[col] = X[col].map(lambda x: le.transform([str(x)])[0] if str(x) in le.classes_ else new_label)
     else:
-        X[categorical_features] = cat_imputer.transform(X[categorical_features])
-    
-    # Label encode categorical features
-    if label_encoders is None:
-        label_encoders = {}
-        for col in categorical_features:
-            le = LabelEncoder()
-            X[col] = le.fit_transform(X[col].astype(str))
-            label_encoders[col] = le
-    else:
-        for col in categorical_features:
-            # Handle new categories
-            le = label_encoders[col]
-            new_categories = set(X[col]) - set(le.classes_)
-            if new_categories:
-                print(f"New categories found in {col}: {new_categories}")
-                new_label = len(le.classes_)
-                le.classes_ = np.append(le.classes_, list(new_categories))
-            X[col] = X[col].map(lambda x: le.transform([str(x)])[0] if str(x) in le.classes_ else new_label)
+        print("No categorical features found in the dataset.")
+        cat_imputer = None
+        label_encoders = None
     
     return X, num_imputer, cat_imputer, label_encoders, scaler
-
 def train_evaluate_lightgbm(X, y, params, num_rounds=1000, early_stopping_rounds=50):
     X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, random_state=42)
     

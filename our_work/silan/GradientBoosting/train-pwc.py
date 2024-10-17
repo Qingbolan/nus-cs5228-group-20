@@ -66,6 +66,11 @@ if __name__ == '__main__':
 
     # 对 'model' 列进行标签编码
     train_data['model'] = le_model.fit_transform(train_data['model'])
+    
+    # 对 ['curb_weight', 'power', 'engine_cap','depreciation'] 列分别进行标准化
+    train_data['curb_weight'] = (train_data['curb_weight'] - train_data['curb_weight'].mean()) / train_data['curb_weight'].std()
+    train_data['power'] = (train_data['power'] - train_data['power'].mean()) / train_data['power'].std()
+    train_data['engine_cap'] = (train_data['engine_cap'] - train_data['engine_cap'].mean()) / train_data['engine_cap'].std()
 
     # 统计数据的行和列
     print(f"Training data has {train_data.shape[0]} rows and {train_data.shape[1]} columns.")
