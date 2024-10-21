@@ -296,3 +296,25 @@ def impute_missing_values_2(data, target_columns, estimation_features=None, n_ne
         for col in available_target_columns:
             imputation_stats[col]['error'] = str(e)
         return data, imputation_stats
+
+# just remove the line whose target column is empty
+def impute_missing_values_3(data, target_columns, estimation_features, n_neighbors=5, z_threshold=3, min_features=3):
+    # 确保 target_columns 是列表
+    if isinstance(target_columns, str):
+        target_columns = [target_columns]
+        
+    # 找到缺失目标的目标行
+    rows_with_missing_target = data[target_columns].isnull().any(axis=1)
+    # 删除缺失目标的行
+    data = data[~rows_with_missing_target]
+    
+    imputation_stats = {col: {
+        'initial_missing': 0,
+        'final_missing': 0,
+        'filled_values': 0,
+        'outliers_detected': 0,
+        'outliers_replaced': 0,
+        'small_values_adjusted': 0
+    } for col in target_columns}
+    
+    return data, imputation_stats
