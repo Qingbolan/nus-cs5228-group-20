@@ -131,7 +131,7 @@ def create_price_clusters(X, y, n_clusters, features_for_clustering=['depreciati
         np.percentile(cluster_features_clean, np.linspace(0, 100, n_clusters), axis=0)
     ])
     
-    kmeans = KMeans(n_clusters=n_clusters, init=initial_centers, n_init=10, random_state=42)
+    kmeans = KMeans(n_clusters=n_clusters, init=initial_centers, n_init=3, random_state=42)
     cluster_features = np.column_stack([np.log1p(y), cluster_features_clean])
     price_clusters = kmeans.fit_predict(cluster_features)
     
@@ -187,14 +187,7 @@ def post_process_predictions(predictions, min_price=700, max_price=2900000):
 def main():
     np.random.seed(42)
     
-    X, y = load_and_preprocess_data('preprocessing/2024-10-23-silan/train_cleaned.csv')
-    
-    # if 'make' not in X.columns or 'model' not in X.columns:
-    #     logging.error("Error: 'make' or 'model' column not found in training data")
-    #     return
-    
-    # X['make'] = X['make'].astype('object')
-    # X['model'] = X['model'].astype('object')
+    X, y = load_and_preprocess_data('preprocessing/2024-10-21-silan/train_cleaned.csv')
     
     logging.info("Target variable (price) statistics:")
     logging.info(y.describe())
@@ -202,11 +195,11 @@ def main():
     features_for_clustering = ['depreciation', 'coe', 'dereg_value']
     
     # Find optimal number of clusters
-    optimal_clusters = find_optimal_clusters(X, y, max_clusters=10, features_for_clustering=features_for_clustering)
+    optimal_clusters = find_optimal_clusters(X, y, max_clusters=3, features_for_clustering=features_for_clustering)
     
     kmeans_model, price_clusters, cluster_info = create_price_clusters(X, y, n_clusters=optimal_clusters, features_for_clustering=features_for_clustering)
     
-    kf = KFold(n_splits=5, shuffle=True, random_state=42)
+    kf = KFold(n_splits=10, shuffle=True, random_state=42)
     
     oof_predictions = np.zeros(len(X))
     feature_importance_list = []
@@ -289,7 +282,7 @@ def main():
         }, f)
     logging.info("Models and preprocessors saved.")
     
-    X_test, _ = load_and_preprocess_data('preprocessing/2024-10-23-silan/test_cleaned.csv')
+    X_test, _ = load_and_preprocess_data('preprocessing/2024-10-21-silan/test_cleaned.csv')
     
     # if 'make' not in X_test.columns or 'model' not in X_test.columns:
     #     logging.error("Error: 'make' or 'model' column not found in test data")
@@ -336,7 +329,7 @@ def main():
     })
     
     submission.to_csv('./10-23-submission_lightgbm_clustered_optimized.csv', index=False)
-    logging.info("Predictions complete. Submission file saved as 'submission_lightgbm_clustered_optimized.csv'.")
+    logging.info("Predictions complete. Submission file saved as '10-23-submission_lightgbm_clustered_optimized.csv'.")
     
     logging.info("\nPrediction statistics:")
     logging.info(f"Minimum: {final_predictions.min()}")
