@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-import lightgbm as lgb
+from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.model_selection import KFold
 from sklearn.metrics import mean_squared_error, r2_score, silhouette_score
 from sklearn.impute import SimpleImputer
@@ -28,12 +28,11 @@ def load_and_preprocess_data(file_path):
 
 def preprocess_features(X, y=None, num_imputer=None, cat_imputer=None, 
                         target_encoder=None, scaler=None, 
-                        target_encode_cols=[], 
+                        target_encode_cols=['make', 'model'], 
                         encoding_smoothing=1.0):
     X = X.copy()
-    # X['make'] = X['make'].astype('object')
-    # X['model'] = X['model'].astype('object')
-
+    X['make'] = X['make'].astype('object')
+    X['model'] = X['model'].astype('object')
     
     numeric_features = X.select_dtypes(include=['int64', 'float64']).columns
     categorical_features = X.select_dtypes(include=['object']).columns
@@ -125,7 +124,7 @@ def create_price_clusters(X, y, n_clusters, features_for_clustering=['depreciati
     
     return kmeans, price_clusters, cluster_df
 
-def find_optimal_clusters(X, y, max_clusters=3, features_for_clustering=['depreciation', 'coe', 'dereg_value'])
+def find_optimal_clusters(X, y, max_clusters=10, features_for_clustering=['depreciation', 'coe', 'dereg_value']):
     cluster_features = np.column_stack([np.log1p(y), X[features_for_clustering]])
     silhouette_scores = []
 
@@ -140,19 +139,28 @@ def find_optimal_clusters(X, y, max_clusters=3, features_for_clustering=['deprec
     logging.info(f"Optimal number of clusters: {optimal_clusters}")
     return optimal_clusters
 
-def train_evaluate_lightgbm(X_train, y_train, X_val, y_val, params):
-    train_data = lgb.Dataset(X_train, label=np.log1p(y_train))
-    val_data = lgb.Dataset(X_val, label=np.log1p(y_val), reference=train_data)
-    
-    model = lgb.train(
-        params,
-        train_data,
-        num_boost_round=1000,
-        valid_sets=[train_data, val_data],
-        valid_names=['train', 'valid'],
-        # early_stopping_rounds=50,
-        # verbose_eval=100
+def train_evaluate_gradient_boosting(X_train, y_train, X_val, y_val):
+    model = GradientBoostingRegressor(
+        n_estimators=3000,
+        learning_rate=0.1,
+        max_depth=5,
+        max_features='sqrt',
+        min_samples_leaf=20,
+        min_samples_split=15,
+        loss='huber',
+        random_state=42
     )
+    
+    model.fit(X_train, np.log1p(y_train))
+    
+    train_predictions = np.expm1(model.predict(X_train))
+    val_predictions = np.expm1(model.predict(X_val))
+    
+    train_mse = mean_squared_error(y_train, train_predictions)
+    val_mse = mean_squared_error(y_val, val_predictions)
+    
+    logging.info(f"Train RMSE: {np.sqrt(train_mse):.4f}")
+    logging.info(f"Validation RMSE: {np.sqrt(val_mse):.4f}")
     
     return model
 
@@ -169,12 +177,12 @@ def main():
     
     X, y = load_and_preprocess_data('preprocessing/2024-10-21-silan/train_cleaned.csv')
     
-    # if 'make' not in X.columns or 'model' not in X.columns:
-    #     logging.error("Error: 'make' or 'model' column not found in training data")
-    #     return
+    if 'make' not in X.columns or 'model' not in X.columns:
+        logging.error("Error: 'make' or 'model' column not found in training data")
+        return
     
-    # X['make'] = X['make'].astype('object')
-    # X['model'] = X['model'].astype('object')
+    X['make'] = X['make'].astype('object')
+    X['model'] = X['model'].astype('object')
     
     logging.info("Target variable (price) statistics:")
     logging.info(y.describe())
@@ -182,8 +190,7 @@ def main():
     features_for_clustering = ['depreciation', 'coe', 'dereg_value']
     
     # Find optimal number of clusters
-
-    optimal_clusters = find_optimal_clusters(X, y, max_clusters=3, features_for_clustering=features_for_clustering)
+    optimal_clusters = find_optimal_clusters(X, y, max_clusters=10, features_for_clustering=features_for_clustering)
     
     kmeans_model, price_clusters, cluster_info = create_price_clusters(X, y, n_clusters=optimal_clusters, features_for_clustering=features_for_clustering)
     
@@ -192,23 +199,6 @@ def main():
     oof_predictions = np.zeros(len(X))
     feature_importance_list = []
     models = []
-    
-    params = {
-        'objective': 'regression',
-        'metric': 'rmse',
-        'boosting_type': 'gbdt',
-        'verbosity': -1,
-        'seed': 42,
-        'learning_rate': 0.05,
-        'num_leaves': 31,
-        'feature_fraction': 0.8,
-        'bagging_fraction': 0.7,
-        'bagging_freq': 5,
-        'max_depth': -1,
-        'min_child_samples': 20,
-        'cat_smooth': 10,
-        'cat_l2': 10,
-    }
     
     start_time = time.time()
     
@@ -228,12 +218,12 @@ def main():
             X_train_processed, num_imputer, cat_imputer, target_encoder, scaler = preprocess_features(X_train, y_train)
             X_val_processed, _, _, _, _ = preprocess_features(X_val, y_val, num_imputer, cat_imputer, target_encoder, scaler)
             
-            model = train_evaluate_lightgbm(X_train_processed, y_train, X_val_processed, y_val, params)
+            model = train_evaluate_gradient_boosting(X_train_processed, y_train, X_val_processed, y_val)
             
-            fold_predictions = np.expm1(model.predict(X_val_processed, num_iteration=model.best_iteration))
+            fold_predictions = np.expm1(model.predict(X_val_processed))
             oof_predictions[price_clusters == cluster][val_index] = fold_predictions
             
-            importance = model.feature_importance(importance_type='gain')
+            importance = model.feature_importances_
             feature_importance = pd.DataFrame({'feature': X_train_processed.columns, 'importance': importance})
             feature_importance_list.append(feature_importance)
             
@@ -262,7 +252,7 @@ def main():
     logging.info("\nTop 10 important features:")
     logging.info(feature_importance.head(10))
     
-    with open('lightgbm_clustered_models.pkl', 'wb') as f:
+    with open('gradient_boosting_clustered_models.pkl', 'wb') as f:
         pickle.dump({
             'models': models,
             'kmeans_model': kmeans_model,
@@ -272,12 +262,12 @@ def main():
     
     X_test, _ = load_and_preprocess_data('preprocessing/2024-10-21-silan/test_cleaned.csv')
     
-    # if 'make' not in X_test.columns or 'model' not in X_test.columns:
-    #     logging.error("Error: 'make' or 'model' column not found in test data")
-    #     return
+    if 'make' not in X_test.columns or 'model' not in X_test.columns:
+        logging.error("Error: 'make' or 'model' column not found in test data")
+        return
     
-    # X_test['make'] = X_test['make'].astype('object')
-    # X_test['model'] = X_test['model'].astype('object')
+    X_test['make'] = X_test['make'].astype('object')
+    X_test['model'] = X_test['model'].astype('object')
     
     dummy_y_test = np.zeros(len(X_test))
     test_clusters = predict_cluster(X_test, dummy_y_test, kmeans_model, models[0][0]['preprocessors'], features_for_clustering)
@@ -300,7 +290,7 @@ def main():
             
             try:
                 X_test_processed, _, _, _, _ = preprocess_features(X_test_cluster, y=None, **preprocessors)
-                cluster_predictions[:, i] = np.expm1(model.predict(X_test_processed, num_iteration=model.best_iteration))
+                cluster_predictions[:, i] = np.expm1(model.predict(X_test_processed))
             except Exception as e:
                 logging.error(f"Error predicting for cluster {cluster}, model {i}: {str(e)}")
                 logging.error(f"Shape of X_test_cluster: {X_test_cluster.shape}")
@@ -316,8 +306,8 @@ def main():
         'Predicted': np.round(final_predictions).astype(int)
     })
     
-    submission.to_csv('./submission_lightgbm_clustered_optimized.csv', index=False)
-    logging.info("Predictions complete. Submission file saved as 'submission_lightgbm_clustered_optimized.csv'.")
+    submission.to_csv('./submission_gradient_boosting_clustered_optimized.csv', index=False)
+    logging.info("Predictions complete. Submission file saved as 'submission_gradient_boosting_clustered_optimized.csv'.")
     
     logging.info("\nPrediction statistics:")
     logging.info(f"Minimum: {final_predictions.min()}")
@@ -327,3 +317,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+                

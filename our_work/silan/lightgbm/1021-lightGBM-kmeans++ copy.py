@@ -28,18 +28,14 @@ def load_and_preprocess_data(file_path):
 
 def preprocess_features(X, y=None, num_imputer=None, cat_imputer=None, 
                         target_encoder=None, scaler=None, 
-                        target_encode_cols=[], 
+                        target_encode_cols=['make', 'model'], 
                         encoding_smoothing=1.0):
     X = X.copy()
-    # X['make'] = X['make'].astype('object')
-    # X['model'] = X['model'].astype('object')
-
+    X['make'] = X['make'].astype('object')
+    X['model'] = X['model'].astype('object')
     
     numeric_features = X.select_dtypes(include=['int64', 'float64']).columns
     categorical_features = X.select_dtypes(include=['object']).columns
-    
-    columns_to_standardize = ['curb_weight', 'power', 'engine_cap', 'depreciation']
-    columns_to_standardize = [col for col in columns_to_standardize if col in X.columns]
     
     if num_imputer is None:
         num_imputer = SimpleImputer(strategy='median')
@@ -50,17 +46,6 @@ def preprocess_features(X, y=None, num_imputer=None, cat_imputer=None,
         X[numeric_features] = pd.DataFrame(num_imputer.transform(X[numeric_features]), 
                                            columns=numeric_features, 
                                            index=X.index)
-    
-    if columns_to_standardize:
-        if scaler is None:
-            scaler = StandardScaler()
-            X[columns_to_standardize] = pd.DataFrame(scaler.fit_transform(X[columns_to_standardize]), 
-                                                     columns=columns_to_standardize, 
-                                                     index=X.index)
-        else:
-            X[columns_to_standardize] = pd.DataFrame(scaler.transform(X[columns_to_standardize]), 
-                                                     columns=columns_to_standardize, 
-                                                     index=X.index)
 
     if len(categorical_features) > 0:
         if cat_imputer is None:
@@ -97,7 +82,9 @@ def preprocess_features(X, y=None, num_imputer=None, cat_imputer=None,
 
     return X, num_imputer, cat_imputer, target_encoder, scaler
 
-def create_price_clusters(X, y, n_clusters, features_for_clustering=['depreciation', 'coe', 'dereg_value']):
+def create_price_clusters(X, y, n_clusters, features_for_clustering=
+['vehicle_type_bus_mini_bus', 'vehicle_type_hatchback', 'vehicle_type_luxury_sedan', 'vehicle_type_midsized_sedan', 'vehicle_type_mpv', 'vehicle_type_others', 'vehicle_type_sports_car', 'vehicle_type_stationwagon', 'vehicle_type_suv', 'vehicle_type_truck', 'vehicle_type_van', 'transmission_type_auto', 'transmission_type_manual', 'almost new car', 'coe car', 'consignment car', 'direct owner sale', 'electric cars', 'hybrid cars', 'imported used vehicle', 'low mileage car', 'opc car', 'parf car', 'premium ad car', 'rare & exotic', 'sgcarmart warranty cars', 'sta evaluated car', 'vintage cars', 'curb_weight', 'power', 'engine_cap', 'no_of_owners', 'depreciation', 'coe', 'road_tax', 'dereg_value', 'omv', 'arf', 'vehicle_age']
+):
     price_percentiles = np.percentile(y, np.linspace(0, 100, n_clusters))
     initial_centers = np.column_stack([
         np.log1p(price_percentiles),
@@ -125,7 +112,9 @@ def create_price_clusters(X, y, n_clusters, features_for_clustering=['depreciati
     
     return kmeans, price_clusters, cluster_df
 
-def find_optimal_clusters(X, y, max_clusters=3, features_for_clustering=['depreciation', 'coe', 'dereg_value'])
+def find_optimal_clusters(X, y, max_clusters=10, features_for_clustering=
+['vehicle_type_bus_mini_bus', 'vehicle_type_hatchback', 'vehicle_type_luxury_sedan', 'vehicle_type_midsized_sedan', 'vehicle_type_mpv', 'vehicle_type_others', 'vehicle_type_sports_car', 'vehicle_type_stationwagon', 'vehicle_type_suv', 'vehicle_type_truck', 'vehicle_type_van', 'transmission_type_auto', 'transmission_type_manual', 'almost new car', 'coe car', 'consignment car', 'direct owner sale', 'electric cars', 'hybrid cars', 'imported used vehicle', 'low mileage car', 'opc car', 'parf car', 'premium ad car', 'rare & exotic', 'sgcarmart warranty cars', 'sta evaluated car', 'vintage cars', 'curb_weight', 'power', 'engine_cap', 'no_of_owners', 'depreciation', 'coe', 'road_tax', 'dereg_value', 'omv', 'arf', 'vehicle_age']
+                          ):
     cluster_features = np.column_stack([np.log1p(y), X[features_for_clustering]])
     silhouette_scores = []
 
@@ -156,7 +145,9 @@ def train_evaluate_lightgbm(X_train, y_train, X_val, y_val, params):
     
     return model
 
-def predict_cluster(X, y, kmeans_model, preprocessors, features_for_clustering=['depreciation', 'coe', 'dereg_value']):
+def predict_cluster(X, y, kmeans_model, preprocessors, features_for_clustering=
+['vehicle_type_bus_mini_bus', 'vehicle_type_hatchback', 'vehicle_type_luxury_sedan', 'vehicle_type_midsized_sedan', 'vehicle_type_mpv', 'vehicle_type_others', 'vehicle_type_sports_car', 'vehicle_type_stationwagon', 'vehicle_type_suv', 'vehicle_type_truck', 'vehicle_type_van', 'transmission_type_auto', 'transmission_type_manual', 'almost new car', 'coe car', 'consignment car', 'direct owner sale', 'electric cars', 'hybrid cars', 'imported used vehicle', 'low mileage car', 'opc car', 'parf car', 'premium ad car', 'rare & exotic', 'sgcarmart warranty cars', 'sta evaluated car', 'vintage cars', 'curb_weight', 'power', 'engine_cap', 'no_of_owners', 'depreciation', 'coe', 'road_tax', 'dereg_value', 'omv', 'arf', 'vehicle_age']
+                    ):
     X_processed, _, _, _, _ = preprocess_features(X, y, **preprocessors)
     cluster_features = np.column_stack([np.log1p(y) if y is not None else np.zeros(len(X)), X_processed[features_for_clustering]])
     return kmeans_model.predict(cluster_features)
@@ -169,21 +160,20 @@ def main():
     
     X, y = load_and_preprocess_data('preprocessing/2024-10-21-silan/train_cleaned.csv')
     
-    # if 'make' not in X.columns or 'model' not in X.columns:
-    #     logging.error("Error: 'make' or 'model' column not found in training data")
-    #     return
+    if 'make' not in X.columns or 'model' not in X.columns:
+        logging.error("Error: 'make' or 'model' column not found in training data")
+        return
     
-    # X['make'] = X['make'].astype('object')
-    # X['model'] = X['model'].astype('object')
+    X['make'] = X['make'].astype('object')
+    X['model'] = X['model'].astype('object')
     
     logging.info("Target variable (price) statistics:")
     logging.info(y.describe())
     
-    features_for_clustering = ['depreciation', 'coe', 'dereg_value']
+    features_for_clustering = ['vehicle_type_bus_mini_bus', 'vehicle_type_hatchback', 'vehicle_type_luxury_sedan', 'vehicle_type_midsized_sedan', 'vehicle_type_mpv', 'vehicle_type_others', 'vehicle_type_sports_car', 'vehicle_type_stationwagon', 'vehicle_type_suv', 'vehicle_type_truck', 'vehicle_type_van', 'transmission_type_auto', 'transmission_type_manual', 'almost new car', 'coe car', 'consignment car', 'direct owner sale', 'electric cars', 'hybrid cars', 'imported used vehicle', 'low mileage car', 'opc car', 'parf car', 'premium ad car', 'rare & exotic', 'sgcarmart warranty cars', 'sta evaluated car', 'vintage cars', 'curb_weight', 'power', 'engine_cap', 'no_of_owners', 'depreciation', 'coe', 'road_tax', 'dereg_value', 'omv', 'arf', 'vehicle_age']
     
     # Find optimal number of clusters
-
-    optimal_clusters = find_optimal_clusters(X, y, max_clusters=3, features_for_clustering=features_for_clustering)
+    optimal_clusters = find_optimal_clusters(X, y, max_clusters=10, features_for_clustering=features_for_clustering)
     
     kmeans_model, price_clusters, cluster_info = create_price_clusters(X, y, n_clusters=optimal_clusters, features_for_clustering=features_for_clustering)
     
@@ -272,12 +262,12 @@ def main():
     
     X_test, _ = load_and_preprocess_data('preprocessing/2024-10-21-silan/test_cleaned.csv')
     
-    # if 'make' not in X_test.columns or 'model' not in X_test.columns:
-    #     logging.error("Error: 'make' or 'model' column not found in test data")
-    #     return
+    if 'make' not in X_test.columns or 'model' not in X_test.columns:
+        logging.error("Error: 'make' or 'model' column not found in test data")
+        return
     
-    # X_test['make'] = X_test['make'].astype('object')
-    # X_test['model'] = X_test['model'].astype('object')
+    X_test['make'] = X_test['make'].astype('object')
+    X_test['model'] = X_test['model'].astype('object')
     
     dummy_y_test = np.zeros(len(X_test))
     test_clusters = predict_cluster(X_test, dummy_y_test, kmeans_model, models[0][0]['preprocessors'], features_for_clustering)

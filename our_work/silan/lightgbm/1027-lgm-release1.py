@@ -11,6 +11,8 @@ import time
 from category_encoders import TargetEncoder
 import logging
 
+# (test)RMSE Score: 21429.3845
+
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -28,18 +30,15 @@ def load_and_preprocess_data(file_path):
 
 def preprocess_features(X, y=None, num_imputer=None, cat_imputer=None, 
                         target_encoder=None, scaler=None, 
-                        target_encode_cols=[], 
+                        target_encode_cols=['make', 'model'], 
                         encoding_smoothing=1.0):
     X = X.copy()
-    # X['make'] = X['make'].astype('object')
-    # X['model'] = X['model'].astype('object')
-
     
     numeric_features = X.select_dtypes(include=['int64', 'float64']).columns
     categorical_features = X.select_dtypes(include=['object']).columns
     
-    columns_to_standardize = ['curb_weight', 'power', 'engine_cap', 'depreciation']
-    columns_to_standardize = [col for col in columns_to_standardize if col in X.columns]
+    # columns_to_standardize = ['curb_weight', 'power', 'engine_cap', 'depreciation']
+    # columns_to_standardize = [col for col in columns_to_standardize if col in X.columns]
     
     if num_imputer is None:
         num_imputer = SimpleImputer(strategy='median')
@@ -51,16 +50,16 @@ def preprocess_features(X, y=None, num_imputer=None, cat_imputer=None,
                                            columns=numeric_features, 
                                            index=X.index)
     
-    if columns_to_standardize:
-        if scaler is None:
-            scaler = StandardScaler()
-            X[columns_to_standardize] = pd.DataFrame(scaler.fit_transform(X[columns_to_standardize]), 
-                                                     columns=columns_to_standardize, 
-                                                     index=X.index)
-        else:
-            X[columns_to_standardize] = pd.DataFrame(scaler.transform(X[columns_to_standardize]), 
-                                                     columns=columns_to_standardize, 
-                                                     index=X.index)
+    # if columns_to_standardize:
+    #     if scaler is None:
+    #         scaler = StandardScaler()
+    #         X[columns_to_standardize] = pd.DataFrame(scaler.fit_transform(X[columns_to_standardize]), 
+    #                                                  columns=columns_to_standardize, 
+    #                                                  index=X.index)
+    #     else:
+    #         X[columns_to_standardize] = pd.DataFrame(scaler.transform(X[columns_to_standardize]), 
+    #                                                  columns=columns_to_standardize, 
+    #                                                  index=X.index)
 
     if len(categorical_features) > 0:
         if cat_imputer is None:
@@ -97,15 +96,45 @@ def preprocess_features(X, y=None, num_imputer=None, cat_imputer=None,
 
     return X, num_imputer, cat_imputer, target_encoder, scaler
 
+
+def find_optimal_clusters(X, y, max_clusters=10, features_for_clustering=['depreciation', 'coe', 'dereg_value']):
+    # First ensure the clustering features have no NaN values
+    cluster_features_df = pd.DataFrame(X[features_for_clustering])
+    
+    # Apply simple imputation for any NaN values
+    imputer = SimpleImputer(strategy='median')
+    cluster_features_clean = imputer.fit_transform(cluster_features_df)
+    
+    # Stack with log-transformed price
+    cluster_features = np.column_stack([np.log1p(y), cluster_features_clean])
+    
+    silhouette_scores = []
+    
+    for n_clusters in range(2, max_clusters + 1):
+        kmeans = KMeans(n_clusters=n_clusters, init='k-means++', n_init=10, random_state=42)
+        cluster_labels = kmeans.fit_predict(cluster_features)
+        silhouette_avg = silhouette_score(cluster_features, cluster_labels)
+        silhouette_scores.append(silhouette_avg)
+        logging.info(f"For n_clusters = {n_clusters}, the average silhouette score is : {silhouette_avg}")
+    
+    optimal_clusters = silhouette_scores.index(max(silhouette_scores)) + 2
+    logging.info(f"Optimal number of clusters: {optimal_clusters}")
+    return optimal_clusters
+
 def create_price_clusters(X, y, n_clusters, features_for_clustering=['depreciation', 'coe', 'dereg_value']):
+    # First handle NaN values in clustering features
+    cluster_features_df = pd.DataFrame(X[features_for_clustering])
+    imputer = SimpleImputer(strategy='median')
+    cluster_features_clean = imputer.fit_transform(cluster_features_df)
+    
     price_percentiles = np.percentile(y, np.linspace(0, 100, n_clusters))
     initial_centers = np.column_stack([
         np.log1p(price_percentiles),
-        np.percentile(X[features_for_clustering], np.linspace(0, 100, n_clusters), axis=0)
+        np.percentile(cluster_features_clean, np.linspace(0, 100, n_clusters), axis=0)
     ])
-
-    kmeans = KMeans(n_clusters=n_clusters, init=initial_centers, n_init=10, random_state=42)
-    cluster_features = np.column_stack([np.log1p(y), X[features_for_clustering]])
+    
+    kmeans = KMeans(n_clusters=n_clusters, init=initial_centers, n_init=3, random_state=42)
+    cluster_features = np.column_stack([np.log1p(y), cluster_features_clean])
     price_clusters = kmeans.fit_predict(cluster_features)
     
     cluster_info = []
@@ -123,22 +152,20 @@ def create_price_clusters(X, y, n_clusters, features_for_clustering=['depreciati
     logging.info("Price Cluster Information:")
     logging.info(cluster_df)
     
+    # Store the imputer with the kmeans model for later use
+    kmeans.feature_imputer = imputer
+    
     return kmeans, price_clusters, cluster_df
 
-def find_optimal_clusters(X, y, max_clusters=3, features_for_clustering=['depreciation', 'coe', 'dereg_value'])
-    cluster_features = np.column_stack([np.log1p(y), X[features_for_clustering]])
-    silhouette_scores = []
-
-    for n_clusters in range(2, max_clusters + 1):
-        kmeans = KMeans(n_clusters=n_clusters, init='k-means++', n_init=10, random_state=42)
-        cluster_labels = kmeans.fit_predict(cluster_features)
-        silhouette_avg = silhouette_score(cluster_features, cluster_labels)
-        silhouette_scores.append(silhouette_avg)
-        logging.info(f"For n_clusters = {n_clusters}, the average silhouette score is : {silhouette_avg}")
-
-    optimal_clusters = silhouette_scores.index(max(silhouette_scores)) + 2
-    logging.info(f"Optimal number of clusters: {optimal_clusters}")
-    return optimal_clusters
+def predict_cluster(X, y, kmeans_model, preprocessors, features_for_clustering=['depreciation', 'coe', 'dereg_value']):
+    X_processed, _, _, _, _ = preprocess_features(X, y, **preprocessors)
+    
+    # Use the stored imputer to handle NaN values in clustering features
+    cluster_features_df = pd.DataFrame(X_processed[features_for_clustering])
+    cluster_features_clean = kmeans_model.feature_imputer.transform(cluster_features_df)
+    
+    cluster_features = np.column_stack([np.log1p(y) if y is not None else np.zeros(len(X)), cluster_features_clean])
+    return kmeans_model.predict(cluster_features)
 
 def train_evaluate_lightgbm(X_train, y_train, X_val, y_val, params):
     train_data = lgb.Dataset(X_train, label=np.log1p(y_train))
@@ -156,11 +183,6 @@ def train_evaluate_lightgbm(X_train, y_train, X_val, y_val, params):
     
     return model
 
-def predict_cluster(X, y, kmeans_model, preprocessors, features_for_clustering=['depreciation', 'coe', 'dereg_value']):
-    X_processed, _, _, _, _ = preprocess_features(X, y, **preprocessors)
-    cluster_features = np.column_stack([np.log1p(y) if y is not None else np.zeros(len(X)), X_processed[features_for_clustering]])
-    return kmeans_model.predict(cluster_features)
-
 def post_process_predictions(predictions, min_price=700, max_price=2900000):
     return np.clip(predictions, min_price, max_price)
 
@@ -169,25 +191,17 @@ def main():
     
     X, y = load_and_preprocess_data('preprocessing/2024-10-21-silan/train_cleaned.csv')
     
-    # if 'make' not in X.columns or 'model' not in X.columns:
-    #     logging.error("Error: 'make' or 'model' column not found in training data")
-    #     return
-    
-    # X['make'] = X['make'].astype('object')
-    # X['model'] = X['model'].astype('object')
-    
     logging.info("Target variable (price) statistics:")
     logging.info(y.describe())
     
     features_for_clustering = ['depreciation', 'coe', 'dereg_value']
     
     # Find optimal number of clusters
-
     optimal_clusters = find_optimal_clusters(X, y, max_clusters=3, features_for_clustering=features_for_clustering)
     
     kmeans_model, price_clusters, cluster_info = create_price_clusters(X, y, n_clusters=optimal_clusters, features_for_clustering=features_for_clustering)
     
-    kf = KFold(n_splits=5, shuffle=True, random_state=42)
+    kf = KFold(n_splits=10, shuffle=True, random_state=42)
     
     oof_predictions = np.zeros(len(X))
     feature_importance_list = []
@@ -316,8 +330,8 @@ def main():
         'Predicted': np.round(final_predictions).astype(int)
     })
     
-    submission.to_csv('./submission_lightgbm_clustered_optimized.csv', index=False)
-    logging.info("Predictions complete. Submission file saved as 'submission_lightgbm_clustered_optimized.csv'.")
+    submission.to_csv('./10-27-release_lightgbm.csv', index=False)
+    logging.info("Predictions complete. Submission file saved as '10-27-release_lightgbm.csv'.")
     
     logging.info("\nPrediction statistics:")
     logging.info(f"Minimum: {final_predictions.min()}")
