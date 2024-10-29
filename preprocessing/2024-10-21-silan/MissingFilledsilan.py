@@ -177,7 +177,7 @@ def impute_missing_values_optimized(data, target_columns, estimation_features, n
     - data: pandas.DataFrame, 插补后的DataFrame。
     - imputation_stats: dict, 插补统计信息。
     """
-
+    
     # 确保 target_columns 是列表
     if isinstance(target_columns, str):
         target_columns = [target_columns]
@@ -219,6 +219,7 @@ def impute_missing_values_optimized(data, target_columns, estimation_features, n
             encoded_feature_names = encoder.get_feature_names_out(categorical_features)
             encoded_df = pd.DataFrame(encoded_features, columns=encoded_feature_names, index=data.index)
             data = pd.concat([data, encoded_df], axis=1)
+
             available_estimation_features = [feat for feat in available_estimation_features if
                                              feat not in categorical_features] + list(encoded_feature_names)
 
@@ -248,6 +249,7 @@ def impute_missing_values_optimized(data, target_columns, estimation_features, n
                     selector.fit(valid_data[numeric_features], valid_data[target_column])
                     selected_features = [feature for feature, selected in zip(numeric_features, selector.get_support())
                                          if selected]
+
                 else:
                     selected_features = numeric_features.tolist()
 
@@ -317,6 +319,7 @@ def impute_missing_values_optimized(data, target_columns, estimation_features, n
             imputation_stats[target_column]['final_missing'] = data[target_column].isnull().sum()
             imputation_stats[target_column]['filled_values'] = imputation_stats[target_column]['initial_missing'] - \
                                                                imputation_stats[target_column]['final_missing']
+
             print(f"处理后缺失值数量: {imputation_stats[target_column]['final_missing']}")
             print(f"填补的缺失值数量: {imputation_stats[target_column]['filled_values']}")
             print(f"调整的小值数量: {imputation_stats[target_column]['small_values_adjusted']}")
@@ -837,3 +840,4 @@ def impute_missing_values_optimized_3(
     except Exception as e:
         logger.error(f"发生错误: {str(e)}")
         return data, {'error': str(e)}
+

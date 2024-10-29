@@ -33,6 +33,7 @@ def preprocess_features(X, y=None, num_imputer=None, cat_imputer=None,
     X = X.copy()
     # X['make'] = X['make'].astype('object')
     # X['model'] = X['model'].astype('object')
+
     
     numeric_features = X.select_dtypes(include=['int64', 'float64']).columns
     categorical_features = X.select_dtypes(include=['object']).columns
@@ -124,7 +125,7 @@ def create_price_clusters(X, y, n_clusters, features_for_clustering=['depreciati
     
     return kmeans, price_clusters, cluster_df
 
-def find_optimal_clusters(X, y, max_clusters=3, features_for_clustering=['depreciation', 'coe', 'dereg_value']):
+def find_optimal_clusters(X, y, max_clusters=3, features_for_clustering=['depreciation', 'coe', 'dereg_value'])
     cluster_features = np.column_stack([np.log1p(y), X[features_for_clustering]])
     silhouette_scores = []
 
@@ -181,6 +182,7 @@ def main():
     features_for_clustering = ['depreciation', 'coe', 'dereg_value']
     
     # Find optimal number of clusters
+
     optimal_clusters = find_optimal_clusters(X, y, max_clusters=3, features_for_clustering=features_for_clustering)
     
     kmeans_model, price_clusters, cluster_info = create_price_clusters(X, y, n_clusters=optimal_clusters, features_for_clustering=features_for_clustering)
