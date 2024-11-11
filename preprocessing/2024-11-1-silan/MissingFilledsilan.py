@@ -219,7 +219,6 @@ def impute_missing_values_optimized(data, target_columns, estimation_features, n
             encoded_feature_names = encoder.get_feature_names_out(categorical_features)
             encoded_df = pd.DataFrame(encoded_features, columns=encoded_feature_names, index=data.index)
             data = pd.concat([data, encoded_df], axis=1)
-
             available_estimation_features = [feat for feat in available_estimation_features if
                                              feat not in categorical_features] + list(encoded_feature_names)
 
@@ -317,7 +316,7 @@ def impute_missing_values_optimized(data, target_columns, estimation_features, n
             # 最终缺失值统计
             imputation_stats[target_column]['final_missing'] = data[target_column].isnull().sum()
             imputation_stats[target_column]['filled_values'] = imputation_stats[target_column]['initial_missing'] - \
-
+                                                               imputation_stats[target_column]['final_missing']
             print(f"处理后缺失值数量: {imputation_stats[target_column]['final_missing']}")
             print(f"填补的缺失值数量: {imputation_stats[target_column]['filled_values']}")
             print(f"调整的小值数量: {imputation_stats[target_column]['small_values_adjusted']}")
@@ -544,81 +543,20 @@ def impute_missing_values_optimized_2(
     except Exception as e:
         logger.error(f"发生错误: {str(e)}")
         return data, {'error': str(e)}
-
+    
+    
 
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.impute import KNNImputer
-from sklearn.cluster import KMeans
-import lightgbm as lgb
+from sklearn.ensemble import RandomForestRegressor
 from sklearn.feature_selection import SelectKBest, f_regression
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import logging
 from typing import List, Union, Dict, Tuple, Optional
 
-def get_cluster_median(data: pd.DataFrame, 
-                      target_column: str, 
-                      features: List[str],
-                      n_clusters: int = 3,
-                      random_state: Optional[int] = 42) -> float:
-    """
-    使用聚类方法计算目标值的中位数
-    
-    参数:
-    - data: 输入数据
-    - target_column: 目标列名
-    - features: 用于聚类的特征列名
-    - n_clusters: 聚类数量
-    - random_state: 随机种子
-    
-    返回:
-    - 最相似簇的中位数
-    """
-    # 准备聚类数据
-    cluster_data = data[features].copy()
-    
-    # 标准化数据
-    for col in cluster_data.columns:
-        if cluster_data[col].std() > 0:
-            cluster_data[col] = (cluster_data[col] - cluster_data[col].mean()) / cluster_data[col].std()
-    
-    # 执行聚类
-    kmeans = KMeans(n_clusters=n_clusters, random_state=random_state)
-    
-    # 获取所有非空值的样本的聚类标签
-    valid_mask = ~data[target_column].isnull()
-    if valid_mask.sum() == 0:
-        return data[target_column].median()  # 如果没有有效值，返回全局中位数
-        
-    valid_data = cluster_data[valid_mask]
-    cluster_labels = kmeans.fit_predict(valid_data)
-    
-    # 为每个缺失值找到最近的簇
-    missing_mask = data[target_column].isnull()
-    missing_data = cluster_data[missing_mask]
-    
-    if len(missing_data) == 0:
-        return None  # 没有缺失值
-        
-    # 预测缺失值所属的簇
-    missing_clusters = kmeans.predict(missing_data)
-    
-    # 计算每个簇的中位数
-    cluster_medians = {}
-    for i in range(n_clusters):
-        cluster_mask = cluster_labels == i
-        if cluster_mask.any():
-            cluster_medians[i] = data.loc[valid_mask, target_column].iloc[cluster_mask].median()
-    
-    # 获取众数簇的中位数
-    if missing_clusters.size > 0:
-        most_common_cluster = pd.Series(missing_clusters).mode().iloc[0]
-        return cluster_medians.get(most_common_cluster, data[target_column].median())
-    
-    return data[target_column].median()
-
-def process_single_column(
+def process_single_column2(
     target_column: str,
     data: pd.DataFrame,
     available_estimation_features: List[str],
@@ -626,7 +564,7 @@ def process_single_column(
     n_neighbors: int,
     min_features: int,
     random_state: Optional[int] = 42
-) -> Tuple[str, pd.Series, Dict]:
+) -> Tuple[str, pd.Series, pd.Series, Dict]:
     logger = logging.getLogger(__name__)
     stats = {
         'initial_missing': 0,
@@ -636,11 +574,15 @@ def process_single_column(
     }
 
     try:
+        # 创建填补标记列，初始化为0（表示原始值）
+        impute_flag_column = f"is_impute_{target_column}"
+        data[impute_flag_column] = 0
+        
         if not pd.api.types.is_numeric_dtype(data[target_column]):
             msg = f"目标列 '{target_column}' 不是数值型。跳过该列。"
             logger.warning(msg)
             stats['errors'].append(msg)
-            return target_column, data[target_column], stats
+            return target_column, data[target_column], data[impute_flag_column], stats
 
         stats['initial_missing'] = data[target_column].isnull().sum()
 
@@ -652,23 +594,11 @@ def process_single_column(
             if use_rf_importance:
                 valid_data = data.dropna(subset=[target_column] + numeric_features)
                 if not valid_data.empty:
-                    # 使用LightGBM替代RandomForest
-                    lgb_params = {
-                        'objective': 'regression',
-                        'metric': 'rmse',
-                        'verbosity': -1,
-                        'num_threads': -1,
-                        'seed': random_state
-                    }
-                    train_data = lgb.Dataset(valid_data[numeric_features], 
-                                           label=valid_data[target_column])
-                    model = lgb.train(lgb_params, train_data, num_boost_round=100)
-                    
-                    # 获取特征重要性
-                    importance = pd.Series(model.feature_importance(importance_type='gain'), 
-                                         index=numeric_features)
+                    rf = RandomForestRegressor(n_estimators=100, n_jobs=-1, random_state=random_state)
+                    rf.fit(valid_data[numeric_features], valid_data[target_column])
+                    importance = pd.Series(rf.feature_importances_, index=numeric_features)
                     selected_features = importance.nlargest(min_features).index.tolist()
-                    logger.info(f"目标列 '{target_column}' 使用LightGBM选择的特征: {selected_features}")
+                    logger.info(f"目标列 '{target_column}' 使用随机森林选择的特征: {selected_features}")
             if not selected_features:
                 selector = SelectKBest(score_func=f_regression, k=min(min_features, len(numeric_features)))
                 valid_data = data.dropna(subset=[target_column] + numeric_features)
@@ -686,49 +616,47 @@ def process_single_column(
                 logger.info(f"目标列 '{target_column}' 补充选择的特征: {selected_features[:needed]}")
 
         if not selected_features:
-            msg = f"目标列 '{target_column}' 没有足够的数值特征用于插补。使用聚类中位数填补。"
+            msg = f"目标列 '{target_column}' 没有足够的数值特征用于插补。使用全局中位数填补。"
             logger.warning(msg)
             stats['errors'].append(msg)
-            # 使用聚类中位数替代全局中位数
-            cluster_median = get_cluster_median(data, target_column, numeric_features)
-            data[target_column].fillna(cluster_median, inplace=True)
+            # 记录需要填补的位置
+            mask = data[target_column].isnull()
+            median_value = data[target_column].median()
+            data.loc[mask, target_column] = median_value
+            # 更新填补标记
+            data.loc[mask, impute_flag_column] = 1
             stats['final_missing'] = data[target_column].isnull().sum()
             stats['filled_values'] = stats['initial_missing'] - stats['final_missing']
-            return target_column, data[target_column], stats
+            return target_column, data[target_column], data[impute_flag_column], stats
 
         # 使用选定特征进行KNN插补
         impute_features = selected_features + [target_column]
         impute_data = data[impute_features].copy()
 
-        # 如果KNN插补失败，使用聚类中位数作为后备方案
-        try:
-            imputer = KNNImputer(n_neighbors=n_neighbors, weights='distance')
-            imputed_array = imputer.fit_transform(impute_data)
-            imputed_df = pd.DataFrame(imputed_array, columns=impute_features, index=data.index)
-        except Exception as e:
-            logger.warning(f"KNN插补失败，使用聚类中位数作为后备方案: {str(e)}")
-            cluster_median = get_cluster_median(data, target_column, selected_features)
-            data[target_column].fillna(cluster_median, inplace=True)
-            stats['final_missing'] = data[target_column].isnull().sum()
-            stats['filled_values'] = stats['initial_missing'] - stats['final_missing']
-            return target_column, data[target_column], stats
+        # 记录原始的缺失值位置
+        missing_mask = data[target_column].isnull()
 
-        # 更新缺失值
+        imputer = KNNImputer(n_neighbors=n_neighbors, weights='distance')
+        imputed_array = imputer.fit_transform(impute_data)
+        imputed_df = pd.DataFrame(imputed_array, columns=impute_features, index=data.index)
+
+        # 更新缺失值和填补标记
         mask = data[target_column].isnull()
         filled_values = imputed_df.loc[mask, target_column]
         data.loc[mask, target_column] = filled_values
+        data.loc[mask, impute_flag_column] = 1
         stats['filled_values'] = filled_values.notna().sum()
 
         # 最终缺失值统计
         stats['final_missing'] = data[target_column].isnull().sum()
 
-        return target_column, data[target_column], stats
+        return target_column, data[target_column], data[impute_flag_column], stats
 
     except Exception as e:
         error_msg = f"处理列 '{target_column}' 时发生错误: {str(e)}"
         logger.error(error_msg)
         stats['errors'].append(error_msg)
-        return target_column, data[target_column], stats
+        return target_column, data[target_column], data[impute_flag_column], stats
 
 def impute_missing_values_optimized_3(
     data: pd.DataFrame,
@@ -741,7 +669,7 @@ def impute_missing_values_optimized_3(
     random_state: Optional[int] = 42
 ) -> Tuple[pd.DataFrame, Dict]:
     """
-    优化后的缺失值插补函数，使用LightGBM替代RandomForest进行特征选择。
+    优化后的缺失值插补函数，增加了填补标记列功能。
 
     参数:
     - data: pandas.DataFrame, 包含数据的DataFrame。
@@ -750,11 +678,11 @@ def impute_missing_values_optimized_3(
     - n_neighbors: int, KNN插补的邻居数量。
     - min_features: int, 特征选择时最小特征数量。
     - n_jobs: int, 并行处理的作业数，-1表示使用所有CPU核心。
-    - use_rf_importance: bool, 是否使用LightGBM进行特征重要性评估。
+    - use_rf_importance: bool, 是否使用随机森林进行特征重要性评估。
     - random_state: int, 随机种子，保证结果可重复。
 
     返回:
-    - data: pandas.DataFrame, 插补后的DataFrame。
+    - data: pandas.DataFrame, 插补后的DataFrame，包含新增的填补标记列（0表示原始值，1表示填补值）。
     - imputation_stats: dict, 插补统计信息。
     """
     # 设置日志
@@ -801,7 +729,7 @@ def impute_missing_values_optimized_3(
         with ThreadPoolExecutor(max_workers=n_jobs if n_jobs > 0 else None) as executor:
             future_to_column = {
                 executor.submit(
-                    process_single_column,
+                    process_single_column2,
                     target_column,
                     data,
                     available_estimation_features,
@@ -815,8 +743,9 @@ def impute_missing_values_optimized_3(
             for future in as_completed(future_to_column):
                 target_column = future_to_column[future]
                 try:
-                    col, imputed_series, stats = future.result()
+                    col, imputed_series, impute_flag_series, stats = future.result()
                     data[col] = imputed_series
+                    data[f"is_impute_{col}"] = impute_flag_series
                     imputation_stats[col].update(stats)
                 except Exception as e:
                     error_msg = f"处理列 '{target_column}' 时发生错误: {str(e)}"
@@ -837,6 +766,4 @@ def impute_missing_values_optimized_3(
 
     except Exception as e:
         logger.error(f"发生错误: {str(e)}")
-
         return data, {'error': str(e)}
-
