@@ -177,7 +177,7 @@ def impute_missing_values_optimized(data, target_columns, estimation_features, n
     - data: pandas.DataFrame, 插补后的DataFrame。
     - imputation_stats: dict, 插补统计信息。
     """
-    
+
     # 确保 target_columns 是列表
     if isinstance(target_columns, str):
         target_columns = [target_columns]
@@ -249,7 +249,6 @@ def impute_missing_values_optimized(data, target_columns, estimation_features, n
                     selector.fit(valid_data[numeric_features], valid_data[target_column])
                     selected_features = [feature for feature, selected in zip(numeric_features, selector.get_support())
                                          if selected]
-
                 else:
                     selected_features = numeric_features.tolist()
 
