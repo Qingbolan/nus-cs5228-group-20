@@ -1,0 +1,42 @@
+{
+    "timestamp": "2024-10-29 21:00:20",
+    "training_time_minutes": 0.905920128027598,
+    "optimal_clusters": 2,
+    "cluster_info": [
+        {
+            "cluster": 0,
+            "min": 700.0,
+            "max": 1200000.0,
+            "median": 71500.0,
+            "count": 22215,
+            "std": 54468.35360429735
+        },
+        {
+            "cluster": 1,
+            "min": 9888.0,
+            "max": 2899999.0,
+            "median": 239800.0,
+            "count": 2785,
+            "std": 346817.8438393532
+        }
+    ],
+    "prediction_stats": {
+        "min": 3375,
+        "max": 1280254,
+        "mean": 111287.5997,
+        "median": 77368.0
+    },
+    "features_used": {
+        "clustering_features": [
+            "depreciation",
+            "coe",
+            "dereg_value"
+        ],
+        "target_encoded_features": [
+            "manufacturer",
+            "model",
+            "type",
+            "transmission"
+        ]
+    }
+}

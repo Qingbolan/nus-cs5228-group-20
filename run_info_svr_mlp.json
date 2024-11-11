@@ -1,0 +1,27 @@
+{
+    "timestamp": "2024-10-29 20:53:05",
+    "training_time": 112.96057415008545,
+    "optimal_clusters": 2,
+    "cluster_info": [
+        {
+            "cluster": 0,
+            "min": 700.0,
+            "max": 2788000.0,
+            "median": 77800.0,
+            "count": 24473
+        },
+        {
+            "cluster": 1,
+            "min": 168000.0,
+            "max": 2899999.0,
+            "median": 720000.0,
+            "count": 527
+        }
+    ],
+    "prediction_stats": {
+        "min": 2237.0,
+        "max": 2801671.0,
+        "mean": 113979.534,
+        "median": 77348.0
+    }
+}

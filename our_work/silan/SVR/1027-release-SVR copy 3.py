@@ -1,29 +1,30 @@
 import pandas as pd
 import numpy as np
-import lightgbm as lgb
 from sklearn.svm import SVR
-from catboost import CatBoostRegressor
+from sklearn.preprocessing import StandardScaler, RobustScaler
 from sklearn.model_selection import KFold
-from sklearn.metrics import mean_squared_error, r2_score, silhouette_score
-from sklearn.impute import SimpleImputer
-from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.cluster import KMeans
-import pickle
-import time
+from sklearn.impute import SimpleImputer
 from category_encoders import TargetEncoder
 import logging
+import time
+import pickle
+import json
+from typing import Dict, List, Tuple, Optional, Any
 
-# Set up logging
+# 设置日志配置
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('ensemble_training.log'),
+        logging.FileHandler('model_training.log'),
         logging.StreamHandler()
     ]
 )
 
-def load_and_preprocess_data(file_path):
+def load_and_prepare_data(file_path: str) -> Tuple[pd.DataFrame, Optional[pd.Series]]:
+    """加载并准备数据"""
     data = pd.read_csv(file_path)
     if 'Unnamed: 0' in data.columns:
         data = data.drop(columns='Unnamed: 0')
@@ -35,397 +36,324 @@ def load_and_preprocess_data(file_path):
     
     return X, y
 
-def preprocess_features(X, y=None, num_imputer=None, cat_imputer=None, 
-                       target_encoder=None, scaler=None, 
-                       target_encode_cols=['make', 'model'], 
-                       encoding_smoothing=1.0):
+def preprocess_features(X: pd.DataFrame, 
+                       encoders: Dict = None, 
+                       fit: bool = False) -> Tuple[pd.DataFrame, Dict]:
+    """特征预处理"""
     X = X.copy()
     
-    numeric_features = X.select_dtypes(include=['int64', 'float64']).columns
-    categorical_features = X.select_dtypes(include=['object']).columns
+    if encoders is None:
+        encoders = {
+            'num_imputer': SimpleImputer(strategy='median'),
+            'robust_scaler': RobustScaler(),
+            'standard_scaler': StandardScaler(),
+        }
     
-    if num_imputer is None:
-        num_imputer = SimpleImputer(strategy='median')
-        X[numeric_features] = pd.DataFrame(num_imputer.fit_transform(X[numeric_features]), 
-                                         columns=numeric_features, 
-                                         index=X.index)
+    # 数值型特征
+    numeric_cols = [
+        'curb_weight', 'power', 'engine_cap', 'no_of_owners',
+        'depreciation', 'coe', 'road_tax', 'dereg_value', 'omv',
+        'arf', 'vehicle_age'
+    ]
+    numeric_cols = [col for col in numeric_cols if col in X.columns]
+    
+    # 标准化特征
+    scale_cols = ['curb_weight', 'power', 'engine_cap', 'depreciation']
+    scale_cols = [col for col in scale_cols if col in X.columns]
+    
+    # 鲁棒缩放特征
+    robust_cols = ['coe', 'dereg_value', 'omv', 'arf']
+    robust_cols = [col for col in robust_cols if col in X.columns]
+    
+    if fit:
+        X[numeric_cols] = encoders['num_imputer'].fit_transform(X[numeric_cols])
+        X[scale_cols] = encoders['standard_scaler'].fit_transform(X[scale_cols].values)
+        X[robust_cols] = encoders['robust_scaler'].fit_transform(X[robust_cols].values)
     else:
-        X[numeric_features] = pd.DataFrame(num_imputer.transform(X[numeric_features]), 
-                                         columns=numeric_features, 
-                                         index=X.index)
+        X[numeric_cols] = encoders['num_imputer'].transform(X[numeric_cols])
+        X[scale_cols] = encoders['standard_scaler'].transform(X[scale_cols].values)
+        X[robust_cols] = encoders['robust_scaler'].transform(X[robust_cols].values)
+    
+    return X, encoders
 
-    if len(categorical_features) > 0:
-        if cat_imputer is None:
-            cat_imputer = SimpleImputer(strategy='constant', fill_value='unknown')
-            X[categorical_features] = pd.DataFrame(cat_imputer.fit_transform(X[categorical_features]), 
-                                               columns=categorical_features, 
-                                               index=X.index)
-        else:
-            X[categorical_features] = pd.DataFrame(cat_imputer.transform(X[categorical_features]), 
-                                               columns=categorical_features, 
-                                               index=X.index)
+def create_svr_model(cluster_stats: Dict) -> SVR:
+    """创建优化的SVR模型"""
+    price_std = cluster_stats['std']
+    price_range = cluster_stats['max'] - cluster_stats['min']
+    sample_count = cluster_stats['count']
+    
+    # 动态参数调整
+    base_epsilon = (price_std / price_range) * 0.05
+    base_C = np.log1p(sample_count) * 20
+    
+    if sample_count < 1000:
+        base_C *= 1.2
+        base_epsilon *= 0.8
+    
+    return SVR(
+        kernel='rbf',
+        C=base_C,
+        epsilon=base_epsilon,
+        gamma='scale',
+        cache_size=2000,
+        tol=0.001
+    )
+
+def train_cluster_models(X: pd.DataFrame, 
+                        y: pd.Series, 
+                        clusters: np.ndarray,
+                        n_splits: int = 5) -> List[Dict]:
+    """训练聚类模型"""
+    unique_clusters = np.unique(clusters)
+    models = []
+    
+    for cluster in unique_clusters:
+        logging.info(f"\nTraining models for Cluster {cluster}")
+        mask = clusters == cluster
+        X_cluster = X[mask]
+        y_cluster = y[mask]
         
-        target_encode_features = [col for col in target_encode_cols if col in categorical_features]
+        cluster_stats = {
+            'min': y_cluster.min(),
+            'max': y_cluster.max(),
+            'median': y_cluster.median(),
+            'count': len(y_cluster),
+            'std': y_cluster.std()
+        }
+        logging.info(f"Cluster stats: {cluster_stats}")
         
-        if target_encode_features:
-            if target_encoder is None:
-                target_encoder = TargetEncoder(cols=target_encode_features, smoothing=encoding_smoothing)
-                X[target_encode_features] = pd.DataFrame(target_encoder.fit_transform(X[target_encode_features], y), 
-                                                     columns=target_encode_features, 
-                                                     index=X.index)
-            else:
-                X[target_encode_features] = pd.DataFrame(target_encoder.transform(X[target_encode_features]), 
-                                                     columns=target_encode_features, 
-                                                     index=X.index)
+        # 创建交叉验证折叠
+        kf = KFold(n_splits=n_splits, shuffle=True, random_state=42)
+        fold_models = []
         
-        other_categorical = [col for col in categorical_features if col not in target_encode_features]
-        if len(other_categorical) > 0:
-            encoder = OneHotEncoder(sparse_output=False, handle_unknown='ignore')
-            encoded_features = encoder.fit_transform(X[other_categorical])
-            encoded_feature_names = encoder.get_feature_names_out(other_categorical)
-            encoded_df = pd.DataFrame(encoded_features, columns=encoded_feature_names, index=X.index)
-            X = pd.concat([X, encoded_df], axis=1)
-            X = X.drop(columns=other_categorical)
+        for fold, (train_idx, val_idx) in enumerate(kf.split(X_cluster), 1):
+            logging.info(f"Training fold {fold}")
+            
+            # 准备数据
+            X_train, X_val = X_cluster.iloc[train_idx], X_cluster.iloc[val_idx]
+            y_train, y_val = y_cluster.iloc[train_idx], y_cluster.iloc[val_idx]
+            
+            # 特征预处理
+            X_train_processed, encoders = preprocess_features(X_train, fit=True)
+            X_val_processed, _ = preprocess_features(X_val, encoders=encoders)
+            
+            # 目标值转换
+            y_scaler = StandardScaler()
+            y_train_scaled = y_scaler.fit_transform(y_train.values.reshape(-1, 1)).ravel()
+            
+            # 训练模型
+            model = create_svr_model(cluster_stats)
+            model.fit(X_train_processed, y_train_scaled)
+            
+            # 验证
+            y_val_pred = y_scaler.inverse_transform(
+                model.predict(X_val_processed).reshape(-1, 1)
+            ).ravel()
+            
+            # 评估
+            rmse = np.sqrt(mean_squared_error(y_val, y_val_pred))
+            r2 = r2_score(y_val, y_val_pred)
+            
+            logging.info(f"Fold {fold} - RMSE: {rmse:.4f}, R2: {r2:.4f}")
+            
+            fold_models.append({
+                'model': model,
+                'encoders': encoders,
+                'y_scaler': y_scaler,
+                'performance': {'rmse': rmse, 'r2': r2}
+            })
+        
+        models.append({
+            'cluster': cluster,
+            'models': fold_models,
+            'stats': cluster_stats
+        })
+    
+    return models
 
-    return X, num_imputer, cat_imputer, target_encoder, scaler
+def predict_prices(X: pd.DataFrame, 
+                  models: List[Dict], 
+                  kmeans: KMeans) -> np.ndarray:
+    """预测价格"""
+    # 预测聚类
+    cluster_features = [
+        'depreciation', 'coe', 'dereg_value', 'omv', 'arf',
+        'curb_weight', 'engine_cap', 'vehicle_age'
+    ]
+    cluster_features = [f for f in cluster_features if f in X.columns]
+    
+    # 准备聚类特征
+    scaler = RobustScaler()
+    X_cluster = scaler.fit_transform(X[cluster_features])
+    dummy_price = np.zeros((len(X), 1))
+    cluster_data = np.hstack([X_cluster, dummy_price])
+    
+    clusters = kmeans.predict(cluster_data)
+    predictions = np.zeros(len(X))
+    
+    # 对每个簇进行预测
+    for cluster_dict in models:
+        cluster = cluster_dict['cluster']
+        mask = clusters == cluster
+        if not any(mask):
+            continue
+        
+        cluster_predictions = []
+        weights = []
+        
+        # 使用每个折叠的模型进行预测
+        for model_dict in cluster_dict['models']:
+            X_processed, _ = preprocess_features(
+                X[mask],
+                encoders=model_dict['encoders']
+            )
+            
+            pred_scaled = model_dict['model'].predict(X_processed)
+            pred = model_dict['y_scaler'].inverse_transform(
+                pred_scaled.reshape(-1, 1)
+            ).ravel()
+            
+            cluster_predictions.append(pred)
+            weights.append(model_dict['performance']['r2'])
+        
+        # 加权平均
+        weights = np.array(weights) / sum(weights)
+        cluster_pred = np.average(
+            cluster_predictions,
+            axis=0,
+            weights=weights
+        )
+        
+        # 应用聚类特定的约束
+        cluster_stats = cluster_dict['stats']
+        min_price = max(700, cluster_stats['median'] - 3 * cluster_stats['std'])
+        max_price = min(2900000, cluster_stats['median'] + 3 * cluster_stats['std'])
+        cluster_pred = np.clip(cluster_pred, min_price, max_price)
+        
+        predictions[mask] = cluster_pred
+    
+    return np.round(predictions).astype(int)
 
-def find_optimal_clusters(X, y, max_clusters=10, features_for_clustering=['depreciation', 'coe', 'dereg_value']):
-    cluster_features_df = pd.DataFrame(X[features_for_clustering])
+def create_clusters(X: pd.DataFrame, 
+                   y: pd.Series, 
+                   n_clusters: int = 3) -> Tuple[KMeans, np.ndarray, pd.DataFrame]:
+    """改进的聚类方法"""
+    # 聚类特征
+    cluster_features = [
+        'depreciation', 'coe', 'dereg_value', 'omv', 'arf',
+        'curb_weight', 'engine_cap', 'vehicle_age'
+    ]
+    cluster_features = [f for f in cluster_features if f in X.columns]
     
-    imputer = SimpleImputer(strategy='median')
-    cluster_features_clean = imputer.fit_transform(cluster_features_df)
+    # 特征预处理
+    scaler = RobustScaler()
+    X_cluster = scaler.fit_transform(X[cluster_features])
     
-    cluster_features = np.column_stack([np.log1p(y), cluster_features_clean])
+    # 添加价格信息
+    price_log = np.log1p(y)
+    price_scaled = scaler.fit_transform(price_log.values.reshape(-1, 1))
+    cluster_data = np.hstack([X_cluster, price_scaled])
     
-    silhouette_scores = []
+    # 修复：确保生成正确数量的初始中心点
+    percentiles = np.linspace(0, 100, n_clusters + 1)[1:-1]
+    price_percentiles = np.percentile(y, percentiles)
+    initial_centers = []
     
-    for n_clusters in range(2, max_clusters + 1):
-        kmeans = KMeans(n_clusters=n_clusters, init='k-means++', n_init=10, random_state=42)
-        cluster_labels = kmeans.fit_predict(cluster_features)
-        silhouette_avg = silhouette_score(cluster_features, cluster_labels)
-        silhouette_scores.append(silhouette_avg)
-        logging.info(f"For n_clusters = {n_clusters}, the average silhouette score is : {silhouette_avg}")
+    last_threshold = 0
+    for i, threshold in enumerate(price_percentiles):
+        mask = (y > last_threshold) & (y <= threshold)
+        if sum(mask) > 0:  # 确保有足够的样本
+            center_features = cluster_data[mask].mean(axis=0)
+        else:  # 如果没有样本，使用相邻区间的平均值
+            lower_mask = y <= threshold
+            upper_mask = y > last_threshold
+            center_features = (cluster_data[lower_mask].mean(axis=0) + 
+                             cluster_data[upper_mask].mean(axis=0)) / 2
+        initial_centers.append(center_features)
+        last_threshold = threshold
     
-    optimal_clusters = silhouette_scores.index(max(silhouette_scores)) + 2
-    logging.info(f"Optimal number of clusters: {optimal_clusters}")
-    return optimal_clusters
-
-def create_price_clusters(X, y, n_clusters, features_for_clustering=['depreciation', 'coe', 'dereg_value']):
-    cluster_features_df = pd.DataFrame(X[features_for_clustering])
-    imputer = SimpleImputer(strategy='median')
-    cluster_features_clean = imputer.fit_transform(cluster_features_df)
+    # 添加最后一个中心点
+    mask = y > price_percentiles[-1]
+    if sum(mask) > 0:
+        center_features = cluster_data[mask].mean(axis=0)
+    else:
+        center_features = cluster_data[y > np.percentile(y, 90)].mean(axis=0)
+    initial_centers.append(center_features)
     
-    price_percentiles = np.percentile(y, np.linspace(0, 100, n_clusters))
-    initial_centers = np.column_stack([
-        np.log1p(price_percentiles),
-        np.percentile(cluster_features_clean, np.linspace(0, 100, n_clusters), axis=0)
-    ])
+    initial_centers = np.vstack(initial_centers)
     
-    kmeans = KMeans(n_clusters=n_clusters, init=initial_centers, n_init=3, random_state=42)
-    cluster_features = np.column_stack([np.log1p(y), cluster_features_clean])
-    price_clusters = kmeans.fit_predict(cluster_features)
+    # 确保初始中心点的数量正确
+    assert initial_centers.shape[0] == n_clusters, \
+        f"Got {initial_centers.shape[0]} centers, expected {n_clusters}"
     
+    # 执行聚类
+    kmeans = KMeans(
+        n_clusters=n_clusters,
+        init=initial_centers,
+        n_init=1,
+        random_state=42
+    )
+    clusters = kmeans.fit_predict(cluster_data)
+    
+    # 收集聚类信息
     cluster_info = []
     for cluster in range(n_clusters):
-        cluster_prices = y[price_clusters == cluster]
+        mask = clusters == cluster
+        cluster_prices = y[mask]
         cluster_info.append({
             'cluster': cluster,
             'min': cluster_prices.min(),
             'max': cluster_prices.max(),
             'median': cluster_prices.median(),
-            'count': len(cluster_prices)
+            'count': len(cluster_prices),
+            'std': cluster_prices.std()
         })
     
     cluster_df = pd.DataFrame(cluster_info)
-    logging.info("Price Cluster Information:")
+    logging.info("Cluster Information:")
     logging.info(cluster_df)
     
-    kmeans.feature_imputer = imputer
-    
-    return kmeans, price_clusters, cluster_df
-
-def predict_cluster(X, y, kmeans_model, preprocessors, features_for_clustering=['depreciation', 'coe', 'dereg_value']):
-    X_processed, _, _, _, _ = preprocess_features(X, y, **preprocessors)
-    
-    cluster_features_df = pd.DataFrame(X_processed[features_for_clustering])
-    cluster_features_clean = kmeans_model.feature_imputer.transform(cluster_features_df)
-    
-    cluster_features = np.column_stack([np.log1p(y) if y is not None else np.zeros(len(X)), cluster_features_clean])
-    return kmeans_model.predict(cluster_features)
-
-def train_evaluate_models(X_train, y_train, X_val, y_val, lgb_params, cb_params, price_range='medium'):
-    """训练LightGBM、CatBoost和SVR模型并返回最优权重组合"""
-    # 训练LightGBM
-    train_data = lgb.Dataset(X_train, label=np.log1p(y_train))
-    val_data = lgb.Dataset(X_val, label=np.log1p(y_val), reference=train_data)
-    
-    lgb_model = lgb.train(
-        lgb_params,
-        train_data,
-        num_boost_round=1000,
-        valid_sets=[train_data, val_data],
-        valid_names=['train', 'valid']
-    )
-    
-    # 训练CatBoost
-    cb_model = CatBoostRegressor(**cb_params)
-    cb_model.fit(
-        X_train, 
-        np.log1p(y_train),
-        eval_set=(X_val, np.log1p(y_val)),
-        verbose=False
-    )
-    
-    # 根据价格区间调整SVR参数
-    if price_range == 'high':
-        svr_params = {'C': 100, 'epsilon': 0.1, 'gamma': 'scale'}
-    elif price_range == 'low':
-        svr_params = {'C': 50, 'epsilon': 0.2, 'gamma': 'scale'}
-    else:
-        svr_params = {'C': 75, 'epsilon': 0.15, 'gamma': 'scale'}
-    
-    svr_model = SVR(**svr_params)
-    svr_model.fit(X_train, np.log1p(y_train))
-    
-    # 在验证集上寻找最优权重组合
-    lgb_pred = np.expm1(lgb_model.predict(X_val, num_iteration=lgb_model.best_iteration))
-    cb_pred = np.expm1(cb_model.predict(X_val))
-    svr_pred = np.expm1(svr_model.predict(X_val))
-    
-    best_rmse = float('inf')
-    best_weights = (0.4, 0.3, 0.3)  # 初始权重
-    
-    # 根据价格区间调整权重搜索范围
-    if price_range == 'high':
-        w1_range = np.arange(0.3, 0.5, 0.1)  # LightGBM权重范围
-        w2_range = np.arange(0.2, 0.4, 0.1)  # CatBoost权重范围
-    elif price_range == 'low':
-        w1_range = np.arange(0.4, 0.7, 0.1)  # LightGBM权重范围
-        w2_range = np.arange(0.2, 0.4, 0.1)  # CatBoost权重范围
-    else:
-        w1_range = np.arange(0.3, 0.6, 0.1)  # LightGBM权重范围
-        w2_range = np.arange(0.2, 0.4, 0.1)  # CatBoost权重范围
-    
-    # 网格搜索最优权重组合
-    for w1 in w1_range:
-        for w2 in w2_range:
-            w3 = 1 - w1 - w2
-            if w3 < 0.1:  # 确保SVR至少有10%的权重
-                continue
-                
-            weighted_pred = w1 * lgb_pred + w2 * cb_pred + w3 * svr_pred
-            rmse = np.sqrt(mean_squared_error(y_val, weighted_pred))
-            
-            if rmse < best_rmse:
-                best_rmse = rmse
-                best_weights = (w1, w2, w3)
-    
-    return lgb_model, cb_model, svr_model, best_weights
-
-def post_process_predictions(predictions, min_price=700, max_price=2900000):
-    return np.clip(predictions, min_price, max_price)
+    return kmeans, clusters, cluster_df
 
 def main():
-    np.random.seed(42)
-    
-    X, y = load_and_preprocess_data('preprocessing/2024-10-21-silan/train_cleaned.csv')
-    
-    logging.info("Target variable (price) statistics:")
-    logging.info(y.describe())
-    
-    features_for_clustering = ['depreciation', 'coe', 'dereg_value']
-    
-    optimal_clusters = find_optimal_clusters(X, y, max_clusters=3, features_for_clustering=features_for_clustering)
-    
-    kmeans_model, price_clusters, cluster_info = create_price_clusters(X, y, n_clusters=optimal_clusters, features_for_clustering=features_for_clustering)
-    
-    kf = KFold(n_splits=10, shuffle=True, random_state=42)
-    
-    oof_predictions = np.zeros(len(X))
-    feature_importance_list = []
-    models = []
-    
-    # LightGBM参数
-    params = {
-        'objective': 'regression',
-        'metric': 'rmse',
-        'boosting_type': 'gbdt',
-        'verbosity': -1,
-        'seed': 42,
-        'learning_rate': 0.05,
-        'num_leaves': 31,
-        'feature_fraction': 0.8,
-        'bagging_fraction': 0.7,
-        'bagging_freq': 5,
-        'max_depth': -1,
-        'min_child_samples': 20,
-        'cat_smooth': 10,
-        'cat_l2': 10,
-    }
-    
-    # CatBoost参数
-    cb_params = {
-        'iterations': 3000,
-        'learning_rate': 0.05,
-        'depth': 6,
-        'l2_leaf_reg': 10,
-        'min_data_in_leaf': 20,
-        'random_strength': 0.5,
-        'bagging_temperature': 0.2,
-        'od_type': 'Iter',
-        'od_wait': 50,
-        'random_seed': 42,
-        'verbose': False
-    }
-    
-    start_time = time.time()
-    
-    for cluster in range(len(cluster_info)):
-        logging.info(f"\nTraining models for Cluster {cluster}")
-        X_cluster = X[price_clusters == cluster]
-        y_cluster = y[price_clusters == cluster]
+    """主函数"""
+    try:
+        start_time = time.time()
+        np.random.seed(42)
         
-        # 确定价格区间
-        median_price = cluster_info.iloc[cluster]['median']
-        if median_price < cluster_info['median'].median():
-            price_range = 'low'
-        elif median_price > cluster_info['median'].quantile(0.75):
-            price_range = 'high'
-        else:
-            price_range = 'medium'
-            
-        cluster_models = []
+        # 加载数据
+        X_train, y_train = load_and_prepare_data('l2_train.csv')
+        X_test, _ = load_and_prepare_data('l2_test.csv')
         
-        for fold, (train_index, val_index) in enumerate(kf.split(X_cluster), 1):
-            logging.info(f"Fold {fold}")
-            
-            X_train, X_val = X_cluster.iloc[train_index].copy(), X_cluster.iloc[val_index].copy()
-            y_train, y_val = y_cluster.iloc[train_index], y_cluster.iloc[val_index]
-            
-            X_train_processed, num_imputer, cat_imputer, target_encoder, scaler = preprocess_features(X_train, y_train)
-            X_val_processed, _, _, _, _ = preprocess_features(X_val, y_val, num_imputer, cat_imputer, target_encoder, scaler)
-            
-            # 训练模型
-            lgb_model, cb_model, svr_model, best_weights = train_evaluate_models(
-                X_train_processed, y_train,
-                X_val_processed, y_val,
-                params, 
-                cb_params,
-                price_range
-            )
-            
-            # 组合预测
-            lgb_pred = np.expm1(lgb_model.predict(X_val_processed, num_iteration=lgb_model.best_iteration))
-            cb_pred = np.expm1(cb_model.predict(X_val_processed))
-            svr_pred = np.expm1(svr_model.predict(X_val_processed))
-            
-            fold_predictions = (best_weights[0] * lgb_pred + 
-                              best_weights[1] * cb_pred + 
-                              best_weights[2] * svr_pred)
-            
-            oof_predictions[price_clusters == cluster][val_index] = fold_predictions
-            
-            # 记录特征重要性 (使用LightGBM的特征重要性)
-            importance = lgb_model.feature_importance(importance_type='gain')
-            feature_importance = pd.DataFrame({'feature': X_train_processed.columns, 'importance': importance})
-            feature_importance_list.append(feature_importance)
-            
-            logging.info(f"Best weights for cluster {cluster}, fold {fold}: LGB={best_weights[0]:.2f}, "
-                        f"CB={best_weights[1]:.2f}, SVR={best_weights[2]:.2f}")
-            
-            # 保存模型和权重
-            cluster_models.append({
-                'lgb_model': lgb_model,
-                'cb_model': cb_model,
-                'svr_model': svr_model,
-                'weights': best_weights,
-                'preprocessors': {
-                    'num_imputer': num_imputer,
-                    'cat_imputer': cat_imputer,
-                    'target_encoder': target_encoder,
-                    'scaler': scaler
-                }
-            })
+        # 创建聚类
+        n_clusters = 3  # 明确指定聚类数量
+        kmeans, clusters, cluster_info = create_clusters(X_train, y_train, n_clusters=n_clusters)
         
-        models.append(cluster_models)
-    
-    elapsed_time = time.time() - start_time
-    logging.info(f"\nTotal training time: {elapsed_time/60:.2f} minutes")
-    
-    oof_predictions = post_process_predictions(oof_predictions)
-    oof_mse = mean_squared_error(y, oof_predictions)
-    oof_r2 = r2_score(y, oof_predictions)
-    logging.info(f"Out-of-fold RMSE: {np.sqrt(oof_mse):.4f}")
-    logging.info(f"Out-of-fold R2: {oof_r2:.4f}")
-    
-    feature_importance = pd.concat(feature_importance_list).groupby('feature').mean().sort_values('importance', ascending=False)
-    logging.info("\nTop 10 important features:")
-    logging.info(feature_importance.head(10))
-    
-    # 保存模型
-    with open('triple_ensemble_models.pkl', 'wb') as f:
-        pickle.dump({
-            'models': models,
-            'kmeans_model': kmeans_model,
-            'cluster_info': cluster_info
-        }, f)
-    logging.info("Models and preprocessors saved.")
-    
-    # 预测测试集
-    X_test, _ = load_and_preprocess_data('preprocessing/2024-10-21-silan/test_cleaned.csv')
-    
-    dummy_y_test = np.zeros(len(X_test))
-    test_clusters = predict_cluster(X_test, dummy_y_test, kmeans_model, models[0][0]['preprocessors'], features_for_clustering)
-    
-    final_predictions = np.zeros(len(X_test))
-    
-    for cluster in range(len(cluster_info)):
-        cluster_mask = test_clusters == cluster
-        X_test_cluster = X_test[cluster_mask]
+        # 训练模型
+        models = train_cluster_models(X_train, y_train, clusters)
         
-        if len(X_test_cluster) == 0:
-            logging.warning(f"No samples in test data for cluster {cluster}. Skipping this cluster.")
-            continue
+        # 预测
+        predictions = predict_prices(X_test, models, kmeans)
         
-        cluster_predictions = np.zeros((len(X_test_cluster), len(models[cluster])))
+        # 保存结果
+        submission = pd.DataFrame({
+            'Id': range(len(predictions)),
+            'Predicted': predictions
+        })
+        submission.to_csv('predictions.csv', index=False)
         
-        for i, model_dict in enumerate(models[cluster]):
-            try:
-                X_test_processed, _, _, _, _ = preprocess_features(
-                    X_test_cluster, y=None, **model_dict['preprocessors']
-                )
-                
-                # 组合三个模型的预测
-                lgb_pred = np.expm1(model_dict['lgb_model'].predict(X_test_processed))
-                cb_pred = np.expm1(model_dict['cb_model'].predict(X_test_processed))
-                svr_pred = np.expm1(model_dict['svr_model'].predict(X_test_processed))
-                
-                weights = model_dict['weights']
-                cluster_predictions[:, i] = (weights[0] * lgb_pred + 
-                                          weights[1] * cb_pred + 
-                                          weights[2] * svr_pred)
-                
-            except Exception as e:
-                logging.error(f"Error predicting for cluster {cluster}, model {i}: {str(e)}")
-                continue
+        # 输出训练信息
+        duration = (time.time() - start_time) / 60
+        logging.info(f"\nTraining completed in {duration:.2f} minutes")
+        logging.info(f"Predictions summary:")
+        logging.info(f"Min: {predictions.min()}")
+        logging.info(f"Max: {predictions.max()}")
+        logging.info(f"Mean: {predictions.mean():.2f}")
+        logging.info(f"Median: {np.median(predictions):.2f}")
         
-        final_predictions[cluster_mask] = np.mean(cluster_predictions, axis=1)
-    
-    final_predictions = post_process_predictions(final_predictions)
-    
-    submission = pd.DataFrame({
-        'Id': range(len(final_predictions)),
-        'Predicted': np.round(final_predictions).astype(int)
-    })
-    
-    submission.to_csv('./triple_ensemble_predictions.csv', index=False)
-    logging.info("Predictions complete. Submission file saved as 'triple_ensemble_predictions.csv'.")
-    
-    logging.info("\nPrediction statistics:")
-    logging.info(f"Minimum: {final_predictions.min()}")
-    logging.info(f"Maximum: {final_predictions.max()}")
-    logging.info(f"Mean: {final_predictions.mean()}")
-    logging.info(f"Median: {np.median(final_predictions)}")
+    except Exception as e:
+        logging.error(f"Error in main execution: {str(e)}", exc_info=True)
+        raise
 
 if __name__ == '__main__':
     main()

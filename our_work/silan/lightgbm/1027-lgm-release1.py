@@ -189,7 +189,7 @@ def post_process_predictions(predictions, min_price=700, max_price=2900000):
 def main():
     np.random.seed(42)
     
-    X, y = load_and_preprocess_data('preprocessing/2024-10-21-silan/train_cleaned.csv')
+    X, y = load_and_preprocess_data('preprocessing/2024-11-2-silan/train_cleaned.csv')
     
     logging.info("Target variable (price) statistics:")
     logging.info(y.describe())
@@ -284,7 +284,7 @@ def main():
         }, f)
     logging.info("Models and preprocessors saved.")
     
-    X_test, _ = load_and_preprocess_data('preprocessing/2024-10-21-silan/test_cleaned.csv')
+    X_test, _ = load_and_preprocess_data('preprocessing/2024-11-2-silan/test_cleaned.csv')
     
     # if 'make' not in X_test.columns or 'model' not in X_test.columns:
     #     logging.error("Error: 'make' or 'model' column not found in test data")
