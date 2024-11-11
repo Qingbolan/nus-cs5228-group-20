@@ -181,6 +181,7 @@ def main():
     features_for_clustering = ['depreciation', 'coe', 'dereg_value']
     
     # Find optimal number of clusters
+
     optimal_clusters = find_optimal_clusters(X, y, max_clusters=3, features_for_clustering=features_for_clustering)
     
     kmeans_model, price_clusters, cluster_info = create_price_clusters(X, y, n_clusters=optimal_clusters, features_for_clustering=features_for_clustering)
