@@ -3,8 +3,10 @@ import os
 load_dotenv()
 
 from data.rmse_calculator import calculate_rmse
+from final_report.approach1.without_cluster.models.catboost import train_catboost_models
 from final_report.approach1.without_cluster.models.lightgbm import train_lightgbm_models
-
+from final_report.approach1.without_cluster.models.gradientboost import train_gradient_boosting_models
+from final_report.approach1.without_cluster.models.xgboost import train_xgboost_models
 
 # def train_lightgbm_models(train_file_path, test_file_path, prediction_output_path):
 
@@ -20,12 +22,37 @@ from final_report.approach1.without_cluster.models.lightgbm import train_lightgb
 
 def main():
     print('Training model...')
-    train_lightgbm_models(
+    
+# FINAL_REPORT_APPROACH_one_WITHOUT_cluster_LightGBM_WEIGHT_PATH="final_report\approach1\without_cluster\lightgbm_models.pkl"
+# FINAL_REPORT_APPROACH_one_WITHOUT_cluster_XGBoost_WEIGHT_PATH="final_report\approach1\without_cluster\xgboost_models.pkl"
+# FINAL_REPORT_APPROACH_one_WITHOUT_cluster_CATBOOST_WEIGHT_PATH="final_report\approach1\without_cluster\catboost_models.pkl"
+# FINAL_REPORT_APPROACH_one_WITHOUT_cluster_GRADIENT_BOOSTING_WEIGHT_PATH="final_report\approach1\without_cluster\gradient_boosting_models.pkl"
+
+    train_xgboost_models(
         os.getenv('FINAL_REPORT_TRAIN_DATA'),
         os.getenv('FINAL_REPORT_TEST_DATA'),
-        os.getenv('FINAL_REPORT_APPROACH_one_SUBMISSION_PATH')
+        os.getenv('FINAL_REPORT_APPROACH_one_SUBMISSION_PATH'),
+        os.getenv('FINAL_REPORT_APPROACH_one_WITHOUT_cluster_XGBoost_WEIGHT_PATH')        
     )
+    # train_lightgbm_models(
+    #     os.getenv('FINAL_REPORT_TRAIN_DATA'),
+    #     os.getenv('FINAL_REPORT_TEST_DATA'),
+    #     os.getenv('FINAL_REPORT_APPROACH_one_SUBMISSION_PATH'),
+    #     os.getenv('FINAL_REPORT_APPROACH_one_WITHOUT_cluster_LightGBM_WEIGHT_PATH')
+    # )
+    # train_catboost_models(
+    #     os.getenv('FINAL_REPORT_TRAIN_DATA'),
+    #     os.getenv('FINAL_REPORT_TEST_DATA'),
+    #     os.getenv('FINAL_REPORT_APPROACH_one_SUBMISSION_PATH'),
+    #     os.getenv('FINAL_REPORT_APPROACH_one_WITHOUT_cluster_CATBOOST_WEIGHT_PATH')
+    # )
+    # train_gradient_boosting_models(
+    #     os.getenv('FINAL_REPORT_TRAIN_DATA'),
+    #     os.getenv('FINAL_REPORT_TEST_DATA'),
+    #     os.getenv('FINAL_REPORT_APPROACH_one_SUBMISSION_PATH'),
+    #     os.getenv('FINAL_REPORT_APPROACH_one_WITHOUT_cluster_GRADIENT_BOOSTING_WEIGHT_PATH')
+    # )
     print('Training model done.')
-    # print('evalute...')
-    # RSME = calculate_rmse(os.getenv('FINAL_REPORT_APPROACH_one_SUBMISSION_PATH'))
-    # print(f'RSME: {RSME}')
+    print('evalute...')
+    RSME = calculate_rmse(os.getenv('FINAL_REPORT_APPROACH_one_SUBMISSION_PATH'))
+    print(f'RSME: {RSME}')

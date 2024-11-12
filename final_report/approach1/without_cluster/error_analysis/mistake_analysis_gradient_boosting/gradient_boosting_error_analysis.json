@@ -1,0 +1,175 @@
+{
+    "category_0": {
+        "category_id": 0,
+        "rmse": 1020.9458783239165,
+        "count": 15742,
+        "proportion": 0.62968,
+        "mean_absolute_mistake": 855.9672411666314,
+        "max_mistake": 1999.5612006246229,
+        "min_mistake": 0.026207161405181978,
+        "top_features": [
+            "almost_new_car",
+            "low_mileage_car",
+            "vehicle_type_sports_car",
+            "vehicle_type_van",
+            "vehicle_age"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_gradient_boosting\\heatmaps_gradient_boosting\\category_0_heatmap_gradient_boosting.png"
+    },
+    "category_1": {
+        "category_id": 1,
+        "rmse": 2467.6309438775315,
+        "count": 3437,
+        "proportion": 0.13748,
+        "mean_absolute_mistake": 2451.3844410128313,
+        "max_mistake": 2999.8185848347202,
+        "min_mistake": 2001.0207101810956,
+        "top_features": [
+            "electric_cars",
+            "coe",
+            "depreciation",
+            "sta_evaluated_car",
+            "vehicle_type_mpv"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_gradient_boosting\\heatmaps_gradient_boosting\\category_1_heatmap_gradient_boosting.png"
+    },
+    "category_2": {
+        "category_id": 2,
+        "rmse": 3848.279548801145,
+        "count": 2973,
+        "proportion": 0.11892,
+        "mean_absolute_mistake": 3806.6508475382066,
+        "max_mistake": 4999.285484906912,
+        "min_mistake": 3001.1367790152726,
+        "top_features": [
+            "dereg_value",
+            "vehicle_type_mpv",
+            "coe_car",
+            "low_mileage_car",
+            "arf"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_gradient_boosting\\heatmaps_gradient_boosting\\category_2_heatmap_gradient_boosting.png"
+    },
+    "category_3": {
+        "category_id": 3,
+        "rmse": 6264.71547359444,
+        "count": 1311,
+        "proportion": 0.05244,
+        "mean_absolute_mistake": 6208.74452272616,
+        "max_mistake": 7995.019478809612,
+        "min_mistake": 5001.9167192763125,
+        "top_features": [
+            "almost_new_car",
+            "sgcarmart_warranty_cars",
+            "imported_used_vehicle",
+            "electric_cars",
+            "curb_weight"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_gradient_boosting\\heatmaps_gradient_boosting\\category_3_heatmap_gradient_boosting.png"
+    },
+    "category_4": {
+        "category_id": 4,
+        "rmse": 8916.703684085249,
+        "count": 370,
+        "proportion": 0.0148,
+        "mean_absolute_mistake": 8898.20754799933,
+        "max_mistake": 9997.460473956307,
+        "min_mistake": 8003.8928152324515,
+        "top_features": [
+            "vehicle_age",
+            "manufactured",
+            "rare_exotic",
+            "vehicle_type_others",
+            "vintage_cars"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_gradient_boosting\\heatmaps_gradient_boosting\\category_4_heatmap_gradient_boosting.png"
+    },
+    "category_5": {
+        "category_id": 5,
+        "rmse": 10880.593077269383,
+        "count": 201,
+        "proportion": 0.00804,
+        "mean_absolute_mistake": 10865.918523511678,
+        "max_mistake": 11990.173943317845,
+        "min_mistake": 10014.154723965388,
+        "top_features": [
+            "consignment_car",
+            "transmission_type_manual",
+            "transmission_type_auto",
+            "vehicle_type_stationwagon",
+            "vehicle_type_truck"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_gradient_boosting\\heatmaps_gradient_boosting\\category_5_heatmap_gradient_boosting.png"
+    },
+    "category_6": {
+        "category_id": 6,
+        "rmse": 12937.734405894604,
+        "count": 145,
+        "proportion": 0.0058,
+        "mean_absolute_mistake": 12923.821137123536,
+        "max_mistake": 13992.330225227914,
+        "min_mistake": 12009.899814295815,
+        "top_features": [
+            "vehicle_type_luxury_sedan",
+            "transmission_type_manual",
+            "transmission_type_auto",
+            "vehicle_age",
+            "manufactured"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_gradient_boosting\\heatmaps_gradient_boosting\\category_6_heatmap_gradient_boosting.png"
+    },
+    "category_7": {
+        "category_id": 7,
+        "rmse": 15051.854017457264,
+        "count": 98,
+        "proportion": 0.00392,
+        "mean_absolute_mistake": 15040.02449388917,
+        "max_mistake": 15989.654361377325,
+        "min_mistake": 14012.73601783585,
+        "top_features": [
+            "coe",
+            "parf_car",
+            "vehicle_type_sports_car",
+            "coe_car",
+            "almost_new_car"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_gradient_boosting\\heatmaps_gradient_boosting\\category_7_heatmap_gradient_boosting.png"
+    },
+    "category_8": {
+        "category_id": 8,
+        "rmse": 17755.668724439216,
+        "count": 138,
+        "proportion": 0.00552,
+        "mean_absolute_mistake": 17716.55388373633,
+        "max_mistake": 19981.344226513058,
+        "min_mistake": 16030.152067797608,
+        "top_features": [
+            "rare_exotic",
+            "vehicle_type_others",
+            "electric_cars",
+            "consignment_car",
+            "vehicle_type_mpv"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_gradient_boosting\\heatmaps_gradient_boosting\\category_8_heatmap_gradient_boosting.png"
+    },
+    "category_9": {
+        "category_id": 9,
+        "rmse": 139347.67829360202,
+        "count": 585,
+        "proportion": 0.0234,
+        "mean_absolute_mistake": 67529.31612558008,
+        "max_mistake": 1358637.2723295265,
+        "min_mistake": 2000.1285082890172,
+        "top_features": [
+            "imported_used_vehicle",
+            "almost_new_car",
+            "rare_exotic",
+            "road_tax",
+            "engine_cap"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_gradient_boosting\\heatmaps_gradient_boosting\\category_9_heatmap_gradient_boosting.png"
+    },
+    "overall": {
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_gradient_boosting\\heatmaps_gradient_boosting\\overall_heatmap_gradient_boosting.png"
+    }
+}

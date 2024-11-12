@@ -1,0 +1,175 @@
+{
+    "category_0": {
+        "category_id": 0,
+        "rmse": 956.096129018563,
+        "count": 17114,
+        "proportion": 0.68456,
+        "mean_absolute_mistake": 787.3779340755832,
+        "max_mistake": 1999.4234374999942,
+        "min_mistake": 0.08906250000291038,
+        "top_features": [
+            "coe",
+            "vehicle_type_van",
+            "almost_new_car",
+            "omv",
+            "arf"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_xgboost\\heatmaps_xgboost\\category_0_heatmap_xgboost.png"
+    },
+    "category_1": {
+        "category_id": 1,
+        "rmse": 2472.4998146634107,
+        "count": 2840,
+        "proportion": 0.1136,
+        "mean_absolute_mistake": 2455.613168885137,
+        "max_mistake": 2997.928125000006,
+        "min_mistake": 2001.4976562500015,
+        "top_features": [
+            "vehicle_type_hatchback",
+            "omv",
+            "coe",
+            "low_mileage_car",
+            "arf"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_xgboost\\heatmaps_xgboost\\category_1_heatmap_xgboost.png"
+    },
+    "category_2": {
+        "category_id": 2,
+        "rmse": 3853.4490691690316,
+        "count": 2540,
+        "proportion": 0.1016,
+        "mean_absolute_mistake": 3812.788572046475,
+        "max_mistake": 4999.003124999988,
+        "min_mistake": 3001.720312499994,
+        "top_features": [
+            "almost_new_car",
+            "vehicle_type_truck",
+            "direct_owner_sale",
+            "depreciation",
+            "coe"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_xgboost\\heatmaps_xgboost\\category_2_heatmap_xgboost.png"
+    },
+    "category_3": {
+        "category_id": 3,
+        "rmse": 6257.26548298624,
+        "count": 1181,
+        "proportion": 0.04724,
+        "mean_absolute_mistake": 6199.720309729903,
+        "max_mistake": 7996.403125000012,
+        "min_mistake": 5002.181249999994,
+        "top_features": [
+            "power",
+            "arf",
+            "vehicle_type_sports_car",
+            "engine_cap",
+            "road_tax"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_xgboost\\heatmaps_xgboost\\category_3_heatmap_xgboost.png"
+    },
+    "category_4": {
+        "category_id": 4,
+        "rmse": 8928.565263987954,
+        "count": 321,
+        "proportion": 0.01284,
+        "mean_absolute_mistake": 8909.799165206387,
+        "max_mistake": 9996.168750000012,
+        "min_mistake": 8012.046875,
+        "top_features": [
+            "arf",
+            "omv",
+            "power",
+            "depreciation",
+            "direct_owner_sale"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_xgboost\\heatmaps_xgboost\\category_4_heatmap_xgboost.png"
+    },
+    "category_5": {
+        "category_id": 5,
+        "rmse": 10995.236593687838,
+        "count": 192,
+        "proportion": 0.00768,
+        "mean_absolute_mistake": 10979.183154551189,
+        "max_mistake": 11995.084375000006,
+        "min_mistake": 10012.412500000006,
+        "top_features": [
+            "parf_car",
+            "coe_car",
+            "vintage_cars",
+            "vehicle_type_bus_mini_bus",
+            "manufactured"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_xgboost\\heatmaps_xgboost\\category_5_heatmap_xgboost.png"
+    },
+    "category_6": {
+        "category_id": 6,
+        "rmse": 12961.241947819844,
+        "count": 128,
+        "proportion": 0.00512,
+        "mean_absolute_mistake": 12948.508746337895,
+        "max_mistake": 13996.209374999999,
+        "min_mistake": 12019.950000000012,
+        "top_features": [
+            "vehicle_type_mpv",
+            "curb_weight",
+            "rare_exotic",
+            "vehicle_type_others",
+            "power"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_xgboost\\heatmaps_xgboost\\category_6_heatmap_xgboost.png"
+    },
+    "category_7": {
+        "category_id": 7,
+        "rmse": 14865.517386583197,
+        "count": 101,
+        "proportion": 0.00404,
+        "mean_absolute_mistake": 14854.943376779083,
+        "max_mistake": 15985.740625000006,
+        "min_mistake": 14002.443749999977,
+        "top_features": [
+            "no_of_owners",
+            "dereg_value",
+            "vehicle_age",
+            "rare_exotic",
+            "coe_car"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_xgboost\\heatmaps_xgboost\\category_7_heatmap_xgboost.png"
+    },
+    "category_8": {
+        "category_id": 8,
+        "rmse": 18057.455897365748,
+        "count": 129,
+        "proportion": 0.00516,
+        "mean_absolute_mistake": 18017.819125484486,
+        "max_mistake": 19997.224999999977,
+        "min_mistake": 16060.5625,
+        "top_features": [
+            "dereg_value",
+            "omv",
+            "arf",
+            "power",
+            "parf_car"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_xgboost\\heatmaps_xgboost\\category_8_heatmap_xgboost.png"
+    },
+    "category_9": {
+        "category_id": 9,
+        "rmse": 104459.20023468844,
+        "count": 454,
+        "proportion": 0.01816,
+        "mean_absolute_mistake": 62152.891736216276,
+        "max_mistake": 1108699.45,
+        "min_mistake": 2000.270312499997,
+        "top_features": [
+            "vehicle_type_sports_car",
+            "imported_used_vehicle",
+            "depreciation",
+            "vehicle_type_suv",
+            "dereg_value"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_xgboost\\heatmaps_xgboost\\category_9_heatmap_xgboost.png"
+    },
+    "overall": {
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_xgboost\\heatmaps_xgboost\\overall_heatmap_xgboost.png"
+    }
+}

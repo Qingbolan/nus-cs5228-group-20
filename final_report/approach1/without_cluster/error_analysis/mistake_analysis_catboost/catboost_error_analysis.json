@@ -1,0 +1,175 @@
+{
+    "category_0": {
+        "category_id": 0,
+        "rmse": 1090.0957286846783,
+        "count": 12068,
+        "proportion": 0.48272,
+        "mean_absolute_mistake": 929.3492050339062,
+        "max_mistake": 1999.8241934410617,
+        "min_mistake": 0.0894791858154349,
+        "top_features": [
+            "vehicle_type_truck",
+            "vehicle_type_luxury_sedan",
+            "road_tax",
+            "engine_cap",
+            "parf_car"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_catboost\\heatmaps_catboost\\category_0_heatmap_catboost.png"
+    },
+    "category_1": {
+        "category_id": 1,
+        "rmse": 2478.3091308249504,
+        "count": 4004,
+        "proportion": 0.16016,
+        "mean_absolute_mistake": 2461.732768855052,
+        "max_mistake": 2999.936995585871,
+        "min_mistake": 2001.2548415951314,
+        "top_features": [
+            "low_mileage_car",
+            "coe",
+            "vehicle_type_luxury_sedan",
+            "parf_car",
+            "vehicle_type_suv"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_catboost\\heatmaps_catboost\\category_1_heatmap_catboost.png"
+    },
+    "category_2": {
+        "category_id": 2,
+        "rmse": 3903.5655806043983,
+        "count": 4266,
+        "proportion": 0.17064,
+        "mean_absolute_mistake": 3862.350075302013,
+        "max_mistake": 4997.487348537485,
+        "min_mistake": 3001.172921687714,
+        "top_features": [
+            "low_mileage_car",
+            "vehicle_type_sports_car",
+            "coe",
+            "omv",
+            "arf"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_catboost\\heatmaps_catboost\\category_2_heatmap_catboost.png"
+    },
+    "category_3": {
+        "category_id": 3,
+        "rmse": 6243.573971324609,
+        "count": 2347,
+        "proportion": 0.09388,
+        "mean_absolute_mistake": 6187.294281345127,
+        "max_mistake": 7999.186227363767,
+        "min_mistake": 5001.831846722227,
+        "top_features": [
+            "vehicle_type_sports_car",
+            "low_mileage_car",
+            "road_tax",
+            "engine_cap",
+            "electric_cars"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_catboost\\heatmaps_catboost\\category_3_heatmap_catboost.png"
+    },
+    "category_4": {
+        "category_id": 4,
+        "rmse": 8950.173638950644,
+        "count": 628,
+        "proportion": 0.02512,
+        "mean_absolute_mistake": 8931.29820392502,
+        "max_mistake": 9992.33326964872,
+        "min_mistake": 8001.298315039137,
+        "top_features": [
+            "engine_cap",
+            "road_tax",
+            "almost_new_car",
+            "vehicle_type_sports_car",
+            "vehicle_age"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_catboost\\heatmaps_catboost\\category_4_heatmap_catboost.png"
+    },
+    "category_5": {
+        "category_id": 5,
+        "rmse": 10953.99538268424,
+        "count": 367,
+        "proportion": 0.01468,
+        "mean_absolute_mistake": 10938.92191235429,
+        "max_mistake": 11993.274607066764,
+        "min_mistake": 10003.815633930659,
+        "top_features": [
+            "arf",
+            "power",
+            "dereg_value",
+            "omv",
+            "rare_exotic"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_catboost\\heatmaps_catboost\\category_5_heatmap_catboost.png"
+    },
+    "category_6": {
+        "category_id": 6,
+        "rmse": 12950.654278423819,
+        "count": 245,
+        "proportion": 0.0098,
+        "mean_absolute_mistake": 12936.978600816745,
+        "max_mistake": 13992.38048009266,
+        "min_mistake": 12001.451952172443,
+        "top_features": [
+            "almost_new_car",
+            "hybrid_cars",
+            "vehicle_type_mpv",
+            "vehicle_age",
+            "vehicle_type_sports_car"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_catboost\\heatmaps_catboost\\category_6_heatmap_catboost.png"
+    },
+    "category_7": {
+        "category_id": 7,
+        "rmse": 14933.713063839146,
+        "count": 194,
+        "proportion": 0.00776,
+        "mean_absolute_mistake": 14921.938142470175,
+        "max_mistake": 15994.681769801537,
+        "min_mistake": 14002.377609440824,
+        "top_features": [
+            "rare_exotic",
+            "sgcarmart_warranty_cars",
+            "vehicle_type_luxury_sedan",
+            "vehicle_type_mpv",
+            "vehicle_type_sports_car"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_catboost\\heatmaps_catboost\\category_7_heatmap_catboost.png"
+    },
+    "category_8": {
+        "category_id": 8,
+        "rmse": 17844.782886015757,
+        "count": 233,
+        "proportion": 0.00932,
+        "mean_absolute_mistake": 17807.607526887718,
+        "max_mistake": 19978.98644070851,
+        "min_mistake": 16003.174215604246,
+        "top_features": [
+            "vehicle_type_sports_car",
+            "power",
+            "consignment_car",
+            "vehicle_type_suv",
+            "rare_exotic"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_catboost\\heatmaps_catboost\\category_8_heatmap_catboost.png"
+    },
+    "category_9": {
+        "category_id": 9,
+        "rmse": 85757.91052637919,
+        "count": 648,
+        "proportion": 0.02592,
+        "mean_absolute_mistake": 51162.43347931832,
+        "max_mistake": 1270130.4516920405,
+        "min_mistake": 2000.1550913854517,
+        "top_features": [
+            "depreciation",
+            "vehicle_type_sports_car",
+            "power",
+            "vehicle_type_suv",
+            "low_mileage_car"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_catboost\\heatmaps_catboost\\category_9_heatmap_catboost.png"
+    },
+    "overall": {
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_catboost\\heatmaps_catboost\\overall_heatmap_catboost.png"
+    }
+}
