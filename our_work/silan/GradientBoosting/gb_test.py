@@ -39,6 +39,7 @@ print('\nFeature count check:')
 print('Train features:', train_data.shape[1])
 print('Test features:', test_data.shape[1])
 
+
 # 训练集预测
 train_no_nan = train_data.dropna()
 train_nan = train_data[train_data.isna().any(axis=1)]

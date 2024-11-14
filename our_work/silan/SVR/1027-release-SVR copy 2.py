@@ -23,6 +23,7 @@ logging.basicConfig(
     ]
 )
 
+
 def load_and_preprocess_data(file_path):
     data = pd.read_csv(file_path)
     if 'Unnamed: 0' in data.columns:
@@ -38,6 +39,7 @@ def load_and_preprocess_data(file_path):
 def preprocess_features(X, y=None, num_imputer=None, cat_imputer=None, 
                         target_encoder=None, scaler=None, 
                         target_encode_cols=[], 
+
                         encoding_smoothing=1.0):
     X = X.copy()
     
@@ -47,6 +49,7 @@ def preprocess_features(X, y=None, num_imputer=None, cat_imputer=None,
     columns_to_standardize = ['curb_weight', 'power', 'engine_cap', 'depreciation']
     columns_to_standardize = [col for col in columns_to_standardize if col in X.columns]
     
+
     if num_imputer is None:
         num_imputer = SimpleImputer(strategy='median')
         X[numeric_features] = pd.DataFrame(num_imputer.fit_transform(X[numeric_features]), 
@@ -67,6 +70,7 @@ def preprocess_features(X, y=None, num_imputer=None, cat_imputer=None,
             X[columns_to_standardize] = pd.DataFrame(scaler.transform(X[columns_to_standardize]), 
                                                      columns=columns_to_standardize, 
                                                      index=X.index)
+
 
     if len(categorical_features) > 0:
         if cat_imputer is None:
@@ -112,12 +116,14 @@ def create_price_clusters(X, y, n_clusters, features_for_clustering=['depreciati
 
     kmeans = KMeans(n_clusters=n_clusters, init=initial_centers, n_init=10, random_state=42)
     cluster_features = np.column_stack([np.log1p(y), X[features_for_clustering]])
+
     price_clusters = kmeans.fit_predict(cluster_features)
     
     cluster_info = []
     for cluster in range(n_clusters):
         cluster_mask = price_clusters == cluster
         cluster_prices = y[cluster_mask]
+
         cluster_info.append({
             'cluster': cluster,
             'min': cluster_prices.min(),
@@ -320,6 +326,7 @@ def train_cluster_models(X_cluster, y_cluster, cluster_stats):
             
             fold_models.append({
                 'model': model,
+
                 'preprocessors': {
                     'num_imputer': num_imputer,
                     'cat_imputer': cat_imputer,

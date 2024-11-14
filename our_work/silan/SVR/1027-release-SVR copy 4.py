@@ -1,6 +1,9 @@
 import pandas as pd
 import numpy as np
 import lightgbm as lgb
+
+from sklearn.svm import SVR
+from catboost import CatBoostRegressor
 from sklearn.model_selection import KFold
 from sklearn.metrics import mean_squared_error, r2_score, silhouette_score
 from sklearn.impute import SimpleImputer
@@ -17,6 +20,7 @@ import logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def load_and_preprocess_data(file_path):
+
     data = pd.read_csv(file_path)
     if 'Unnamed: 0' in data.columns:
         data = data.drop(columns='Unnamed: 0')
@@ -49,6 +53,7 @@ def preprocess_features_fit(X, y=None, num_imputer=None, cat_imputer=None,
         scaler: 标准化器
         encoder: OneHotEncoder
     """
+
     X = X.copy()
     
     numeric_features = X.select_dtypes(include=['int64', 'float64']).columns
@@ -79,6 +84,7 @@ def preprocess_features_fit(X, y=None, num_imputer=None, cat_imputer=None,
                 X[target_encode_features] = target_encoder.transform(X[target_encode_features])
         
         # 其他类别特征一热编码
+
         other_categorical = [col for col in categorical_features if col not in target_encode_features]
         if len(other_categorical) > 0:
             encoder = OneHotEncoder(sparse_output=False, handle_unknown='ignore')
@@ -152,6 +158,7 @@ def find_optimal_clusters(X, y, max_clusters=10, features_for_clustering=['depre
     cluster_features = np.column_stack([np.log1p(y), cluster_features_clean])
     
     silhouette_scores = []
+
     
     for n_clusters in range(2, max_clusters + 1):
         kmeans = KMeans(n_clusters=n_clusters, init='k-means++', n_init=10, random_state=42)
@@ -166,10 +173,11 @@ def find_optimal_clusters(X, y, max_clusters=10, features_for_clustering=['depre
 
 def create_price_clusters(X, y, n_clusters, features_for_clustering=['depreciation', 'coe', 'dereg_value']):
     # First handle NaN values in clustering features
+
     cluster_features_df = pd.DataFrame(X[features_for_clustering])
     imputer = SimpleImputer(strategy='median')
     cluster_features_clean = imputer.fit_transform(cluster_features_df)
-    
+
     price_percentiles = np.percentile(y, np.linspace(0, 100, n_clusters))
     initial_centers = np.column_stack([
         np.log1p(price_percentiles),
@@ -180,6 +188,7 @@ def create_price_clusters(X, y, n_clusters, features_for_clustering=['depreciati
     cluster_features = np.column_stack([np.log1p(y), cluster_features_clean])
     price_clusters = kmeans.fit_predict(cluster_features)
     
+    # 收集聚类统计信息
     cluster_info = []
     for cluster in range(n_clusters):
         cluster_prices = y[price_clusters == cluster]
@@ -198,6 +207,7 @@ def create_price_clusters(X, y, n_clusters, features_for_clustering=['depreciati
     logging.info(cluster_df)
     
     # Store the imputer with the kmeans model for later use
+
     kmeans.feature_imputer = imputer
     
     return kmeans, price_clusters, cluster_df
@@ -230,11 +240,13 @@ def predict_cluster(X, y, kmeans_model, preprocessors, features_for_clustering=[
                                                                encoding_smoothing=1.0)
     
     # Handle NaN in clustering features
+
     cluster_features_df = pd.DataFrame(X_processed[features_for_clustering])
     cluster_features_clean = kmeans_model.feature_imputer.transform(cluster_features_df)
     
     cluster_features = np.column_stack([np.log1p(y) if y is not None else np.zeros(len(X)), cluster_features_clean])
     return kmeans_model.predict(cluster_features)
+
 
 def analyze_clusters(X: pd.DataFrame, y: pd.Series, clusters: np.ndarray):
     """对每个簇进行数据分布分析"""
@@ -293,7 +305,7 @@ def main():
     
     # 加载训练数据
     X, y = load_and_preprocess_data('preprocessing/release/ver2/train_cleaned.csv')
-    
+
     logging.info("Target variable (price) statistics:")
     logging.info(y.describe())
     
@@ -309,6 +321,7 @@ def main():
     # analyze_clusters(X, y, price_clusters)
     
     # K-Fold 交叉验证
+
     kf = KFold(n_splits=10, shuffle=True, random_state=42)
     
     oof_predictions = np.zeros(len(X))
@@ -333,6 +346,7 @@ def main():
         'reg_lambda': 0.1,
     }
     
+
     start_time = time.time()
     
     for cluster in range(len(cluster_info)):
@@ -378,6 +392,7 @@ def main():
             
             cluster_models.append({
                 'model': model,
+
                 'preprocessors': {
                     'num_imputer': num_imputer,
                     'cat_imputer': cat_imputer,
@@ -392,12 +407,16 @@ def main():
     elapsed_time = time.time() - start_time
     logging.info(f"\nTotal training time: {elapsed_time/60:.2f} minutes")
     
+
+    # 评估OOF性能
     oof_predictions = post_process_predictions(oof_predictions)
     oof_mse = mean_squared_error(y, oof_predictions)
     oof_r2 = r2_score(y, oof_predictions)
     logging.info(f"Out-of-fold RMSE: {np.sqrt(oof_mse):.4f}")
     logging.info(f"Out-of-fold R2: {oof_r2:.4f}")
     
+
+    # 特征重要性分析
     feature_importance = pd.concat(feature_importance_list).groupby('feature').mean().sort_values('importance', ascending=False)
     logging.info("\nTop 10 important features:")
     logging.info(feature_importance.head(10))
@@ -461,6 +480,7 @@ def main():
                 # 预测并逆转换
                 preds = np.expm1(model.predict(X_test_processed_cluster, num_iteration=model.best_iteration))
                 cluster_predictions.append(preds)
+
             except Exception as e:
                 logging.error(f"Error predicting for cluster {cluster}: {str(e)}")
                 continue
@@ -476,6 +496,7 @@ def main():
     final_predictions = post_process_predictions(final_predictions)
     
     # 生成Submission文件
+
     submission = pd.DataFrame({
         'Id': range(len(final_predictions)),
         'Predicted': np.round(final_predictions).astype(int)
@@ -484,11 +505,12 @@ def main():
     submission.to_csv('./final_submission_lightgbm.csv', index=False)
     logging.info("Predictions complete. Submission file saved as 'final_submission_lightgbm.csv'.")
     
+
     logging.info("\nPrediction statistics:")
     logging.info(f"Minimum: {final_predictions.min()}")
     logging.info(f"Maximum: {final_predictions.max()}")
     logging.info(f"Mean: {final_predictions.mean()}")
     logging.info(f"Median: {np.median(final_predictions)}")
-    
+
 if __name__ == '__main__':
     main()

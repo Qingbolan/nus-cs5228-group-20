@@ -190,6 +190,7 @@ def main():
     np.random.seed(42)
     
     X, y = load_and_preprocess_data('preprocessing/2024-11-2-silan/train_cleaned.csv')
+
     
     logging.info("Target variable (price) statistics:")
     logging.info(y.describe())
@@ -285,6 +286,7 @@ def main():
     logging.info("Models and preprocessors saved.")
     
     X_test, _ = load_and_preprocess_data('preprocessing/2024-11-2-silan/test_cleaned.csv')
+
     
     # if 'make' not in X_test.columns or 'model' not in X_test.columns:
     #     logging.error("Error: 'make' or 'model' column not found in test data")

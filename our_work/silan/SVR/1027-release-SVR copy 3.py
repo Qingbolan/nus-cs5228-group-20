@@ -25,6 +25,7 @@ logging.basicConfig(
 
 def load_and_prepare_data(file_path: str) -> Tuple[pd.DataFrame, Optional[pd.Series]]:
     """加载并准备数据"""
+
     data = pd.read_csv(file_path)
     if 'Unnamed: 0' in data.columns:
         data = data.drop(columns='Unnamed: 0')

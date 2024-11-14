@@ -316,7 +316,6 @@ def impute_missing_values_optimized(data, target_columns, estimation_features, n
             # 最终缺失值统计
             imputation_stats[target_column]['final_missing'] = data[target_column].isnull().sum()
             imputation_stats[target_column]['filled_values'] = imputation_stats[target_column]['initial_missing'] - \
-                                                               imputation_stats[target_column]['final_missing']
             print(f"处理后缺失值数量: {imputation_stats[target_column]['final_missing']}")
             print(f"填补的缺失值数量: {imputation_stats[target_column]['filled_values']}")
             print(f"调整的小值数量: {imputation_stats[target_column]['small_values_adjusted']}")
@@ -837,3 +836,4 @@ def impute_missing_values_optimized_3(
     except Exception as e:
         logger.error(f"发生错误: {str(e)}")
         return data, {'error': str(e)}
+

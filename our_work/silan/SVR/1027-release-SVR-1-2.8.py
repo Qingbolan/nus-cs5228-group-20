@@ -202,7 +202,9 @@ def main():
         np.random.seed(42)
         
         # 加载数据
+
         X, y = load_and_preprocess_data('l2_train.csv')
+
         
         # 识别特征类型
         numeric_features = X.select_dtypes(include=['int64', 'float64']).columns.tolist()
@@ -258,6 +260,7 @@ def main():
         
         # 生成测试集预测
         X_test, _ = load_and_preprocess_data('l2_test.csv')
+
         
         # 预测测试集的聚类
         test_clusters = predict_cluster(X_test, None, kmeans_model, features_for_clustering)

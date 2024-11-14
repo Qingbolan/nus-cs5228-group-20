@@ -49,6 +49,7 @@ def rmsle_cross_val(X_train, y_train, n_folds, model, n_jobs=-1):
 if __name__ == '__main__':
     # 读取数据
     train_data = pd.read_csv('preprocessing/release/ver2/train_cleaned.csv')
+
     train_data = train_data.drop(columns=train_data.columns[0])
 
     train_labels = train_data['price']

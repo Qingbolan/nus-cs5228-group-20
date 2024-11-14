@@ -200,6 +200,7 @@ def train_evaluate_models(X_train, y_train, X_val, y_val, lgb_params, cb_params,
             for w3 in np.arange(0.1, 0.3, 0.05):  # GradientBoosting权重
                 w4 = 1 - w1 - w2 - w3  # SVR权重
                 if w4 < 0.05:  # 确保SVR至少有5%的权重
+
                     continue
                     
                 weighted_pred = (w1 * lgb_pred + w2 * cb_pred + 
@@ -219,6 +220,7 @@ def main():
     np.random.seed(42)
     
     X, y = load_and_preprocess_data('preprocessing/2024-10-27-silan/train_cleaned.csv')
+
     
     logging.info("Target variable (price) statistics:")
     logging.info(y.describe())
@@ -376,6 +378,7 @@ def main():
     
     # 预测测试集
     X_test, _ = load_and_preprocess_data('preprocessing/2024-10-27-silan/test_cleaned.csv')
+
     
     dummy_y_test = np.zeros(len(X_test))
     test_clusters = predict_cluster(X_test, dummy_y_test, kmeans_model, models[0][0]['preprocessors'], features_for_clustering)

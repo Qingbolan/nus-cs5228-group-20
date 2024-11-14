@@ -172,6 +172,7 @@ def main():
     np.random.seed(42)
     
     X, y = load_and_preprocess_data('train_cleaned.csv')
+
     
     logging.info("Target variable (price) statistics:")
     logging.info(y.describe())
@@ -211,6 +212,7 @@ def main():
         'min_data_in_leaf': 20,                  # 与 min_child_samples 相同
         'feature_fraction_seed': 42,             # 确保可重复性
         'bagging_seed': 42,                      # 确保可重复性
+
     }
     
     # GradientBoostingRegressor 的超参数
@@ -326,6 +328,7 @@ def main():
     logging.info(feature_importance.head(10))
     
     with open('ensemble_clustered_models_v2.pkl', 'wb') as f:
+
         pickle.dump({
             'models': models,
             'kmeans_model': kmeans_model,
@@ -349,6 +352,7 @@ def main():
     
     # 预测测试数据
     X_test, _ = load_and_preprocess_data('test_cleaned.csv')
+
     
     dummy_y_test = np.zeros(len(X_test))
     test_clusters = predict_cluster(X_test, dummy_y_test, kmeans_model, models[0][0]['preprocessors'], features_for_clustering)
