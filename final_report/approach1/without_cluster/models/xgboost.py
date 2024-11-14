@@ -141,9 +141,14 @@ def train_xgboost_models(
         logging.info(y_train.describe())
 
         # 初始化 K-Fold
-        kf = KFold(n_splits=n_splits, shuffle=True, random_state=42)
+        sample_count = len(y_train)
+        if sample_count < 5:
+            logging.warning(f"训练数据样本数量为 {sample_count}，小于 5，调整交叉验证的折数为 {sample_count}")
+            n_splits = 2
 
+        kf = KFold(n_splits=n_splits, shuffle=True, random_state=42)
         oof_predictions = np.zeros(len(X_train))
+        
         feature_importance_list = []
         models = []
 

@@ -56,3 +56,50 @@ def main():
     print('evalute...')
     RSME = calculate_rmse(os.getenv('FINAL_REPORT_APPROACH_one_SUBMISSION_PATH'))
     print(f'RSME: {RSME}')
+
+
+def switch_main(model_name):
+    """
+    Train and evaluate the model based on the given model name.
+    'xgboost': XGBoost
+    'lightgbm': LightGBM
+    'catboost': CatBoost
+    'gradientboost': GradientBoosting
+    """
+    print('Training model...')
+    
+    if model_name == 'xgboost':
+        train_xgboost_models(
+            os.getenv('FINAL_REPORT_TRAIN_DATA'),
+            os.getenv('FINAL_REPORT_TEST_DATA'),
+            os.getenv('FINAL_REPORT_APPROACH_one_SUBMISSION_PATH'),
+            os.getenv('FINAL_REPORT_APPROACH_one_WITHOUT_cluster_XGBoost_WEIGHT_PATH')        
+        )
+    elif model_name == 'lightgbm':
+        train_lightgbm_models(
+            os.getenv('FINAL_REPORT_TRAIN_DATA'),
+            os.getenv('FINAL_REPORT_TEST_DATA'),
+            os.getenv('FINAL_REPORT_APPROACH_one_SUBMISSION_PATH'),
+            os.getenv('FINAL_REPORT_APPROACH_one_WITHOUT_cluster_LightGBM_WEIGHT_PATH')
+        )
+    elif model_name == 'catboost':
+        train_catboost_models(
+            os.getenv('FINAL_REPORT_TRAIN_DATA'),
+            os.getenv('FINAL_REPORT_TEST_DATA'),
+            os.getenv('FINAL_REPORT_APPROACH_one_SUBMISSION_PATH'),
+            os.getenv('FINAL_REPORT_APPROACH_one_WITHOUT_cluster_CATBOOST_WEIGHT_PATH')
+        )
+    elif model_name == 'gradientboost':
+        train_gradient_boosting_models(
+            os.getenv('FINAL_REPORT_TRAIN_DATA'),
+            os.getenv('FINAL_REPORT_TEST_DATA'),
+            os.getenv('FINAL_REPORT_APPROACH_one_SUBMISSION_PATH'),
+            os.getenv('FINAL_REPORT_APPROACH_one_WITHOUT_cluster_GRADIENT_BOOSTING_WEIGHT_PATH')
+        )
+    else:
+        print('Invalid model name.')
+        return
+    print('Training model done.')
+    print('evalute...')
+    RSME = calculate_rmse(os.getenv('FINAL_REPORT_APPROACH_one_SUBMISSION_PATH'))
+    print(f'RSME: {RSME}')

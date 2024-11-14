@@ -171,7 +171,7 @@ def post_process_predictions(predictions, min_price=700, max_price=2900000):
 def main():
     np.random.seed(42)
     
-    X, y = load_and_preprocess_data('preprocessing/2024-10-21-silan/train_cleaned.csv')
+    X, y = load_and_preprocess_data('train_cleaned.csv')
     
     logging.info("Target variable (price) statistics:")
     logging.info(y.describe())
@@ -198,42 +198,49 @@ def main():
         'boosting_type': 'gbdt',
         'verbosity': -1,
         'seed': 42,
-        'learning_rate': 0.05,
-        'num_leaves': 31,
-        'feature_fraction': 0.8,
-        'bagging_fraction': 0.7,
-        'bagging_freq': 5,
-        'max_depth': -1,
-        'min_child_samples': 20,
-        'cat_smooth': 10,
-        'cat_l2': 10,
+        'learning_rate':   0.1,        # 保持适中的学习率
+        'num_leaves': 31,                        # 合理的叶子数
+        'max_depth': -1,                         # 不限制深度
+        'min_child_samples': 20,                 # 防止过拟合
+        'feature_fraction': 0.8,                 # 每棵树使用80%的特征
+        'bagging_fraction': 0.8,                 # 每棵树使用80%的数据
+        'bagging_freq': 5,                       # 每5次迭代进行一次bagging
+        'lambda_l1': 0.0,                        # L1正则化项
+        'lambda_l2': 10.0,                       # L2正则化项
+        'max_bin': 255,                          # 默认值
+        'min_data_in_leaf': 20,                  # 与 min_child_samples 相同
+        'feature_fraction_seed': 42,             # 确保可重复性
+        'bagging_seed': 42,                      # 确保可重复性
     }
     
     # GradientBoostingRegressor 的超参数
     gb_params = {
-        'n_estimators': 3000,
-        'learning_rate': 0.05,
-        'max_depth': 5,
-        'min_samples_split': 20,
-        'min_samples_leaf': 15,
-        'loss': 'huber',
-        'random_state': 42
-    }
+            'n_estimators': 1000,
+            'learning_rate': 0.1,
+            'max_depth': 5,
+            'min_samples_split': 20,
+            'min_samples_leaf': 15,
+            'loss': 'huber',
+            'random_state': 42
+        }
     
     # CatBoostRegressor 的超参数
     cb_params = {
-        'iterations': 3000,
-        'learning_rate': 0.05,
-        'depth': 6,
-        'l2_leaf_reg': 10,
-        'min_data_in_leaf': 20,
-        'random_strength': 0.5,
-        'bagging_temperature': 0.2,
-        'od_type': 'Iter',
-        'od_wait': 50,
-        'random_seed': 42,
-        'verbose': False
-    }
+                'iterations': 5000,
+                'learning_rate': 0.1,
+                'depth': 6,
+                'l2_leaf_reg': 10,
+                'min_data_in_leaf': 20,
+                'random_strength': 0.5,
+                'bagging_temperature': 0.2,
+                'od_type': 'Iter',
+                'od_wait': 100,
+                'random_seed': 42,
+                'verbose': False,
+                'task_type': 'CPU',
+                'allow_writing_files': False,
+                'verbose': False
+            }
     
     start_time = time.time()
     
@@ -318,7 +325,7 @@ def main():
     logging.info("\nTop 10 important features:")
     logging.info(feature_importance.head(10))
     
-    with open('ensemble_clustered_models.pkl', 'wb') as f:
+    with open('ensemble_clustered_models_v2.pkl', 'wb') as f:
         pickle.dump({
             'models': models,
             'kmeans_model': kmeans_model,
@@ -341,7 +348,7 @@ def main():
     #         logging.info("Global SHAP summary saved as 'shap_global_summary.html'.")
     
     # 预测测试数据
-    X_test, _ = load_and_preprocess_data('preprocessing/2024-10-21-silan/test_cleaned.csv')
+    X_test, _ = load_and_preprocess_data('test_cleaned.csv')
     
     dummy_y_test = np.zeros(len(X_test))
     test_clusters = predict_cluster(X_test, dummy_y_test, kmeans_model, models[0][0]['preprocessors'], features_for_clustering)

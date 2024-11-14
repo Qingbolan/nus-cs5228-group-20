@@ -1,0 +1,41 @@
+{
+    "best_params": {
+        "learning_rate": 0.01,
+        "max_depth": 3,
+        "n_estimators": 100
+    },
+    "classifier_name": "xgboost",
+    "classification_report": {
+        "0": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 5000
+        },
+        "accuracy": 1.0,
+        "macro avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 5000
+        },
+        "weighted avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 5000
+        }
+    },
+    "cv_scores": {
+        "mean": 1.0,
+        "std": 0.0,
+        "scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+        ]
+    },
+    "training_date": "2024-11-12 23:30:30"
+}
