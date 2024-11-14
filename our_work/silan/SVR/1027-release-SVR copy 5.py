@@ -192,14 +192,15 @@ def train_evaluate_models(X_train, y_train, X_val, y_val, lgb_params, cb_params,
     svr_pred = np.expm1(svr_model.predict(X_val))
     
     best_rmse = float('inf')
-    best_weights = (0.4, 0.2, 0.2, 0.2)  # 初始权重
+    best_weights = (0.4, 0.2, 0.3, 0.1)  # 初始权重
     
     # 网格搜索最优权重组合
-    for w1 in np.arange(0.3, 0.6, 0.1):  # LightGBM权重
-        for w2 in np.arange(0.1, 0.3, 0.1):  # CatBoost权重
-            for w3 in np.arange(0.1, 0.3, 0.1):  # GradientBoosting权重
+    for w1 in np.arange(0.3, 0.6, 0.05):  # LightGBM权重
+        for w2 in np.arange(0.1, 0.3, 0.05):  # CatBoost权重
+            for w3 in np.arange(0.1, 0.3, 0.05):  # GradientBoosting权重
                 w4 = 1 - w1 - w2 - w3  # SVR权重
-                if w4 < 0.1:  # 确保SVR至少有10%的权重
+                if w4 < 0.05:  # 确保SVR至少有5%的权重
+
                     continue
                     
                 weighted_pred = (w1 * lgb_pred + w2 * cb_pred + 
@@ -218,7 +219,8 @@ def post_process_predictions(predictions, min_price=700, max_price=2900000):
 def main():
     np.random.seed(42)
     
-    X, y = load_and_preprocess_data('preprocessing/2024-10-21-silan/train_cleaned.csv')
+    X, y = load_and_preprocess_data('preprocessing/2024-10-27-silan/train_cleaned.csv')
+
     
     logging.info("Target variable (price) statistics:")
     logging.info(y.describe())
@@ -375,7 +377,8 @@ def main():
     logging.info("Models and preprocessors saved.")
     
     # 预测测试集
-    X_test, _ = load_and_preprocess_data('preprocessing/2024-10-21-silan/test_cleaned.csv')
+    X_test, _ = load_and_preprocess_data('preprocessing/2024-10-27-silan/test_cleaned.csv')
+
     
     dummy_y_test = np.zeros(len(X_test))
     test_clusters = predict_cluster(X_test, dummy_y_test, kmeans_model, models[0][0]['preprocessors'], features_for_clustering)

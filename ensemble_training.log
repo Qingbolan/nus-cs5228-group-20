@@ -178,3 +178,974 @@ Name: price, dtype: float64
 2024-10-28 02:22:10,086 - INFO - 
 Training models for Cluster 0
 2024-10-28 02:22:10,215 - INFO - Training fold 1
+2024-10-28 02:25:26,916 - INFO - Loaded data from preprocessing/2024-10-21-silan/train_cleaned.csv, shape after preprocessing: (20000, 3577)
+2024-10-28 02:25:27,527 - INFO - Target variable (price) statistics:
+2024-10-28 02:25:27,527 - INFO - count     19666.000000
+mean      99323.082833
+std       80039.454805
+min         700.000000
+25%       48800.000000
+50%       77800.000000
+75%      122794.250000
+max      580988.000000
+Name: price, dtype: float64
+2024-10-28 02:25:30,678 - INFO - n_clusters = 2, silhouette = 0.6611, inertia = 16865047425237.6055
+2024-10-28 02:25:33,662 - INFO - n_clusters = 3, silhouette = 0.4679, inertia = 12591246253115.8965
+2024-10-28 02:25:33,662 - INFO - Optimal number of clusters: 2
+2024-10-28 02:25:33,710 - INFO - Price Cluster Information:
+2024-10-28 02:25:33,710 - INFO -    cluster      min       max    median           mean            std  count
+0        0    700.0  568800.0   68800.0   77474.794741   48012.318061  16886
+1        1  72800.0  580988.0  203800.0  232031.785252  103963.243408   2780
+2024-10-28 02:25:33,720 - INFO - 
+Training models for Cluster 0
+2024-10-28 02:25:33,850 - INFO - Training fold 1
+2024-10-28 02:32:25,941 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.994945  0.517206  0.982952
+catboost  0.994945  1.000000  0.523355  0.982250
+svr       0.517206  0.523355  1.000000  0.537464
+actual    0.982952  0.982250  0.537464  1.000000
+2024-10-28 02:33:03,125 - INFO - Price range: low, Best weights: {'lgb': 0.5507513987689913, 'catboost': 0.43988180144157435, 'svr': 0.009366799789434397}
+2024-10-28 02:33:57,161 - INFO - Training fold 2
+2024-10-28 02:41:52,697 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.996186  0.552837  0.991183
+catboost  0.996186  1.000000  0.556856  0.990661
+svr       0.552837  0.556856  1.000000  0.556051
+actual    0.991183  0.990661  0.556051  1.000000
+2024-10-28 02:42:40,667 - INFO - Price range: low, Best weights: {'lgb': 0.5629682991598743, 'catboost': 0.4304521599221547, 'svr': 0.006579540917970879}
+2024-10-28 02:43:39,170 - INFO - Training fold 3
+2024-10-28 02:54:41,931 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.995976  0.679063  0.993120
+catboost  0.995976  1.000000  0.681180  0.993512
+svr       0.679063  0.681180  1.000000  0.674193
+actual    0.993120  0.993512  0.674193  1.000000
+2024-10-28 02:55:10,814 - INFO - Price range: low, Best weights: {'lgb': 0.5255210791067549, 'catboost': 0.46599440749548826, 'svr': 0.008484513397756722}
+2024-10-28 02:56:10,291 - INFO - Training fold 4
+2024-10-28 03:03:46,306 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.997165  0.530031  0.991355
+catboost  0.997165  1.000000  0.525751  0.991011
+svr       0.530031  0.525751  1.000000  0.534054
+actual    0.991355  0.991011  0.534054  1.000000
+2024-10-28 03:04:17,323 - INFO - Price range: low, Best weights: {'lgb': 0.5516312601663271, 'catboost': 0.44317709403479855, 'svr': 0.005191645798874309}
+2024-10-28 03:05:17,174 - INFO - Training fold 5
+2024-10-28 03:11:57,441 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.978084  0.596000  0.980376
+catboost  0.978084  1.000000  0.585930  0.975936
+svr       0.596000  0.585930  1.000000  0.582427
+actual    0.980376  0.975936  0.582427  1.000000
+2024-10-28 03:12:28,564 - INFO - Price range: low, Best weights: {'lgb': 0.5822730278942198, 'catboost': 0.3960951656026214, 'svr': 0.021631806503158765}
+2024-10-28 03:13:27,541 - INFO - Training fold 6
+2024-10-28 03:20:55,095 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.995898  0.615786  0.991063
+catboost  0.995898  1.000000  0.622435  0.991028
+svr       0.615786  0.622435  1.000000  0.598929
+actual    0.991063  0.991028  0.598929  1.000000
+2024-10-28 03:21:26,396 - INFO - Price range: low, Best weights: {'lgb': 0.5445594530226703, 'catboost': 0.4457443186592199, 'svr': 0.00969622831810973}
+2024-10-28 03:22:32,190 - INFO - Training fold 7
+2024-10-28 03:29:17,056 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.996060  0.622856  0.986987
+catboost  0.996060  1.000000  0.621981  0.986504
+svr       0.622856  0.621981  1.000000  0.614337
+actual    0.986987  0.986504  0.614337  1.000000
+2024-10-28 03:30:08,794 - INFO - Price range: low, Best weights: {'lgb': 0.547800562932587, 'catboost': 0.43853986268219397, 'svr': 0.01365957438521911}
+2024-10-28 03:31:14,245 - INFO - Training fold 8
+2024-10-28 03:38:59,428 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.995309  0.596216  0.968277
+catboost  0.995309  1.000000  0.599830  0.968068
+svr       0.596216  0.599830  1.000000  0.581277
+actual    0.968277  0.968068  0.581277  1.000000
+2024-10-28 03:39:34,675 - INFO - Price range: low, Best weights: {'lgb': 0.5299489352458298, 'catboost': 0.43863470779832514, 'svr': 0.03141635695584532}
+2024-10-28 03:40:34,514 - INFO - Training fold 9
+2024-10-28 03:48:40,667 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.995697  0.586074  0.985033
+catboost  0.995697  1.000000  0.592064  0.986619
+svr       0.586074  0.592064  1.000000  0.587762
+actual    0.985033  0.986619  0.587762  1.000000
+2024-10-28 03:49:30,640 - INFO - Price range: low, Best weights: {'lgb': 0.5095618753329605, 'catboost': 0.47797974771251134, 'svr': 0.012458376954528177}
+2024-10-28 03:49:45,068 - INFO - Loaded data from preprocessing/2024-10-27-silan/train_cleaned.csv, shape after preprocessing: (25000, 3577)
+2024-10-28 03:49:45,813 - INFO - Target variable (price) statistics:
+2024-10-28 03:49:45,813 - INFO - count     24574.000000
+mean      99512.195613
+std       80223.687775
+min         700.000000
+25%       48800.000000
+50%       77888.000000
+75%      122800.000000
+max      580988.000000
+Name: price, dtype: float64
+2024-10-28 03:49:50,658 - INFO - n_clusters = 2, silhouette = 0.6600, inertia = 20889182796560.6094
+2024-10-28 03:49:55,380 - INFO - n_clusters = 3, silhouette = 0.4692, inertia = 15522701610680.8320
+2024-10-28 03:49:55,380 - INFO - Optimal number of clusters: 2
+2024-10-28 03:49:55,439 - INFO - Price Cluster Information:
+2024-10-28 03:49:55,439 - INFO -    cluster      min       max    median           mean            std  count
+0        0    700.0  568800.0   68800.0   77447.392486   47989.114104  21053
+1        1  34800.0  580988.0  202999.0  231443.550412  104079.032781   3521
+2024-10-28 03:49:55,458 - INFO - 
+Training models for Cluster 0
+2024-10-28 03:49:55,618 - INFO - Training fold 1
+2024-10-28 03:50:43,264 - INFO - Training fold 10
+2024-10-28 03:54:26,355 - INFO - Loaded data from preprocessing/2024-10-27-silan/train_cleaned.csv, shape after preprocessing: (25000, 3577)
+2024-10-28 03:54:27,714 - INFO - Target variable (price) statistics:
+2024-10-28 03:54:27,716 - INFO - count     24574.000000
+mean      99512.195613
+std       80223.687775
+min         700.000000
+25%       48800.000000
+50%       77888.000000
+75%      122800.000000
+max      580988.000000
+Name: price, dtype: float64
+2024-10-28 03:54:36,443 - INFO - n_clusters = 2, silhouette = 0.6600, inertia = 20889182796560.6094
+2024-10-28 03:54:41,337 - INFO - n_clusters = 3, silhouette = 0.4692, inertia = 15522701610680.8320
+2024-10-28 03:54:41,337 - INFO - Optimal number of clusters: 2
+2024-10-28 03:54:41,388 - INFO - Price Cluster Information:
+2024-10-28 03:54:41,388 - INFO -    cluster      min       max    median           mean            std  count
+0        0    700.0  568800.0   68800.0   77447.392486   47989.114104  21053
+1        1  34800.0  580988.0  202999.0  231443.550412  104079.032781   3521
+2024-10-28 03:54:41,390 - INFO - 
+Training models for Cluster 0
+2024-10-28 03:54:41,552 - INFO - Training fold 1
+2024-10-28 04:00:02,224 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.993511  0.561751  0.972564
+catboost  0.993511  1.000000  0.593977  0.976305
+svr       0.561751  0.593977  1.000000  0.566108
+actual    0.972564  0.976305  0.566108  1.000000
+2024-10-28 04:00:55,893 - INFO - Price range: low, Best weights: {'lgb': 0.4990536352769624, 'catboost': 0.4799963760424567, 'svr': 0.02094998868058086}
+2024-10-28 04:02:06,398 - INFO - 
+Training models for Cluster 1
+2024-10-28 04:02:06,716 - INFO - Training fold 1
+2024-10-28 04:08:40,860 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.994492  0.237671  0.987352
+catboost  0.994492  1.000000  0.235883  0.987790
+svr       0.237671  0.235883  1.000000  0.219718
+actual    0.987352  0.987790  0.219718  1.000000
+2024-10-28 04:08:43,352 - INFO - Price range: high, Best weights: {'lgb': 0.43489386713725164, 'catboost': 0.5621163159697271, 'svr': 0.0029898168930211685}
+2024-10-28 04:08:45,483 - INFO - Training fold 2
+2024-10-28 04:09:38,014 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.993063  0.655075  0.992192
+catboost  0.993063  1.000000  0.640161  0.988180
+svr       0.655075  0.640161  1.000000  0.643231
+actual    0.992192  0.988180  0.643231  1.000000
+2024-10-28 04:11:05,450 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.994762  0.745675  0.957254
+catboost  0.994762  1.000000  0.745659  0.970782
+svr       0.745675  0.745659  1.000000  0.712350
+actual    0.957254  0.970782  0.712350  1.000000
+2024-10-28 04:11:07,708 - INFO - Price range: high, Best weights: {'lgb': 0.3290000028363333, 'catboost': 0.5946989780700008, 'svr': 0.07630101909366589}
+2024-10-28 04:11:09,965 - INFO - Training fold 3
+2024-10-28 04:13:28,331 - INFO - Price range: low, Best weights: {'lgb': 0.6434832737495688, 'catboost': 0.3456374254271822, 'svr': 0.010879300823248948}
+2024-10-28 04:14:05,887 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.995844  0.006972  0.987358
+catboost  0.995844  1.000000 -0.007117  0.992374
+svr       0.006972 -0.007117  1.000000 -0.003996
+actual    0.987358  0.992374 -0.003996  1.000000
+2024-10-28 04:14:08,192 - INFO - Price range: high, Best weights: {'lgb': 0.33341513509916854, 'catboost': 0.6665844479225197, 'svr': 4.16978311584997e-07}
+2024-10-28 04:14:10,512 - INFO - Training fold 4
+2024-10-28 04:17:04,395 - INFO - Training fold 2
+2024-10-28 04:21:28,693 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.996867  0.718822  0.991552
+catboost  0.996867  1.000000  0.734650  0.992733
+svr       0.718822  0.734650  1.000000  0.724836
+actual    0.991552  0.992733  0.724836  1.000000
+2024-10-28 04:21:31,591 - INFO - Price range: high, Best weights: {'lgb': 0.4017306081248884, 'catboost': 0.5759221665126271, 'svr': 0.022347225362484412}
+2024-10-28 04:21:34,460 - INFO - Training fold 5
+2024-10-28 04:29:56,052 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.995847  0.608465  0.994009
+catboost  0.995847  1.000000  0.604392  0.994612
+svr       0.608465  0.604392  1.000000  0.596984
+actual    0.994009  0.994612  0.596984  1.000000
+2024-10-28 04:29:58,827 - INFO - Price range: high, Best weights: {'lgb': 0.41384155485148155, 'catboost': 0.5781503739900977, 'svr': 0.00800807115842083}
+2024-10-28 04:30:01,696 - INFO - Training fold 6
+2024-10-28 04:35:18,257 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.997412  0.720930  0.984424
+catboost  0.997412  1.000000  0.715655  0.984384
+svr       0.720930  0.715655  1.000000  0.705000
+actual    0.984424  0.984384  0.705000  1.000000
+2024-10-28 04:35:21,110 - INFO - Price range: high, Best weights: {'lgb': 0.42681334293532724, 'catboost': 0.5356894139831109, 'svr': 0.03749724308156202}
+2024-10-28 04:35:24,058 - INFO - Training fold 7
+2024-10-28 04:38:49,787 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.995622  0.569799  0.983051
+catboost  0.995622  1.000000  0.572671  0.982490
+svr       0.569799  0.572671  1.000000  0.535499
+actual    0.983051  0.982490  0.535499  1.000000
+2024-10-28 04:38:52,844 - INFO - Price range: high, Best weights: {'lgb': 0.42976668297494447, 'catboost': 0.5394232572314666, 'svr': 0.03081005979358903}
+2024-10-28 04:38:55,892 - INFO - Training fold 8
+2024-10-28 04:43:08,689 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.993854  0.299473  0.986915
+catboost  0.993854  1.000000  0.237540  0.992220
+svr       0.299473  0.237540  1.000000  0.264089
+actual    0.986915  0.992220  0.264089  1.000000
+2024-10-28 04:45:50,355 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.995526  0.653616  0.986901
+catboost  0.995526  1.000000  0.643785  0.990455
+svr       0.653616  0.643785  1.000000  0.648920
+actual    0.986901  0.990455  0.648920  1.000000
+2024-10-28 04:45:53,760 - INFO - Price range: high, Best weights: {'lgb': 0.3563810406229162, 'catboost': 0.6209093122010043, 'svr': 0.02270964717607951}
+2024-10-28 04:45:57,209 - INFO - Training fold 9
+2024-10-28 04:47:12,139 - INFO - Price range: low, Best weights: {'lgb': 0.4205978970268238, 'catboost': 0.5791930788034836, 'svr': 0.00020902416969258261}
+2024-10-28 04:52:54,878 - INFO - Training fold 3
+2024-10-28 04:53:35,020 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.995833  0.281720  0.992206
+catboost  0.995833  1.000000  0.271495  0.994526
+svr       0.281720  0.271495  1.000000  0.277826
+actual    0.992206  0.994526  0.277826  1.000000
+2024-10-28 04:53:38,751 - INFO - Price range: high, Best weights: {'lgb': 0.36879304100179916, 'catboost': 0.6290337559360984, 'svr': 0.0021732030621024936}
+2024-10-28 04:53:42,436 - INFO - Training fold 10
+2024-10-28 04:59:04,013 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.994439  0.683639  0.980130
+catboost  0.994439  1.000000  0.666787  0.981986
+svr       0.683639  0.666787  1.000000  0.665566
+actual    0.980130  0.981986  0.665566  1.000000
+2024-10-28 04:59:13,564 - INFO - Price range: high, Best weights: {'lgb': 0.4047107139643181, 'catboost': 0.5556136961767365, 'svr': 0.03967558985894526}
+2024-10-28 04:59:21,074 - INFO - 
+Total training time: 153.79 minutes
+2024-10-28 04:59:21,074 - INFO - Out-of-fold RMSE: 127013.7829
+2024-10-28 04:59:21,090 - INFO - Out-of-fold R2: -1.5183
+2024-10-28 04:59:21,190 - INFO - 
+Top 10 important features:
+2024-10-28 04:59:21,196 - INFO -                                            importance
+feature                                              
+depreciation_times_value_ratio            8137.933697
+dereg_value_div_price_efficiency          3167.961681
+depreciation_times_dereg_value            1453.503079
+vehicle_age_div_depreciation_squared      1248.537571
+omv_div_vehicle_age                       1065.391487
+vehicle_type_sports_car_plus_value_ratio   860.716934
+engine_cap_times_value_ratio               756.934752
+curb_weight_times_value_ratio              733.207589
+parf_car_times_vehicle_age                 534.362022
+parf_car_div_value_ratio                   497.171048
+2024-10-28 04:59:37,303 - INFO - Loaded data from preprocessing/2024-10-21-silan/test_cleaned.csv, shape after preprocessing: (5000, 3577)
+2024-10-28 05:07:37,835 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.994449  0.546453  0.991618
+catboost  0.994449  1.000000  0.551158  0.988118
+svr       0.546453  0.551158  1.000000  0.552231
+actual    0.991618  0.988118  0.552231  1.000000
+2024-10-28 05:10:20,522 - INFO - Price range: low, Best weights: {'lgb': 0.6250850545677306, 'catboost': 0.3702502739637667, 'svr': 0.004664671468502778}
+2024-10-28 05:13:22,652 - INFO - Training fold 4
+2024-10-28 05:25:14,176 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.996598  0.468781  0.988099
+catboost  0.996598  1.000000  0.480056  0.988375
+svr       0.468781  0.480056  1.000000  0.471685
+actual    0.988099  0.988375  0.471685  1.000000
+2024-10-28 05:28:03,434 - INFO - Price range: low, Best weights: {'lgb': 0.53814172472663, 'catboost': 0.4576110700336339, 'svr': 0.004247205239736046}
+2024-10-28 05:31:08,544 - INFO - Training fold 5
+2024-10-28 05:44:08,733 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.994842  0.673318  0.991752
+catboost  0.994842  1.000000  0.662115  0.987594
+svr       0.673318  0.662115  1.000000  0.685304
+actual    0.991752  0.987594  0.685304  1.000000
+2024-10-28 05:47:37,317 - INFO - Price range: low, Best weights: {'lgb': 0.636188886963038, 'catboost': 0.35263386667203783, 'svr': 0.011177246364924193}
+2024-10-28 05:50:50,219 - INFO - Training fold 6
+2024-10-28 05:57:12,127 - INFO - 
+Prediction statistics:
+2024-10-28 05:57:12,127 - INFO - Minimum: 3726.9089578044427
+2024-10-28 05:57:12,127 - INFO - Maximum: 1254765.2558285836
+2024-10-28 05:57:12,127 - INFO - Mean: 108644.95098197793
+2024-10-28 05:57:12,134 - INFO - Median: 80071.75865386306
+2024-10-28 06:03:11,232 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.996909  0.639336  0.973140
+catboost  0.996909  1.000000  0.642802  0.970060
+svr       0.639336  0.642802  1.000000  0.623164
+actual    0.973140  0.970060  0.623164  1.000000
+2024-10-28 06:06:43,998 - INFO - Price range: low, Best weights: {'lgb': 0.555377782490326, 'catboost': 0.4149526594651763, 'svr': 0.02966955804449771}
+2024-10-28 06:10:04,218 - INFO - Training fold 7
+2024-10-28 06:22:38,587 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.995325  0.632273  0.991879
+catboost  0.995325  1.000000  0.642875  0.993160
+svr       0.632273  0.642875  1.000000  0.650108
+actual    0.991879  0.993160  0.650108  1.000000
+2024-10-28 06:26:04,316 - INFO - Price range: low, Best weights: {'lgb': 0.49894907856258874, 'catboost': 0.49385991355507664, 'svr': 0.007191007882334559}
+2024-10-28 06:29:26,831 - INFO - Training fold 8
+2024-10-28 06:42:12,191 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.996157  0.567676  0.992160
+catboost  0.996157  1.000000  0.564388  0.993864
+svr       0.567676  0.564388  1.000000  0.557394
+actual    0.992160  0.993864  0.557394  1.000000
+2024-10-28 06:45:30,185 - INFO - Price range: low, Best weights: {'lgb': 0.48196328323447085, 'catboost': 0.5127396157236818, 'svr': 0.0052971010418473696}
+2024-10-28 06:49:07,217 - INFO - Training fold 9
+2024-10-28 07:01:36,409 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.995504  0.478318  0.981724
+catboost  0.995504  1.000000  0.459738  0.981469
+svr       0.478318  0.459738  1.000000  0.482824
+actual    0.981724  0.981469  0.482824  1.000000
+2024-10-28 07:05:09,225 - INFO - Price range: low, Best weights: {'lgb': 0.5429404199787964, 'catboost': 0.4473748185774602, 'svr': 0.009684761443743447}
+2024-10-28 07:08:47,175 - INFO - Training fold 10
+2024-10-28 07:20:51,148 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.995617  0.631212  0.981705
+catboost  0.995617  1.000000  0.627593  0.977116
+svr       0.631212  0.627593  1.000000  0.622165
+actual    0.981705  0.977116  0.622165  1.000000
+2024-10-28 07:24:37,249 - INFO - Price range: low, Best weights: {'lgb': 0.5867193455171719, 'catboost': 0.3910461323195299, 'svr': 0.022234522163298125}
+2024-10-28 07:28:33,756 - INFO - 
+Training models for Cluster 1
+2024-10-28 07:28:33,844 - INFO - Training fold 1
+2024-10-28 07:31:22,614 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.995237  0.658377  0.958545
+catboost  0.995237  1.000000  0.657352  0.970107
+svr       0.658377  0.657352  1.000000  0.625372
+actual    0.958545  0.970107  0.625372  1.000000
+2024-10-28 07:31:30,764 - INFO - Price range: high, Best weights: {'lgb': 0.34604041881577147, 'catboost': 0.5961774768409018, 'svr': 0.05778210434332686}
+2024-10-28 07:31:38,939 - INFO - Training fold 2
+2024-10-28 07:37:48,343 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.997629  0.703330  0.994338
+catboost  0.997629  1.000000  0.699459  0.993283
+svr       0.703330  0.699459  1.000000  0.706254
+actual    0.994338  0.993283  0.706254  1.000000
+2024-10-28 07:37:56,974 - INFO - Price range: high, Best weights: {'lgb': 0.48223043064822474, 'catboost': 0.5032167160303492, 'svr': 0.014552853321426161}
+2024-10-28 07:38:05,499 - INFO - Training fold 3
+2024-10-28 07:45:37,023 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.995294  0.734289  0.989722
+catboost  0.995294  1.000000  0.731716  0.992293
+svr       0.734289  0.731716  1.000000  0.726243
+actual    0.989722  0.992293  0.726243  1.000000
+2024-10-28 07:45:46,905 - INFO - Price range: high, Best weights: {'lgb': 0.36793153259904554, 'catboost': 0.6090438174831534, 'svr': 0.02302464991780098}
+2024-10-28 07:45:56,743 - INFO - Training fold 4
+2024-10-28 07:51:00,493 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.997197  0.636836  0.992744
+catboost  0.997197  1.000000  0.627069  0.992246
+svr       0.636836  0.627069  1.000000  0.637943
+actual    0.992744  0.992246  0.637943  1.000000
+2024-10-28 07:51:10,253 - INFO - Price range: high, Best weights: {'lgb': 0.448928007983518, 'catboost': 0.5360446949954293, 'svr': 0.015027297021052696}
+2024-10-28 07:51:19,943 - INFO - Training fold 5
+2024-10-28 07:56:56,623 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.993240  0.013206  0.992374
+catboost  0.993240  1.000000  0.013341  0.995311
+svr       0.013206  0.013341  1.000000  0.017755
+actual    0.992374  0.995311  0.017755  1.000000
+2024-10-28 07:57:06,263 - INFO - Price range: high, Best weights: {'lgb': 0.344212092486256, 'catboost': 0.6557785100401644, 'svr': 9.397473579532174e-06}
+2024-10-28 07:57:16,303 - INFO - Training fold 6
+2024-10-28 08:01:38,263 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.997452  0.796504  0.975228
+catboost  0.997452  1.000000  0.798436  0.974685
+svr       0.796504  0.798436  1.000000  0.755631
+actual    0.975228  0.974685  0.755631  1.000000
+2024-10-28 08:01:47,617 - INFO - Price range: high, Best weights: {'lgb': 0.41710641744340354, 'catboost': 0.5127677402651021, 'svr': 0.07012584229149443}
+2024-10-28 08:01:57,002 - INFO - Training fold 7
+2024-10-28 08:07:18,942 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.994937  0.041171  0.975492
+catboost  0.994937  1.000000  0.054096  0.983991
+svr       0.041171  0.054096  1.000000  0.053940
+actual    0.975492  0.983991  0.053940  1.000000
+2024-10-28 08:07:28,902 - INFO - Price range: high, Best weights: {'lgb': 0.34635935226229825, 'catboost': 0.6533065822088404, 'svr': 0.00033406552886143504}
+2024-10-28 08:07:39,062 - INFO - Training fold 8
+2024-10-28 08:13:52,122 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.997072  0.584619  0.992569
+catboost  0.997072  1.000000  0.587942  0.993293
+svr       0.584619  0.587942  1.000000  0.589074
+actual    0.992569  0.993293  0.589074  1.000000
+2024-10-28 08:14:02,762 - INFO - Price range: high, Best weights: {'lgb': 0.4141757505430478, 'catboost': 0.574018392966191, 'svr': 0.01180585649076143}
+2024-10-28 08:14:13,282 - INFO - Training fold 9
+2024-10-28 08:18:52,332 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.997385  0.745317  0.990938
+catboost  0.997385  1.000000  0.747503  0.989845
+svr       0.745317  0.747503  1.000000  0.756110
+actual    0.990938  0.989845  0.756110  1.000000
+2024-10-28 08:19:03,422 - INFO - Price range: high, Best weights: {'lgb': 0.45989052731028374, 'catboost': 0.5121937521505318, 'svr': 0.027915720539184532}
+2024-10-28 08:19:14,492 - INFO - Training fold 10
+2024-10-28 08:22:33,942 - INFO - Model predictions correlation:
+               lgb  catboost       svr    actual
+lgb       1.000000  0.994753  0.679568  0.977714
+catboost  0.994753  1.000000  0.684929  0.982207
+svr       0.679568  0.684929  1.000000  0.676026
+actual    0.977714  0.982207  0.676026  1.000000
+2024-10-28 08:22:44,687 - INFO - Price range: high, Best weights: {'lgb': 0.3715347277020991, 'catboost': 0.5854699379003462, 'svr': 0.04299533439755462}
+2024-10-28 08:22:55,509 - INFO - 
+Total training time: 268.24 minutes
+2024-10-28 08:22:55,511 - INFO - Out-of-fold RMSE: 127276.9743
+2024-10-28 08:22:55,511 - INFO - Out-of-fold R2: -1.5172
+2024-10-28 08:22:55,521 - INFO - 
+Top 10 important features:
+2024-10-28 08:22:55,525 - INFO -                                             importance
+feature                                               
+depreciation_times_value_ratio            10177.706907
+dereg_value_div_price_efficiency           4086.766037
+omv_div_vehicle_age                        1573.037947
+depreciation_times_dereg_value             1524.295471
+vehicle_age_div_depreciation_squared       1435.732864
+curb_weight_times_value_ratio              1286.640160
+vehicle_type_sports_car_plus_value_ratio    825.155112
+parf_car_times_vehicle_age                  680.862134
+parf_car_div_value_ratio                    577.988059
+engine_cap_times_value_ratio                558.491862
+2024-10-28 08:23:03,471 - INFO - Loaded data from preprocessing/2024-10-27-silan/test_cleaned.csv, shape after preprocessing: (10000, 3577)
+2024-10-28 11:01:13,625 - INFO - Columns in preprocessing/2024-10-21-silan/train_cleaned.csv: Index(['manufactured', 'vehicle_type_bus_mini_bus', 'vehicle_type_hatchback',
+       'vehicle_type_luxury_sedan', 'vehicle_type_midsized_sedan',
+       'vehicle_type_mpv', 'vehicle_type_others', 'vehicle_type_sports_car',
+       'vehicle_type_stationwagon', 'vehicle_type_suv', 'vehicle_type_truck',
+       'vehicle_type_van', 'transmission_type_auto',
+       'transmission_type_manual', 'almost_new_car', 'coe_car',
+       'consignment_car', 'direct_owner_sale', 'electric_cars', 'hybrid_cars',
+       'imported_used_vehicle', 'low_mileage_car', 'opc_car', 'parf_car',
+       'premium_ad_car', 'rare_exotic', 'sgcarmart_warranty_cars',
+       'sta_evaluated_car', 'vintage_cars', 'curb_weight', 'power',
+       'engine_cap', 'no_of_owners', 'depreciation', 'coe', 'road_tax',
+       'dereg_value', 'omv', 'arf', 'vehicle_age'],
+      dtype='object')
+2024-10-28 11:01:13,625 - INFO - Target variable (price) statistics:
+2024-10-28 11:01:13,630 - INFO - count    2.000000e+04
+mean     1.147607e+05
+std      1.557821e+05
+min      7.000000e+02
+25%      4.898800e+04
+50%      7.880000e+04
+75%      1.258000e+05
+max      2.899999e+06
+Name: price, dtype: float64
+2024-10-28 11:01:17,109 - INFO - For n_clusters = 2, the average silhouette score is : 0.8549121481209037
+2024-10-28 11:01:20,289 - INFO - For n_clusters = 3, the average silhouette score is : 0.668391182461361
+2024-10-28 11:01:20,289 - INFO - Optimal number of clusters: 2
+2024-10-28 11:01:20,330 - INFO - Price Cluster Information:
+2024-10-28 11:01:20,335 - INFO -    cluster       min        max    median  count
+0        0     700.0  2788000.0   77500.0  19607
+1        1  168000.0  2899999.0  730000.0    393
+2024-10-28 11:01:20,344 - INFO - 
+Training models for Cluster 0
+2024-10-28 11:01:20,350 - INFO - Fold 1
+2024-10-28 11:01:34,251 - INFO - Best weights for cluster 0, fold 1: LGB=0.50, CB=0.30, SVR=0.20
+2024-10-28 11:01:34,251 - INFO - Fold 2
+2024-10-28 11:01:47,765 - INFO - Best weights for cluster 0, fold 2: LGB=0.50, CB=0.30, SVR=0.20
+2024-10-28 11:01:47,765 - INFO - Fold 3
+2024-10-28 11:02:01,555 - INFO - Best weights for cluster 0, fold 3: LGB=0.50, CB=0.30, SVR=0.20
+2024-10-28 11:02:01,555 - INFO - Fold 4
+2024-10-28 11:02:14,615 - INFO - Best weights for cluster 0, fold 4: LGB=0.60, CB=0.20, SVR=0.20
+2024-10-28 11:02:14,615 - INFO - Fold 5
+2024-10-28 11:02:28,371 - INFO - Best weights for cluster 0, fold 5: LGB=0.60, CB=0.20, SVR=0.20
+2024-10-28 11:02:28,371 - INFO - Fold 6
+2024-10-28 11:02:42,117 - INFO - Best weights for cluster 0, fold 6: LGB=0.50, CB=0.30, SVR=0.20
+2024-10-28 11:02:42,118 - INFO - Fold 7
+2024-10-28 11:02:52,764 - INFO - Best weights for cluster 0, fold 7: LGB=0.60, CB=0.20, SVR=0.20
+2024-10-28 11:02:52,766 - INFO - Fold 8
+2024-10-28 11:03:06,154 - INFO - Best weights for cluster 0, fold 8: LGB=0.60, CB=0.20, SVR=0.20
+2024-10-28 11:03:06,154 - INFO - Fold 9
+2024-10-28 11:03:21,064 - INFO - Best weights for cluster 0, fold 9: LGB=0.60, CB=0.20, SVR=0.20
+2024-10-28 11:03:21,064 - INFO - Fold 10
+2024-10-28 11:03:36,560 - INFO - Best weights for cluster 0, fold 10: LGB=0.50, CB=0.30, SVR=0.20
+2024-10-28 11:03:36,560 - INFO - 
+Training models for Cluster 1
+2024-10-28 11:03:36,563 - INFO - Fold 1
+2024-10-28 11:03:38,030 - INFO - Best weights for cluster 1, fold 1: LGB=0.30, CB=0.30, SVR=0.40
+2024-10-28 11:03:38,030 - INFO - Fold 2
+2024-10-28 11:03:39,648 - INFO - Best weights for cluster 1, fold 2: LGB=0.40, CB=0.20, SVR=0.40
+2024-10-28 11:03:39,648 - INFO - Fold 3
+2024-10-28 11:03:43,030 - INFO - Best weights for cluster 1, fold 3: LGB=0.40, CB=0.30, SVR=0.30
+2024-10-28 11:03:43,035 - INFO - Fold 4
+2024-10-28 11:03:45,059 - INFO - Best weights for cluster 1, fold 4: LGB=0.40, CB=0.20, SVR=0.40
+2024-10-28 11:03:45,059 - INFO - Fold 5
+2024-10-28 11:03:46,239 - INFO - Best weights for cluster 1, fold 5: LGB=0.30, CB=0.20, SVR=0.50
+2024-10-28 11:03:46,239 - INFO - Fold 6
+2024-10-28 11:03:49,887 - INFO - Best weights for cluster 1, fold 6: LGB=0.40, CB=0.30, SVR=0.30
+2024-10-28 11:03:49,887 - INFO - Fold 7
+2024-10-28 11:03:52,297 - INFO - Best weights for cluster 1, fold 7: LGB=0.30, CB=0.20, SVR=0.50
+2024-10-28 11:03:52,298 - INFO - Fold 8
+2024-10-28 11:03:55,224 - INFO - Best weights for cluster 1, fold 8: LGB=0.30, CB=0.20, SVR=0.50
+2024-10-28 11:03:55,224 - INFO - Fold 9
+2024-10-28 11:03:56,089 - INFO - Best weights for cluster 1, fold 9: LGB=0.40, CB=0.20, SVR=0.40
+2024-10-28 11:03:56,089 - INFO - Fold 10
+2024-10-28 11:03:58,673 - INFO - Best weights for cluster 1, fold 10: LGB=0.40, CB=0.20, SVR=0.40
+2024-10-28 11:03:58,673 - INFO - 
+Total training time: 2.64 minutes
+2024-10-28 11:03:58,675 - INFO - Out-of-fold RMSE: 193071.6951
+2024-10-28 11:03:58,675 - INFO - Out-of-fold R2: -0.5361
+2024-10-28 11:03:58,679 - INFO - 
+Top 10 important features:
+2024-10-28 11:03:58,679 - INFO -                 importance
+feature                   
+dereg_value   17842.348656
+depreciation   3932.508897
+vehicle_age    3882.482815
+coe            2272.527769
+power          1590.627492
+arf            1416.730481
+manufactured    963.597258
+engine_cap      420.269779
+omv             417.388507
+coe_car         311.435556
+2024-10-28 11:03:59,645 - INFO - Models and preprocessors saved.
+2024-10-28 11:03:59,662 - INFO - Columns in preprocessing/2024-10-21-silan/test_cleaned.csv: Index(['manufactured', 'vehicle_type_bus_mini_bus', 'vehicle_type_hatchback',
+       'vehicle_type_luxury_sedan', 'vehicle_type_midsized_sedan',
+       'vehicle_type_mpv', 'vehicle_type_others', 'vehicle_type_sports_car',
+       'vehicle_type_stationwagon', 'vehicle_type_suv', 'vehicle_type_truck',
+       'vehicle_type_van', 'transmission_type_auto',
+       'transmission_type_manual', 'almost_new_car', 'coe_car',
+       'consignment_car', 'direct_owner_sale', 'electric_cars', 'hybrid_cars',
+       'imported_used_vehicle', 'low_mileage_car', 'opc_car', 'parf_car',
+       'premium_ad_car', 'rare_exotic', 'sgcarmart_warranty_cars',
+       'sta_evaluated_car', 'vintage_cars', 'curb_weight', 'power',
+       'engine_cap', 'no_of_owners', 'depreciation', 'coe', 'road_tax',
+       'dereg_value', 'omv', 'arf', 'vehicle_age'],
+      dtype='object')
+2024-10-28 11:04:07,960 - INFO - Predictions complete. Submission file saved as 'triple_ensemble_predictions.csv'.
+2024-10-28 11:04:07,962 - INFO - 
+Prediction statistics:
+2024-10-28 11:04:07,962 - INFO - Minimum: 4418.294386019385
+2024-10-28 11:04:07,962 - INFO - Maximum: 2123110.1345857717
+2024-10-28 11:04:07,962 - INFO - Mean: 116143.71244705866
+2024-10-28 11:04:07,962 - INFO - Median: 79988.74622758958
+2024-10-28 11:05:43,294 - INFO - Columns in preprocessing/2024-10-27-silan/train_cleaned.csv: Index(['manufactured', 'vehicle_type_bus_mini_bus', 'vehicle_type_hatchback',
+       'vehicle_type_luxury_sedan', 'vehicle_type_midsized_sedan',
+       'vehicle_type_mpv', 'vehicle_type_others', 'vehicle_type_sports_car',
+       'vehicle_type_stationwagon', 'vehicle_type_suv', 'vehicle_type_truck',
+       'vehicle_type_van', 'transmission_type_auto',
+       'transmission_type_manual', 'almost_new_car', 'coe_car',
+       'consignment_car', 'direct_owner_sale', 'electric_cars', 'hybrid_cars',
+       'imported_used_vehicle', 'low_mileage_car', 'opc_car', 'parf_car',
+       'premium_ad_car', 'rare_exotic', 'sgcarmart_warranty_cars',
+       'sta_evaluated_car', 'vintage_cars', 'curb_weight', 'power',
+       'engine_cap', 'no_of_owners', 'depreciation', 'coe', 'road_tax',
+       'dereg_value', 'omv', 'arf', 'vehicle_age'],
+      dtype='object')
+2024-10-28 11:05:43,294 - INFO - Target variable (price) statistics:
+2024-10-28 11:05:43,294 - INFO - count    2.500000e+04
+mean     1.151486e+05
+std      1.555725e+05
+min      7.000000e+02
+25%      4.914100e+04
+50%      7.888800e+04
+75%      1.258000e+05
+max      2.899999e+06
+Name: price, dtype: float64
+2024-10-28 11:05:48,369 - INFO - For n_clusters = 2, the average silhouette score is : 0.8511180772885572
+2024-10-28 11:05:53,230 - INFO - For n_clusters = 3, the average silhouette score is : 0.6677122727003781
+2024-10-28 11:05:53,231 - INFO - Optimal number of clusters: 2
+2024-10-28 11:05:53,276 - INFO - Price Cluster Information:
+2024-10-28 11:05:53,276 - INFO -    cluster       min        max    median  count
+0        0     700.0  2788000.0   77800.0  24473
+1        1  168000.0  2899999.0  720000.0    527
+2024-10-28 11:05:53,287 - INFO - 
+Training models for Cluster 0
+2024-10-28 11:05:53,293 - INFO - Fold 1
+2024-10-28 11:06:08,309 - INFO - Best weights for cluster 0, fold 1: LGB=0.50, CB=0.30, SVR=0.20
+2024-10-28 11:06:08,309 - INFO - Fold 2
+2024-10-28 11:06:25,119 - INFO - Best weights for cluster 0, fold 2: LGB=0.60, CB=0.20, SVR=0.20
+2024-10-28 11:06:25,119 - INFO - Fold 3
+2024-10-28 11:06:42,254 - INFO - Best weights for cluster 0, fold 3: LGB=0.50, CB=0.30, SVR=0.20
+2024-10-28 11:06:42,254 - INFO - Fold 4
+2024-10-28 11:06:57,326 - INFO - Best weights for cluster 0, fold 4: LGB=0.60, CB=0.20, SVR=0.20
+2024-10-28 11:06:57,326 - INFO - Fold 5
+2024-10-28 11:07:12,130 - INFO - Best weights for cluster 0, fold 5: LGB=0.50, CB=0.30, SVR=0.20
+2024-10-28 11:07:12,130 - INFO - Fold 6
+2024-10-28 11:07:28,550 - INFO - Best weights for cluster 0, fold 6: LGB=0.50, CB=0.30, SVR=0.20
+2024-10-28 11:07:28,550 - INFO - Fold 7
+2024-10-28 11:07:46,294 - INFO - Best weights for cluster 0, fold 7: LGB=0.50, CB=0.30, SVR=0.20
+2024-10-28 11:07:46,302 - INFO - Fold 8
+2024-10-28 11:08:02,754 - INFO - Best weights for cluster 0, fold 8: LGB=0.60, CB=0.20, SVR=0.20
+2024-10-28 11:08:02,754 - INFO - Fold 9
+2024-10-28 11:08:16,486 - INFO - Best weights for cluster 0, fold 9: LGB=0.60, CB=0.20, SVR=0.20
+2024-10-28 11:08:16,486 - INFO - Fold 10
+2024-10-28 11:08:34,107 - INFO - Best weights for cluster 0, fold 10: LGB=0.50, CB=0.30, SVR=0.20
+2024-10-28 11:08:34,107 - INFO - 
+Training models for Cluster 1
+2024-10-28 11:08:34,110 - INFO - Fold 1
+2024-10-28 11:08:37,204 - INFO - Best weights for cluster 1, fold 1: LGB=0.40, CB=0.30, SVR=0.30
+2024-10-28 11:08:37,204 - INFO - Fold 2
+2024-10-28 11:08:39,035 - INFO - Best weights for cluster 1, fold 2: LGB=0.30, CB=0.30, SVR=0.40
+2024-10-28 11:08:39,035 - INFO - Fold 3
+2024-10-28 11:08:40,523 - INFO - Best weights for cluster 1, fold 3: LGB=0.30, CB=0.20, SVR=0.50
+2024-10-28 11:08:40,523 - INFO - Fold 4
+2024-10-28 11:08:41,854 - INFO - Best weights for cluster 1, fold 4: LGB=0.30, CB=0.20, SVR=0.50
+2024-10-28 11:08:41,854 - INFO - Fold 5
+2024-10-28 11:08:43,404 - INFO - Best weights for cluster 1, fold 5: LGB=0.40, CB=0.30, SVR=0.30
+2024-10-28 11:08:43,404 - INFO - Fold 6
+2024-10-28 11:08:45,474 - INFO - Best weights for cluster 1, fold 6: LGB=0.30, CB=0.20, SVR=0.50
+2024-10-28 11:08:45,474 - INFO - Fold 7
+2024-10-28 11:08:47,674 - INFO - Best weights for cluster 1, fold 7: LGB=0.40, CB=0.30, SVR=0.30
+2024-10-28 11:08:47,674 - INFO - Fold 8
+2024-10-28 11:08:49,767 - INFO - Best weights for cluster 1, fold 8: LGB=0.40, CB=0.30, SVR=0.30
+2024-10-28 11:08:49,768 - INFO - Fold 9
+2024-10-28 11:08:51,799 - INFO - Best weights for cluster 1, fold 9: LGB=0.30, CB=0.30, SVR=0.40
+2024-10-28 11:08:51,799 - INFO - Fold 10
+2024-10-28 11:08:54,244 - INFO - Best weights for cluster 1, fold 10: LGB=0.40, CB=0.30, SVR=0.30
+2024-10-28 11:08:54,244 - INFO - 
+Total training time: 3.02 minutes
+2024-10-28 11:08:54,244 - INFO - Out-of-fold RMSE: 193132.9454
+2024-10-28 11:08:54,244 - INFO - Out-of-fold R2: -0.5412
+2024-10-28 11:08:54,248 - INFO - 
+Top 10 important features:
+2024-10-28 11:08:54,248 - INFO -                 importance
+feature                   
+dereg_value   22237.111192
+vehicle_age    5037.503819
+depreciation   4744.151345
+coe            2860.229607
+arf            2076.595317
+power          1694.130881
+manufactured   1095.711170
+omv             497.570215
+engine_cap      427.040716
+coe_car         425.304507
+2024-10-28 11:08:55,526 - INFO - Models and preprocessors saved.
+2024-10-28 11:08:55,564 - INFO - Columns in preprocessing/2024-10-27-silan/test_cleaned.csv: Index(['manufactured', 'vehicle_type_bus_mini_bus', 'vehicle_type_hatchback',
+       'vehicle_type_luxury_sedan', 'vehicle_type_midsized_sedan',
+       'vehicle_type_mpv', 'vehicle_type_others', 'vehicle_type_sports_car',
+       'vehicle_type_stationwagon', 'vehicle_type_suv', 'vehicle_type_truck',
+       'vehicle_type_van', 'transmission_type_auto',
+       'transmission_type_manual', 'almost_new_car', 'coe_car',
+       'consignment_car', 'direct_owner_sale', 'electric_cars', 'hybrid_cars',
+       'imported_used_vehicle', 'low_mileage_car', 'opc_car', 'parf_car',
+       'premium_ad_car', 'rare_exotic', 'sgcarmart_warranty_cars',
+       'sta_evaluated_car', 'vintage_cars', 'curb_weight', 'power',
+       'engine_cap', 'no_of_owners', 'depreciation', 'coe', 'road_tax',
+       'dereg_value', 'omv', 'arf', 'vehicle_age'],
+      dtype='object')
+2024-10-28 11:09:14,534 - INFO - Predictions complete. Submission file saved as 'triple_ensemble_predictions.csv'.
+2024-10-28 11:09:14,534 - INFO - 
+Prediction statistics:
+2024-10-28 11:09:14,534 - INFO - Minimum: 2222.306735973058
+2024-10-28 11:09:14,534 - INFO - Maximum: 2800780.9032085473
+2024-10-28 11:09:14,534 - INFO - Mean: 113849.32533942776
+2024-10-28 11:09:14,534 - INFO - Median: 77515.17022458692
+2024-10-28 11:13:43,935 - INFO - Columns in preprocessing/2024-10-27-silan/train_cleaned.csv: Index(['manufactured', 'vehicle_type_bus_mini_bus', 'vehicle_type_hatchback',
+       'vehicle_type_luxury_sedan', 'vehicle_type_midsized_sedan',
+       'vehicle_type_mpv', 'vehicle_type_others', 'vehicle_type_sports_car',
+       'vehicle_type_stationwagon', 'vehicle_type_suv', 'vehicle_type_truck',
+       'vehicle_type_van', 'transmission_type_auto',
+       'transmission_type_manual', 'almost_new_car', 'coe_car',
+       'consignment_car', 'direct_owner_sale', 'electric_cars', 'hybrid_cars',
+       'imported_used_vehicle', 'low_mileage_car', 'opc_car', 'parf_car',
+       'premium_ad_car', 'rare_exotic', 'sgcarmart_warranty_cars',
+       'sta_evaluated_car', 'vintage_cars', 'curb_weight', 'power',
+       'engine_cap', 'no_of_owners', 'depreciation', 'coe', 'road_tax',
+       'dereg_value', 'omv', 'arf', 'vehicle_age'],
+      dtype='object')
+2024-10-28 11:13:43,935 - INFO - Target variable (price) statistics:
+2024-10-28 11:13:43,935 - INFO - count    2.500000e+04
+mean     1.151486e+05
+std      1.555725e+05
+min      7.000000e+02
+25%      4.914100e+04
+50%      7.888800e+04
+75%      1.258000e+05
+max      2.899999e+06
+Name: price, dtype: float64
+2024-10-28 11:13:49,032 - INFO - For n_clusters = 2, the average silhouette score is : 0.8511180772885572
+2024-10-28 11:13:53,858 - INFO - For n_clusters = 3, the average silhouette score is : 0.6677122727003781
+2024-10-28 11:13:53,859 - INFO - Optimal number of clusters: 2
+2024-10-28 11:13:53,903 - INFO - Price Cluster Information:
+2024-10-28 11:13:53,904 - INFO -    cluster       min        max    median  count
+0        0     700.0  2788000.0   77800.0  24473
+1        1  168000.0  2899999.0  720000.0    527
+2024-10-28 11:13:53,915 - INFO - 
+Training models for Cluster 0
+2024-10-28 11:13:53,920 - INFO - Fold 1
+2024-10-28 11:14:09,935 - INFO - Best weights for cluster 0, fold 1: LGB=0.45, CB=0.45, SVR=0.10
+2024-10-28 11:14:09,935 - INFO - Fold 2
+2024-10-28 11:14:26,284 - INFO - Best weights for cluster 0, fold 2: LGB=0.45, CB=0.45, SVR=0.10
+2024-10-28 11:14:26,284 - INFO - Fold 3
+2024-10-28 11:14:42,474 - INFO - Best weights for cluster 0, fold 3: LGB=0.45, CB=0.45, SVR=0.10
+2024-10-28 11:14:42,474 - INFO - Fold 4
+2024-10-28 11:14:59,389 - INFO - Best weights for cluster 0, fold 4: LGB=0.50, CB=0.40, SVR=0.10
+2024-10-28 11:14:59,389 - INFO - Fold 5
+2024-10-28 11:15:14,944 - INFO - Best weights for cluster 0, fold 5: LGB=0.50, CB=0.40, SVR=0.10
+2024-10-28 11:15:14,944 - INFO - 
+Training models for Cluster 1
+2024-10-28 11:15:14,946 - INFO - Fold 1
+2024-10-28 11:15:16,984 - INFO - Best weights for cluster 1, fold 1: LGB=0.30, CB=0.35, SVR=0.35
+2024-10-28 11:15:16,986 - INFO - Fold 2
+2024-10-28 11:15:18,054 - INFO - Best weights for cluster 1, fold 2: LGB=0.20, CB=0.25, SVR=0.55
+2024-10-28 11:15:18,054 - INFO - Fold 3
+2024-10-28 11:15:20,179 - INFO - Best weights for cluster 1, fold 3: LGB=0.20, CB=0.20, SVR=0.60
+2024-10-28 11:15:20,179 - INFO - Fold 4
+2024-10-28 11:15:22,739 - INFO - Best weights for cluster 1, fold 4: LGB=0.45, CB=0.35, SVR=0.20
+2024-10-28 11:15:22,739 - INFO - Fold 5
+2024-10-28 11:15:24,299 - INFO - Best weights for cluster 1, fold 5: LGB=0.45, CB=0.35, SVR=0.20
+2024-10-28 11:15:24,299 - INFO - 
+Total training time: 1.51 minutes
+2024-10-28 11:15:24,304 - INFO - Out-of-fold RMSE: 193132.9454
+2024-10-28 11:15:24,304 - INFO - Out-of-fold R2: -0.5412
+2024-10-28 11:15:24,304 - INFO - 
+Top 10 important features:
+2024-10-28 11:15:24,304 - INFO -                 importance
+feature                   
+dereg_value   19712.274384
+vehicle_age    4271.446894
+depreciation   4199.445175
+coe            2561.693810
+arf            1930.733867
+power          1497.810872
+manufactured   1124.582780
+omv             405.017824
+engine_cap      388.739601
+coe_car         368.815224
+2024-10-28 11:15:24,899 - INFO - Models and preprocessors saved.
+2024-10-28 11:15:24,930 - INFO - Columns in preprocessing/2024-10-27-silan/test_cleaned.csv: Index(['manufactured', 'vehicle_type_bus_mini_bus', 'vehicle_type_hatchback',
+       'vehicle_type_luxury_sedan', 'vehicle_type_midsized_sedan',
+       'vehicle_type_mpv', 'vehicle_type_others', 'vehicle_type_sports_car',
+       'vehicle_type_stationwagon', 'vehicle_type_suv', 'vehicle_type_truck',
+       'vehicle_type_van', 'transmission_type_auto',
+       'transmission_type_manual', 'almost_new_car', 'coe_car',
+       'consignment_car', 'direct_owner_sale', 'electric_cars', 'hybrid_cars',
+       'imported_used_vehicle', 'low_mileage_car', 'opc_car', 'parf_car',
+       'premium_ad_car', 'rare_exotic', 'sgcarmart_warranty_cars',
+       'sta_evaluated_car', 'vintage_cars', 'curb_weight', 'power',
+       'engine_cap', 'no_of_owners', 'depreciation', 'coe', 'road_tax',
+       'dereg_value', 'omv', 'arf', 'vehicle_age'],
+      dtype='object')
+2024-10-28 11:15:33,272 - INFO - Predictions complete. Submission file saved as 'triple_ensemble_predictions.csv'.
+2024-10-28 11:15:33,272 - INFO - 
+Prediction statistics:
+2024-10-28 11:15:33,273 - INFO - Minimum: 2237.029198295486
+2024-10-28 11:15:33,273 - INFO - Maximum: 2777960.715009545
+2024-10-28 11:15:33,274 - INFO - Mean: 113894.9222729755
+2024-10-28 11:15:33,274 - INFO - Median: 77321.99304774127
+2024-10-28 11:21:34,689 - INFO - Columns in preprocessing/2024-10-27-silan/train_cleaned.csv: Index(['manufactured', 'vehicle_type_bus_mini_bus', 'vehicle_type_hatchback',
+       'vehicle_type_luxury_sedan', 'vehicle_type_midsized_sedan',
+       'vehicle_type_mpv', 'vehicle_type_others', 'vehicle_type_sports_car',
+       'vehicle_type_stationwagon', 'vehicle_type_suv', 'vehicle_type_truck',
+       'vehicle_type_van', 'transmission_type_auto',
+       'transmission_type_manual', 'almost_new_car', 'coe_car',
+       'consignment_car', 'direct_owner_sale', 'electric_cars', 'hybrid_cars',
+       'imported_used_vehicle', 'low_mileage_car', 'opc_car', 'parf_car',
+       'premium_ad_car', 'rare_exotic', 'sgcarmart_warranty_cars',
+       'sta_evaluated_car', 'vintage_cars', 'curb_weight', 'power',
+       'engine_cap', 'no_of_owners', 'depreciation', 'coe', 'road_tax',
+       'dereg_value', 'omv', 'arf', 'vehicle_age'],
+      dtype='object')
+2024-10-28 11:21:34,692 - INFO - Target variable (price) statistics:
+2024-10-28 11:21:34,694 - INFO - count    2.500000e+04
+mean     1.151486e+05
+std      1.555725e+05
+min      7.000000e+02
+25%      4.914100e+04
+50%      7.888800e+04
+75%      1.258000e+05
+max      2.899999e+06
+Name: price, dtype: float64
+2024-10-28 11:21:47,689 - INFO - Columns in preprocessing/2024-10-27-silan/train_cleaned.csv: Index(['manufactured', 'vehicle_type_bus_mini_bus', 'vehicle_type_hatchback',
+       'vehicle_type_luxury_sedan', 'vehicle_type_midsized_sedan',
+       'vehicle_type_mpv', 'vehicle_type_others', 'vehicle_type_sports_car',
+       'vehicle_type_stationwagon', 'vehicle_type_suv', 'vehicle_type_truck',
+       'vehicle_type_van', 'transmission_type_auto',
+       'transmission_type_manual', 'almost_new_car', 'coe_car',
+       'consignment_car', 'direct_owner_sale', 'electric_cars', 'hybrid_cars',
+       'imported_used_vehicle', 'low_mileage_car', 'opc_car', 'parf_car',
+       'premium_ad_car', 'rare_exotic', 'sgcarmart_warranty_cars',
+       'sta_evaluated_car', 'vintage_cars', 'curb_weight', 'power',
+       'engine_cap', 'no_of_owners', 'depreciation', 'coe', 'road_tax',
+       'dereg_value', 'omv', 'arf', 'vehicle_age'],
+      dtype='object')
+2024-10-28 11:21:47,689 - INFO - Target variable (price) statistics:
+2024-10-28 11:21:47,689 - INFO - count    2.500000e+04
+mean     1.151486e+05
+std      1.555725e+05
+min      7.000000e+02
+25%      4.914100e+04
+50%      7.888800e+04
+75%      1.258000e+05
+max      2.899999e+06
+Name: price, dtype: float64
+2024-10-28 11:21:52,624 - INFO - For n_clusters = 2, the average silhouette score is : 0.8511180772885572
+2024-10-28 11:21:57,414 - INFO - For n_clusters = 3, the average silhouette score is : 0.6677122727003781
+2024-10-28 11:21:57,414 - INFO - Optimal number of clusters: 2
+2024-10-28 11:21:57,454 - INFO - Price Cluster Information:
+2024-10-28 11:21:57,454 - INFO -    cluster       min        max    median  count
+0        0     700.0  2788000.0   77800.0  24473
+1        1  168000.0  2899999.0  720000.0    527
+2024-10-28 11:21:57,464 - INFO - 
+Training models for Cluster 0
+2024-10-28 11:21:57,472 - INFO - Fold 1
+2024-10-28 11:25:16,479 - INFO - Best weights for cluster 0, fold 1: LGB=0.50, CB=0.45, GB=0.05
+2024-10-28 11:25:16,479 - INFO - Fold 2
+2024-10-28 11:28:52,674 - INFO - Best weights for cluster 0, fold 2: LGB=0.40, CB=0.30, GB=0.30
+2024-10-28 11:28:52,674 - INFO - 
+Training models for Cluster 1
+2024-10-28 11:28:52,683 - INFO - Fold 1
+2024-10-28 11:29:07,021 - INFO - Best weights for cluster 1, fold 1: LGB=0.35, CB=0.35, GB=0.30
+2024-10-28 11:29:07,021 - INFO - Fold 2
+2024-10-28 11:29:21,934 - INFO - Best weights for cluster 1, fold 2: LGB=0.20, CB=0.35, GB=0.45
+2024-10-28 11:29:21,934 - INFO - 
+Total training time: 7.41 minutes
+2024-10-28 11:29:21,934 - INFO - Out-of-fold RMSE: 193132.9454
+2024-10-28 11:29:21,939 - INFO - Out-of-fold R2: -0.5412
+2024-10-28 11:29:21,939 - INFO - 
+Top 10 important features:
+2024-10-28 11:29:21,943 - INFO -                 importance
+feature                   
+dereg_value   12486.731393
+depreciation   2579.037428
+vehicle_age    2375.158981
+coe            1594.453898
+arf            1153.570472
+power           940.350528
+manufactured    891.113087
+omv             490.620894
+engine_cap      210.725210
+coe_car         209.223733
+2024-10-28 11:29:22,574 - INFO - Models and preprocessors saved.
+2024-10-28 11:29:22,614 - INFO - Columns in preprocessing/2024-10-27-silan/test_cleaned.csv: Index(['manufactured', 'vehicle_type_bus_mini_bus', 'vehicle_type_hatchback',
+       'vehicle_type_luxury_sedan', 'vehicle_type_midsized_sedan',
+       'vehicle_type_mpv', 'vehicle_type_others', 'vehicle_type_sports_car',
+       'vehicle_type_stationwagon', 'vehicle_type_suv', 'vehicle_type_truck',
+       'vehicle_type_van', 'transmission_type_auto',
+       'transmission_type_manual', 'almost_new_car', 'coe_car',
+       'consignment_car', 'direct_owner_sale', 'electric_cars', 'hybrid_cars',
+       'imported_used_vehicle', 'low_mileage_car', 'opc_car', 'parf_car',
+       'premium_ad_car', 'rare_exotic', 'sgcarmart_warranty_cars',
+       'sta_evaluated_car', 'vintage_cars', 'curb_weight', 'power',
+       'engine_cap', 'no_of_owners', 'depreciation', 'coe', 'road_tax',
+       'dereg_value', 'omv', 'arf', 'vehicle_age'],
+      dtype='object')
+2024-10-28 11:29:24,433 - INFO - Predictions complete. Submission file saved as 'triple_ensemble_predictions.csv'.
+2024-10-28 11:29:24,433 - INFO - 
+Prediction statistics:
+2024-10-28 11:29:24,433 - INFO - Minimum: 2398.840457152364
+2024-10-28 11:29:24,433 - INFO - Maximum: 2443528.598161922
+2024-10-28 11:29:24,433 - INFO - Mean: 113951.01750970144
+2024-10-28 11:29:24,440 - INFO - Median: 77180.67297303255
+2024-10-28 11:32:30,268 - INFO - Columns in preprocessing/2024-10-27-silan/train_cleaned.csv: Index(['manufactured', 'vehicle_type_bus_mini_bus', 'vehicle_type_hatchback',
+       'vehicle_type_luxury_sedan', 'vehicle_type_midsized_sedan',
+       'vehicle_type_mpv', 'vehicle_type_others', 'vehicle_type_sports_car',
+       'vehicle_type_stationwagon', 'vehicle_type_suv', 'vehicle_type_truck',
+       'vehicle_type_van', 'transmission_type_auto',
+       'transmission_type_manual', 'almost_new_car', 'coe_car',
+       'consignment_car', 'direct_owner_sale', 'electric_cars', 'hybrid_cars',
+       'imported_used_vehicle', 'low_mileage_car', 'opc_car', 'parf_car',
+       'premium_ad_car', 'rare_exotic', 'sgcarmart_warranty_cars',
+       'sta_evaluated_car', 'vintage_cars', 'curb_weight', 'power',
+       'engine_cap', 'no_of_owners', 'depreciation', 'coe', 'road_tax',
+       'dereg_value', 'omv', 'arf', 'vehicle_age'],
+      dtype='object')
+2024-10-28 11:32:30,268 - INFO - Target variable (price) statistics:
+2024-10-28 11:32:30,268 - INFO - count    2.500000e+04
+mean     1.151486e+05
+std      1.555725e+05
+min      7.000000e+02
+25%      4.914100e+04
+50%      7.888800e+04
+75%      1.258000e+05
+max      2.899999e+06
+Name: price, dtype: float64
+2024-10-28 11:32:35,518 - INFO - For n_clusters = 2, the average silhouette score is : 0.8511180772885572
+2024-10-28 11:32:40,323 - INFO - For n_clusters = 3, the average silhouette score is : 0.6677122727003781
+2024-10-28 11:32:40,323 - INFO - Optimal number of clusters: 2
+2024-10-28 11:32:40,363 - INFO - Price Cluster Information:
+2024-10-28 11:32:40,363 - INFO -    cluster       min        max    median  count
+0        0     700.0  2788000.0   77800.0  24473
+1        1  168000.0  2899999.0  720000.0    527
+2024-10-28 11:32:40,377 - INFO - 
+Training models for Cluster 0
+2024-10-28 11:32:40,382 - INFO - Fold 1
+2024-10-28 11:36:28,833 - INFO - Best weights for cluster 0, fold 1: LGB=0.50, CB=0.45, GB=0.05
+2024-10-28 11:36:28,833 - INFO - Fold 2
+2024-10-28 11:40:19,715 - INFO - Best weights for cluster 0, fold 2: LGB=0.55, CB=0.35, GB=0.10
+2024-10-28 11:40:19,715 - INFO - Fold 3
+2024-10-28 11:44:09,288 - INFO - Best weights for cluster 0, fold 3: LGB=0.50, CB=0.45, GB=0.05
+2024-10-28 11:44:09,288 - INFO - Fold 4
+2024-10-28 11:47:56,784 - INFO - Best weights for cluster 0, fold 4: LGB=0.40, CB=0.30, GB=0.30
+2024-10-28 11:47:56,784 - INFO - Fold 5
+2024-10-28 11:51:44,225 - INFO - Best weights for cluster 0, fold 5: LGB=0.40, CB=0.30, GB=0.30
+2024-10-28 11:51:44,226 - INFO - Fold 6
+2024-10-28 11:55:33,557 - INFO - Best weights for cluster 0, fold 6: LGB=0.40, CB=0.45, GB=0.15
+2024-10-28 11:55:33,557 - INFO - Fold 7
+2024-10-28 11:59:23,596 - INFO - Best weights for cluster 0, fold 7: LGB=0.40, CB=0.30, GB=0.30
+2024-10-28 11:59:23,602 - INFO - Fold 8
+2024-10-28 12:03:10,092 - INFO - Best weights for cluster 0, fold 8: LGB=0.55, CB=0.30, GB=0.15
+2024-10-28 12:03:10,092 - INFO - Fold 9
+2024-10-28 12:06:55,562 - INFO - Best weights for cluster 0, fold 9: LGB=0.40, CB=0.30, GB=0.30
+2024-10-28 12:06:55,562 - INFO - Fold 10
+2024-10-28 12:10:44,801 - INFO - Best weights for cluster 0, fold 10: LGB=0.40, CB=0.30, GB=0.30
+2024-10-28 12:10:44,801 - INFO - 
+Training models for Cluster 1
+2024-10-28 12:10:44,806 - INFO - Fold 1
+2024-10-28 12:10:55,622 - INFO - Best weights for cluster 1, fold 1: LGB=0.20, CB=0.20, GB=0.60
+2024-10-28 12:10:55,622 - INFO - Fold 2
+2024-10-28 12:11:05,334 - INFO - Best weights for cluster 1, fold 2: LGB=0.20, CB=0.35, GB=0.45
+2024-10-28 12:11:05,334 - INFO - Fold 3
+2024-10-28 12:11:14,675 - INFO - Best weights for cluster 1, fold 3: LGB=0.20, CB=0.35, GB=0.45
+2024-10-28 12:11:14,675 - INFO - Fold 4
+2024-10-28 12:11:23,694 - INFO - Best weights for cluster 1, fold 4: LGB=0.20, CB=0.20, GB=0.60
+2024-10-28 12:11:23,695 - INFO - Fold 5
+2024-10-28 12:11:33,042 - INFO - Best weights for cluster 1, fold 5: LGB=0.45, CB=0.20, GB=0.35
+2024-10-28 12:11:33,042 - INFO - Fold 6
+2024-10-28 12:11:42,662 - INFO - Best weights for cluster 1, fold 6: LGB=0.45, CB=0.35, GB=0.20
+2024-10-28 12:11:42,662 - INFO - Fold 7
+2024-10-28 12:11:52,371 - INFO - Best weights for cluster 1, fold 7: LGB=0.45, CB=0.35, GB=0.20
+2024-10-28 12:11:52,371 - INFO - Fold 8
+2024-10-28 12:12:02,046 - INFO - Best weights for cluster 1, fold 8: LGB=0.20, CB=0.35, GB=0.45
+2024-10-28 12:12:02,046 - INFO - Fold 9
+2024-10-28 12:12:11,788 - INFO - Best weights for cluster 1, fold 9: LGB=0.45, CB=0.35, GB=0.20
+2024-10-28 12:12:11,791 - INFO - Fold 10
+2024-10-28 12:12:21,867 - INFO - Best weights for cluster 1, fold 10: LGB=0.20, CB=0.35, GB=0.45
+2024-10-28 12:12:21,867 - INFO - 
+Total training time: 39.69 minutes
+2024-10-28 12:12:21,867 - INFO - Out-of-fold RMSE: 193132.9454
+2024-10-28 12:12:21,867 - INFO - Out-of-fold R2: -0.5412
+2024-10-28 12:12:21,872 - INFO - 
+Top 10 important features:
+2024-10-28 12:12:21,872 - INFO -                 importance
+feature                   
+dereg_value   22237.111192
+vehicle_age    5037.503819
+depreciation   4744.151345
+coe            2860.229607
+arf            2076.595317
+power          1694.130881
+manufactured   1095.711170
+omv             497.570215
+engine_cap      427.040716
+coe_car         425.304507
+2024-10-28 12:12:24,701 - INFO - Models and preprocessors saved.
+2024-10-28 12:12:24,719 - INFO - Columns in preprocessing/2024-10-27-silan/test_cleaned.csv: Index(['manufactured', 'vehicle_type_bus_mini_bus', 'vehicle_type_hatchback',
+       'vehicle_type_luxury_sedan', 'vehicle_type_midsized_sedan',
+       'vehicle_type_mpv', 'vehicle_type_others', 'vehicle_type_sports_car',
+       'vehicle_type_stationwagon', 'vehicle_type_suv', 'vehicle_type_truck',
+       'vehicle_type_van', 'transmission_type_auto',
+       'transmission_type_manual', 'almost_new_car', 'coe_car',
+       'consignment_car', 'direct_owner_sale', 'electric_cars', 'hybrid_cars',
+       'imported_used_vehicle', 'low_mileage_car', 'opc_car', 'parf_car',
+       'premium_ad_car', 'rare_exotic', 'sgcarmart_warranty_cars',
+       'sta_evaluated_car', 'vintage_cars', 'curb_weight', 'power',
+       'engine_cap', 'no_of_owners', 'depreciation', 'coe', 'road_tax',
+       'dereg_value', 'omv', 'arf', 'vehicle_age'],
+      dtype='object')
+2024-10-28 12:12:29,543 - INFO - Predictions complete. Submission file saved as 'triple_ensemble_predictions.csv'.
+2024-10-28 12:12:29,543 - INFO - 
+Prediction statistics:
+2024-10-28 12:12:29,543 - INFO - Minimum: 2231.8192720156308
+2024-10-28 12:12:29,543 - INFO - Maximum: 2672701.903022776
+2024-10-28 12:12:29,543 - INFO - Mean: 113982.99772687924
+2024-10-28 12:12:29,545 - INFO - Median: 77167.62265604737
+2024-10-28 12:35:54,361 - INFO - 
+Prediction statistics:
+2024-10-28 12:35:54,371 - INFO - Minimum: 2584.7530263111494
+2024-10-28 12:35:54,371 - INFO - Maximum: 665954.781332161
+2024-10-28 12:35:54,371 - INFO - Mean: 106755.20767578797
+2024-10-28 12:35:54,371 - INFO - Median: 77046.33630442034

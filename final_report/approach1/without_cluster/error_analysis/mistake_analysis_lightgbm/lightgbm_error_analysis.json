@@ -1,0 +1,175 @@
+{
+    "category_0": {
+        "category_id": 0,
+        "rmse": 964.1959808777618,
+        "count": 16575,
+        "proportion": 0.663,
+        "mean_absolute_mistake": 794.63920425693,
+        "max_mistake": 1999.7624921050156,
+        "min_mistake": 0.11685269694135059,
+        "top_features": [
+            "vehicle_type_truck",
+            "arf",
+            "coe",
+            "omv",
+            "transmission_type_manual"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_lightgbm\\heatmaps_lightgbm\\category_0_heatmap_lightgbm.png"
+    },
+    "category_1": {
+        "category_id": 1,
+        "rmse": 2477.5209504051245,
+        "count": 2982,
+        "proportion": 0.11928,
+        "mean_absolute_mistake": 2461.0801193842267,
+        "max_mistake": 2999.298840987729,
+        "min_mistake": 2001.1767998830474,
+        "top_features": [
+            "almost_new_car",
+            "omv",
+            "engine_cap",
+            "curb_weight",
+            "arf"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_lightgbm\\heatmaps_lightgbm\\category_1_heatmap_lightgbm.png"
+    },
+    "category_2": {
+        "category_id": 2,
+        "rmse": 3871.0420265944845,
+        "count": 2695,
+        "proportion": 0.1078,
+        "mean_absolute_mistake": 3831.017869689594,
+        "max_mistake": 4998.940567668586,
+        "min_mistake": 3001.119811891622,
+        "top_features": [
+            "transmission_type_manual",
+            "transmission_type_auto",
+            "arf",
+            "power",
+            "omv"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_lightgbm\\heatmaps_lightgbm\\category_2_heatmap_lightgbm.png"
+    },
+    "category_3": {
+        "category_id": 3,
+        "rmse": 6259.943427136576,
+        "count": 1291,
+        "proportion": 0.05164,
+        "mean_absolute_mistake": 6203.901630622337,
+        "max_mistake": 7993.968177024508,
+        "min_mistake": 5001.846011287678,
+        "top_features": [
+            "rare_exotic",
+            "power",
+            "low_mileage_car",
+            "vehicle_type_sports_car",
+            "vehicle_type_truck"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_lightgbm\\heatmaps_lightgbm\\category_3_heatmap_lightgbm.png"
+    },
+    "category_4": {
+        "category_id": 4,
+        "rmse": 8974.016296691167,
+        "count": 345,
+        "proportion": 0.0138,
+        "mean_absolute_mistake": 8954.251734952632,
+        "max_mistake": 9997.527559019887,
+        "min_mistake": 8003.166580754012,
+        "top_features": [
+            "sgcarmart_warranty_cars",
+            "vehicle_type_others",
+            "no_of_owners",
+            "vehicle_type_van",
+            "vehicle_type_luxury_sedan"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_lightgbm\\heatmaps_lightgbm\\category_4_heatmap_lightgbm.png"
+    },
+    "category_5": {
+        "category_id": 5,
+        "rmse": 10935.31816043657,
+        "count": 226,
+        "proportion": 0.00904,
+        "mean_absolute_mistake": 10920.535637457986,
+        "max_mistake": 11999.636124600423,
+        "min_mistake": 10016.21242047302,
+        "top_features": [
+            "vehicle_type_truck",
+            "curb_weight",
+            "premium_ad_car",
+            "vehicle_type_hatchback",
+            "vehicle_type_midsized_sedan"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_lightgbm\\heatmaps_lightgbm\\category_5_heatmap_lightgbm.png"
+    },
+    "category_6": {
+        "category_id": 6,
+        "rmse": 12902.81560440638,
+        "count": 130,
+        "proportion": 0.0052,
+        "mean_absolute_mistake": 12889.44661543458,
+        "max_mistake": 13971.958772860235,
+        "min_mistake": 12014.07371814319,
+        "top_features": [
+            "power",
+            "consignment_car",
+            "curb_weight",
+            "parf_car",
+            "coe"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_lightgbm\\heatmaps_lightgbm\\category_6_heatmap_lightgbm.png"
+    },
+    "category_7": {
+        "category_id": 7,
+        "rmse": 14995.821753448174,
+        "count": 112,
+        "proportion": 0.00448,
+        "mean_absolute_mistake": 14986.738606928204,
+        "max_mistake": 15993.396892993944,
+        "min_mistake": 14027.061958819395,
+        "top_features": [
+            "rare_exotic",
+            "premium_ad_car",
+            "vehicle_type_sports_car",
+            "vintage_cars",
+            "power"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_lightgbm\\heatmaps_lightgbm\\category_7_heatmap_lightgbm.png"
+    },
+    "category_8": {
+        "category_id": 8,
+        "rmse": 17994.37242688838,
+        "count": 120,
+        "proportion": 0.0048,
+        "mean_absolute_mistake": 17957.154683419318,
+        "max_mistake": 19824.69700485561,
+        "min_mistake": 16066.73418207874,
+        "top_features": [
+            "vintage_cars",
+            "manufactured",
+            "vehicle_type_truck",
+            "road_tax",
+            "sgcarmart_warranty_cars"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_lightgbm\\heatmaps_lightgbm\\category_8_heatmap_lightgbm.png"
+    },
+    "category_9": {
+        "category_id": 9,
+        "rmse": 102261.05074224612,
+        "count": 524,
+        "proportion": 0.02096,
+        "mean_absolute_mistake": 61629.06518055972,
+        "max_mistake": 1147100.6106708273,
+        "min_mistake": 2000.1951627721028,
+        "top_features": [
+            "depreciation",
+            "dereg_value",
+            "vehicle_type_sports_car",
+            "imported_used_vehicle",
+            "vehicle_type_luxury_sedan"
+        ],
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_lightgbm\\heatmaps_lightgbm\\category_9_heatmap_lightgbm.png"
+    },
+    "overall": {
+        "heatmap_path": "final_report/approach1/without_cluster/error_analysis\\mistake_analysis_lightgbm\\heatmaps_lightgbm\\overall_heatmap_lightgbm.png"
+    }
+}

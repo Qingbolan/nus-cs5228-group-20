@@ -1,0 +1,2131 @@
+2024-11-11 20:11:58,326 - INFO - 成功加载 5 个模型。
+2024-11-11 20:11:58,366 - ERROR - 误差分析过程中发生错误: 'preprocessors'
+2024-11-11 20:11:58,372 - INFO - 成功加载 5 个模型。
+2024-11-11 20:11:58,420 - ERROR - 误差分析过程中发生错误: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Unnamed: 0
+- price
+
+2024-11-11 20:11:58,492 - INFO - 成功加载 5 个模型。
+2024-11-11 20:11:58,539 - ERROR - 误差分析过程中发生错误: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Unnamed: 0
+- price
+
+2024-11-11 20:13:22,511 - INFO - 成功加载 5 个模型。
+2024-11-11 20:13:22,560 - ERROR - 误差分析过程中发生错误: 'preprocessors'
+2024-11-11 20:13:22,565 - INFO - 成功加载 5 个模型。
+2024-11-11 20:13:22,627 - ERROR - 误差分析过程中发生错误: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Unnamed: 0
+- price
+
+2024-11-11 20:13:22,689 - INFO - 成功加载 5 个模型。
+2024-11-11 20:13:22,746 - ERROR - 误差分析过程中发生错误: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Unnamed: 0
+- price
+
+2024-11-11 20:16:37,498 - ERROR - 加载模型时出错: "模型 1 缺少 'preprocessors' 键。请确保所有模型在保存时包含预处理器。"
+2024-11-11 20:16:37,499 - ERROR - 误差分析过程中发生错误: "模型 1 缺少 'preprocessors' 键。请确保所有模型在保存时包含预处理器。"
+2024-11-11 20:16:37,505 - INFO - 成功加载 5 个模型。
+2024-11-11 20:16:37,563 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 20:16:37,616 - INFO - 数值特征缺失值已填充。
+2024-11-11 20:16:37,632 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 20:16:37,686 - INFO - 成功加载 5 个模型。
+2024-11-11 20:16:37,742 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 20:16:37,792 - INFO - 数值特征缺失值已填充。
+2024-11-11 20:16:37,792 - ERROR - 误差分析过程中发生错误: 'scaler'
+2024-11-11 20:16:37,905 - INFO - 模型 1 预测完成。
+2024-11-11 20:16:37,945 - INFO - 数值特征缺失值已填充。
+2024-11-11 20:16:37,959 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 20:16:38,205 - INFO - 模型 2 预测完成。
+2024-11-11 20:16:38,249 - INFO - 数值特征缺失值已填充。
+2024-11-11 20:16:38,262 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 20:16:38,425 - INFO - 成功加载 5 个模型。
+2024-11-11 20:16:38,492 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 20:16:38,538 - INFO - 数值特征缺失值已填充。
+2024-11-11 20:16:38,539 - ERROR - 误差分析过程中发生错误: 'scaler'
+2024-11-11 20:16:38,542 - INFO - 模型 3 预测完成。
+2024-11-11 20:16:38,588 - INFO - 数值特征缺失值已填充。
+2024-11-11 20:16:38,602 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 20:16:38,874 - INFO - 模型 4 预测完成。
+2024-11-11 20:16:38,921 - INFO - 数值特征缺失值已填充。
+2024-11-11 20:16:38,936 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 20:16:39,198 - INFO - 模型 5 预测完成。
+2024-11-11 20:16:39,199 - INFO - 推理和误差计算完成。
+2024-11-11 20:16:39,387 - INFO - 推理结果已保存为 'final_report/approach1/without_cluster/error_analysismistake_analysis_gradient_boosting\gradient_boosting_inference.csv'。
+2024-11-11 20:16:44,595 - INFO - 聚类数量: 2, 轮廓系数: 0.9912
+2024-11-11 20:16:50,143 - INFO - 聚类数量: 3, 轮廓系数: 0.9790
+2024-11-11 20:16:55,442 - INFO - 聚类数量: 4, 轮廓系数: 0.9401
+2024-11-11 20:17:00,585 - INFO - 聚类数量: 5, 轮廓系数: 0.9309
+2024-11-11 20:17:05,695 - INFO - 聚类数量: 6, 轮廓系数: 0.9124
+2024-11-11 20:17:11,017 - INFO - 聚类数量: 7, 轮廓系数: 0.8897
+2024-11-11 20:17:16,305 - INFO - 聚类数量: 8, 轮廓系数: 0.8894
+2024-11-11 20:17:21,313 - INFO - 聚类数量: 9, 轮廓系数: 0.5006
+2024-11-11 20:17:26,288 - INFO - 聚类数量: 10, 轮廓系数: 0.5399
+2024-11-11 20:17:26,288 - INFO - 最佳聚类数量为: 2
+2024-11-11 20:17:26,645 - INFO - 轮廓系数图已保存为 'final_report/approach1/without_cluster/error_analysismistake_analysis_gradient_boosting\cluster_analysis\silhouette_scores.png'。
+2024-11-11 20:17:26,862 - INFO - 'mistake' 列已聚类为 2 个簇。
+2024-11-11 20:17:26,933 - INFO - 聚类 0 分析完成。Top features: ['price', 'inference_price', 'depreciation', 'arf', 'omv']
+2024-11-11 20:17:26,935 - INFO - 聚类 1 分析完成。Top features: ['vehicle_type_sports_car', 'imported_used_vehicle', 'vehicle_type_suv', 'almost_new_car', 'curb_weight']
+2024-11-11 20:17:27,283 - INFO - 整体热力图已生成。
+2024-11-11 20:17:27,391 - INFO - 聚类 cluster_0 的热力图已生成。
+2024-11-11 20:17:27,505 - INFO - 聚类 cluster_1 的热力图已生成。
+2024-11-11 20:17:27,506 - INFO - 分析结果已保存为 JSON 文件: final_report/approach1/without_cluster/error_analysismistake_analysis_gradient_boosting\gradient_boosting_mistake_analysis.json
+2024-11-11 20:17:27,506 - INFO - 误差分析完成。
+2024-11-11 20:21:18,210 - ERROR - 加载模型时出错: "模型 1 缺少 'preprocessors' 键。请确保所有模型在保存时包含预处理器。"
+2024-11-11 20:21:18,210 - ERROR - 误差分析过程中发生错误: "模型 1 缺少 'preprocessors' 键。请确保所有模型在保存时包含预处理器。"
+2024-11-11 20:21:18,258 - INFO - 成功加载 5 个模型。
+2024-11-11 20:21:18,310 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 20:21:18,353 - INFO - 数值特征缺失值已填充。
+2024-11-11 20:21:18,368 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 20:21:18,378 - ERROR - 加载模型时出错: "模型 1 的 'preprocessors' 缺少 'scaler'。"
+2024-11-11 20:21:18,379 - ERROR - 误差分析过程中发生错误: "模型 1 的 'preprocessors' 缺少 'scaler'。"
+2024-11-11 20:21:18,626 - INFO - 模型 1 预测完成。
+2024-11-11 20:21:18,667 - INFO - 数值特征缺失值已填充。
+2024-11-11 20:21:18,681 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 20:21:18,928 - INFO - 模型 2 预测完成。
+2024-11-11 20:21:18,970 - INFO - 数值特征缺失值已填充。
+2024-11-11 20:21:18,983 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 20:21:19,109 - ERROR - 加载模型时出错: "模型 1 的 'preprocessors' 缺少 'scaler'。"
+2024-11-11 20:21:19,110 - ERROR - 误差分析过程中发生错误: "模型 1 的 'preprocessors' 缺少 'scaler'。"
+2024-11-11 20:21:19,238 - INFO - 模型 3 预测完成。
+2024-11-11 20:21:19,280 - INFO - 数值特征缺失值已填充。
+2024-11-11 20:21:19,293 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 20:21:19,553 - INFO - 模型 4 预测完成。
+2024-11-11 20:21:19,613 - INFO - 数值特征缺失值已填充。
+2024-11-11 20:21:19,628 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 20:21:19,901 - INFO - 模型 5 预测完成。
+2024-11-11 20:21:19,902 - INFO - 推理和误差计算完成。
+2024-11-11 20:21:20,091 - INFO - 推理结果已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_gradient_boosting\gradient_boosting_inference.csv'。
+2024-11-11 20:21:25,804 - INFO - 聚类数量: 2, 轮廓系数: 0.9912
+2024-11-11 20:21:31,074 - INFO - 聚类数量: 3, 轮廓系数: 0.9790
+2024-11-11 20:21:36,356 - INFO - 聚类数量: 4, 轮廓系数: 0.9401
+2024-11-11 20:21:41,480 - INFO - 聚类数量: 5, 轮廓系数: 0.9309
+2024-11-11 20:21:46,644 - INFO - 聚类数量: 6, 轮廓系数: 0.9124
+2024-11-11 20:21:51,810 - INFO - 聚类数量: 7, 轮廓系数: 0.8897
+2024-11-11 20:21:57,027 - INFO - 聚类数量: 8, 轮廓系数: 0.8894
+2024-11-11 20:22:02,044 - INFO - 聚类数量: 9, 轮廓系数: 0.5006
+2024-11-11 20:22:07,059 - INFO - 聚类数量: 10, 轮廓系数: 0.5399
+2024-11-11 20:22:07,059 - INFO - 最佳聚类数量为: 2
+2024-11-11 20:22:07,254 - INFO - 轮廓系数图已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_gradient_boosting\cluster_analysis\silhouette_scores.png'。
+2024-11-11 20:22:07,457 - INFO - 'mistake' 列已聚类为 2 个簇。
+2024-11-11 20:22:07,476 - INFO - 聚类 0 分析完成。Top features: ['inference_price', 'depreciation', 'arf', 'omv', 'rare_exotic']
+2024-11-11 20:22:07,481 - INFO - 聚类 1 分析完成。Top features: ['vehicle_type_sports_car', 'imported_used_vehicle', 'vehicle_type_suv', 'almost_new_car', 'curb_weight']
+2024-11-11 20:22:07,842 - INFO - 整体热力图已生成。
+2024-11-11 20:22:07,961 - INFO - 聚类 cluster_0 的热力图已生成。
+2024-11-11 20:22:08,068 - INFO - 聚类 cluster_1 的热力图已生成。
+2024-11-11 20:22:08,069 - INFO - 分析结果已保存为 JSON 文件: final_report/approach1/without_cluster/error_analysis/mistake_analysis_gradient_boosting\gradient_boosting_mistake_analysis.json
+2024-11-11 20:22:08,069 - INFO - 误差分析完成。
+2024-11-11 21:04:42,260 - INFO - 成功加载 5 个模型。
+2024-11-11 21:04:42,314 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 21:04:42,314 - INFO - 成功加载 5 个模型。
+2024-11-11 21:04:42,369 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:04:42,371 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 21:04:42,389 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:04:42,389 - ERROR - 误差分析过程中发生错误: 'cat_imputer'
+2024-11-11 21:04:42,424 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:04:42,441 - INFO - 成功加载 5 个模型。
+2024-11-11 21:04:42,446 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:04:42,497 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 21:04:42,547 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:04:42,562 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:04:42,562 - ERROR - 误差分析过程中发生错误: ('Expecting data to be a DMatrix object, got: ', <class 'pandas.core.frame.DataFrame'>)
+2024-11-11 21:04:42,711 - INFO - 模型 1 预测完成。
+2024-11-11 21:04:42,757 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:04:42,772 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:04:43,026 - INFO - 模型 2 预测完成。
+2024-11-11 21:04:43,086 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:04:43,103 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:04:43,283 - ERROR - 加载模型时出错: "模型 1 的 'preprocessors' 缺少 'scaler'。"
+2024-11-11 21:04:43,284 - ERROR - 误差分析过程中发生错误: "模型 1 的 'preprocessors' 缺少 'scaler'。"
+2024-11-11 21:04:43,382 - INFO - 模型 3 预测完成。
+2024-11-11 21:04:43,434 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:04:43,450 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:04:43,720 - INFO - 模型 4 预测完成。
+2024-11-11 21:04:43,762 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:04:43,776 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:04:44,047 - INFO - 模型 5 预测完成。
+2024-11-11 21:04:44,048 - INFO - 推理和误差计算完成。
+2024-11-11 21:04:44,249 - INFO - 推理结果已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_gradient_boosting\gradient_boosting_inference.csv'。
+2024-11-11 21:04:49,745 - INFO - 聚类数量: 2, 轮廓系数: 0.9912
+2024-11-11 21:04:55,133 - INFO - 聚类数量: 3, 轮廓系数: 0.9790
+2024-11-11 21:05:00,744 - INFO - 聚类数量: 4, 轮廓系数: 0.9401
+2024-11-11 21:05:06,453 - INFO - 聚类数量: 5, 轮廓系数: 0.9309
+2024-11-11 21:05:12,107 - INFO - 聚类数量: 6, 轮廓系数: 0.9124
+2024-11-11 21:05:17,533 - INFO - 聚类数量: 7, 轮廓系数: 0.8897
+2024-11-11 21:05:22,971 - INFO - 聚类数量: 8, 轮廓系数: 0.8894
+2024-11-11 21:05:28,039 - INFO - 聚类数量: 9, 轮廓系数: 0.5006
+2024-11-11 21:05:33,156 - INFO - 聚类数量: 10, 轮廓系数: 0.5399
+2024-11-11 21:05:33,157 - INFO - 最佳聚类数量为: 2
+2024-11-11 21:05:33,390 - INFO - 轮廓系数图已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_gradient_boosting\cluster_analysis\silhouette_scores.png'。
+2024-11-11 21:05:33,618 - INFO - 'mistake' 列已聚类为 2 个簇。
+2024-11-11 21:05:33,638 - INFO - 聚类 0 分析完成。Top features: ['inference_price', 'depreciation', 'arf', 'omv', 'rare_exotic']
+2024-11-11 21:05:33,644 - INFO - 聚类 1 分析完成。Top features: ['vehicle_type_sports_car', 'imported_used_vehicle', 'vehicle_type_suv', 'almost_new_car', 'curb_weight']
+2024-11-11 21:05:33,989 - INFO - 整体热力图已生成。
+2024-11-11 21:05:34,098 - INFO - 聚类 cluster_0 的热力图已生成。
+2024-11-11 21:05:34,209 - INFO - 聚类 cluster_1 的热力图已生成。
+2024-11-11 21:05:34,210 - INFO - 分析结果已保存为 JSON 文件: final_report/approach1/without_cluster/error_analysis/mistake_analysis_gradient_boosting\gradient_boosting_mistake_analysis.json
+2024-11-11 21:05:34,210 - INFO - 误差分析完成。
+2024-11-11 21:06:21,247 - INFO - 成功加载 5 个模型。
+2024-11-11 21:06:21,279 - INFO - 成功加载 5 个模型。
+2024-11-11 21:06:21,306 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 21:06:21,335 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 21:06:21,373 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:06:21,393 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:06:21,394 - ERROR - 误差分析过程中发生错误: 'cat_imputer'
+2024-11-11 21:06:21,399 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:06:21,417 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:06:21,440 - INFO - 成功加载 5 个模型。
+2024-11-11 21:06:21,495 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 21:06:21,547 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:06:21,566 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:06:21,566 - ERROR - 误差分析过程中发生错误: ('Expecting data to be a DMatrix object, got: ', <class 'pandas.core.frame.DataFrame'>)
+2024-11-11 21:06:21,690 - INFO - 模型 1 预测完成。
+2024-11-11 21:06:21,739 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:06:21,753 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:06:21,997 - INFO - 模型 2 预测完成。
+2024-11-11 21:06:22,039 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:06:22,053 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:06:22,235 - ERROR - 加载模型时出错: "模型 1 的 'preprocessors' 缺少 'scaler'。"
+2024-11-11 21:06:22,235 - ERROR - 误差分析过程中发生错误: "模型 1 的 'preprocessors' 缺少 'scaler'。"
+2024-11-11 21:06:22,307 - INFO - 模型 3 预测完成。
+2024-11-11 21:06:22,349 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:06:22,362 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:06:22,619 - INFO - 模型 4 预测完成。
+2024-11-11 21:06:22,661 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:06:22,676 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:06:22,932 - INFO - 模型 5 预测完成。
+2024-11-11 21:06:22,933 - INFO - 推理和误差计算完成。
+2024-11-11 21:06:23,126 - INFO - 推理结果已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_gradient_boosting\gradient_boosting_inference.csv'。
+2024-11-11 21:06:28,375 - INFO - 聚类数量: 2, 轮廓系数: 0.9912
+2024-11-11 21:06:33,556 - INFO - 聚类数量: 3, 轮廓系数: 0.9790
+2024-11-11 21:06:38,813 - INFO - 聚类数量: 4, 轮廓系数: 0.9401
+2024-11-11 21:06:44,292 - INFO - 聚类数量: 5, 轮廓系数: 0.9309
+2024-11-11 21:06:49,549 - INFO - 聚类数量: 6, 轮廓系数: 0.9124
+2024-11-11 21:06:54,697 - INFO - 聚类数量: 7, 轮廓系数: 0.8897
+2024-11-11 21:07:00,114 - INFO - 聚类数量: 8, 轮廓系数: 0.8894
+2024-11-11 21:07:05,022 - INFO - 聚类数量: 9, 轮廓系数: 0.5006
+2024-11-11 21:07:09,988 - INFO - 聚类数量: 10, 轮廓系数: 0.5399
+2024-11-11 21:07:09,988 - INFO - 最佳聚类数量为: 2
+2024-11-11 21:07:10,178 - INFO - 轮廓系数图已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_gradient_boosting\cluster_analysis\silhouette_scores.png'。
+2024-11-11 21:07:10,382 - INFO - 'mistake' 列已聚类为 2 个簇。
+2024-11-11 21:07:10,400 - INFO - 聚类 0 分析完成。Top features: ['inference_price', 'depreciation', 'arf', 'omv', 'rare_exotic']
+2024-11-11 21:07:10,405 - INFO - 聚类 1 分析完成。Top features: ['vehicle_type_sports_car', 'imported_used_vehicle', 'vehicle_type_suv', 'almost_new_car', 'curb_weight']
+2024-11-11 21:07:10,709 - INFO - 整体热力图已生成。
+2024-11-11 21:07:10,812 - INFO - 聚类 cluster_0 的热力图已生成。
+2024-11-11 21:07:10,915 - INFO - 聚类 cluster_1 的热力图已生成。
+2024-11-11 21:07:10,916 - INFO - 分析结果已保存为 JSON 文件: final_report/approach1/without_cluster/error_analysis/mistake_analysis_gradient_boosting\gradient_boosting_mistake_analysis.json
+2024-11-11 21:07:10,916 - INFO - 误差分析完成。
+2024-11-11 21:49:57,994 - INFO - 开始加载模型: final_report\approach1\without_cluster\gradient_boosting_models.pkl
+2024-11-11 21:49:57,994 - INFO - 开始加载模型: final_report\approach1\without_cluster\lightgbm_models.pkl
+2024-11-11 21:49:58,000 - INFO - 开始加载模型: final_report\approach1\without_cluster\xgboost_models.pkl
+2024-11-11 21:49:58,001 - INFO - 开始加载模型: final_report\approach1\without_cluster\catboost_models.pkl
+2024-11-11 21:49:58,103 - INFO - 成功加载模型文件: final_report\approach1\without_cluster\catboost_models.pkl. 模型数量: 5
+2024-11-11 21:49:58,103 - INFO - 检查模型 1 的预处理器...
+2024-11-11 21:49:58,104 - INFO - 模型 1 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 21:49:58,104 - INFO - 检查模型 2 的预处理器...
+2024-11-11 21:49:58,104 - INFO - 模型 2 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 21:49:58,104 - INFO - 检查模型 3 的预处理器...
+2024-11-11 21:49:58,104 - INFO - 模型 3 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 21:49:58,104 - INFO - 检查模型 4 的预处理器...
+2024-11-11 21:49:58,105 - INFO - 模型 4 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 21:49:58,105 - INFO - 检查模型 5 的预处理器...
+2024-11-11 21:49:58,105 - INFO - 模型 5 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 21:49:58,105 - INFO - 模型 catboost 加载完成。模型数量: 5
+2024-11-11 21:49:58,158 - INFO - 训练数据加载完成。数据形状: (25000, 42)
+2024-11-11 21:49:58,158 - INFO - 开始进行推理并计算误差。
+2024-11-11 21:49:58,163 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 21:49:58,168 - INFO - 成功加载模型文件: final_report\approach1\without_cluster\gradient_boosting_models.pkl. 模型数量: 5
+2024-11-11 21:49:58,168 - INFO - 检查模型 1 的预处理器...
+2024-11-11 21:49:58,168 - INFO - 模型 1 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 21:49:58,169 - INFO - 检查模型 2 的预处理器...
+2024-11-11 21:49:58,169 - INFO - 模型 2 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 21:49:58,169 - INFO - 检查模型 3 的预处理器...
+2024-11-11 21:49:58,169 - INFO - 模型 3 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 21:49:58,170 - INFO - 检查模型 4 的预处理器...
+2024-11-11 21:49:58,170 - INFO - 模型 4 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 21:49:58,170 - INFO - 检查模型 5 的预处理器...
+2024-11-11 21:49:58,170 - INFO - 模型 5 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 21:49:58,171 - INFO - 模型 gradient_boosting 加载完成。模型数量: 5
+2024-11-11 21:49:58,224 - INFO - 训练数据加载完成。数据形状: (25000, 42)
+2024-11-11 21:49:58,224 - INFO - 开始进行推理并计算误差。
+2024-11-11 21:49:58,226 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:49:58,230 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 21:49:58,245 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:49:58,246 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 21:49:58,246 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 21:49:58,246 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 21:49:58,247 - INFO - 模型 1 的数据预处理完成。
+2024-11-11 21:49:58,258 - INFO - 模型 1 预测完成。
+2024-11-11 21:49:58,291 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:49:58,291 - INFO - 成功加载模型文件: final_report\approach1\without_cluster\xgboost_models.pkl. 模型数量: 5
+2024-11-11 21:49:58,292 - INFO - 检查模型 1 的预处理器...
+2024-11-11 21:49:58,292 - INFO - 模型 1 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 21:49:58,293 - INFO - 检查模型 2 的预处理器...
+2024-11-11 21:49:58,293 - INFO - 模型 2 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 21:49:58,293 - INFO - 检查模型 3 的预处理器...
+2024-11-11 21:49:58,293 - INFO - 模型 3 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 21:49:58,294 - INFO - 检查模型 4 的预处理器...
+2024-11-11 21:49:58,294 - INFO - 模型 4 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 21:49:58,294 - INFO - 检查模型 5 的预处理器...
+2024-11-11 21:49:58,294 - INFO - 模型 5 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 21:49:58,294 - INFO - 模型 xgboost 加载完成。模型数量: 5
+2024-11-11 21:49:58,308 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:49:58,309 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 21:49:58,309 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 21:49:58,309 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 21:49:58,309 - INFO - 模型 1 的数据预处理完成。
+2024-11-11 21:49:58,322 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:49:58,340 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:49:58,341 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 21:49:58,341 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 21:49:58,341 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 21:49:58,342 - INFO - 模型 2 的数据预处理完成。
+2024-11-11 21:49:58,350 - INFO - 模型 2 预测完成。
+2024-11-11 21:49:58,355 - INFO - 训练数据加载完成。数据形状: (25000, 42)
+2024-11-11 21:49:58,355 - INFO - 开始进行推理并计算误差。
+2024-11-11 21:49:58,364 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 21:49:58,408 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:49:58,416 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:49:58,429 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:49:58,429 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 21:49:58,430 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 21:49:58,430 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 21:49:58,431 - INFO - 模型 3 的数据预处理完成。
+2024-11-11 21:49:58,433 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:49:58,433 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 21:49:58,434 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 21:49:58,435 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 21:49:58,435 - INFO - 模型 1 的数据预处理完成。
+2024-11-11 21:49:58,435 - ERROR - 模型 1 预测时出错: ('Expecting data to be a DMatrix object, got: ', <class 'pandas.core.frame.DataFrame'>)
+2024-11-11 21:49:58,436 - ERROR - 误差分析过程中发生错误: ('Expecting data to be a DMatrix object, got: ', <class 'pandas.core.frame.DataFrame'>)
+2024-11-11 21:49:58,437 - INFO - 模型 3 预测完成。
+2024-11-11 21:49:58,495 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:49:58,511 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:49:58,513 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 21:49:58,513 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 21:49:58,513 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 21:49:58,513 - INFO - 模型 4 的数据预处理完成。
+2024-11-11 21:49:58,520 - INFO - 模型 4 预测完成。
+2024-11-11 21:49:58,569 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:49:58,588 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:49:58,588 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 21:49:58,589 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 21:49:58,589 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 21:49:58,589 - INFO - 模型 5 的数据预处理完成。
+2024-11-11 21:49:58,598 - INFO - 模型 5 预测完成。
+2024-11-11 21:49:58,600 - INFO - 推理和误差计算完成。
+2024-11-11 21:49:58,620 - INFO - 模型 1 预测完成。
+2024-11-11 21:49:58,676 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:49:58,691 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:49:58,691 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 21:49:58,692 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 21:49:58,692 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 21:49:58,692 - INFO - 模型 2 的数据预处理完成。
+2024-11-11 21:49:58,811 - INFO - 推理结果已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_catboost\catboost_inference.csv'。
+2024-11-11 21:49:58,811 - INFO - 开始聚类误差。
+2024-11-11 21:49:58,952 - INFO - 模型 2 预测完成。
+2024-11-11 21:49:58,998 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:49:59,012 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:49:59,013 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 21:49:59,013 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 21:49:59,013 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 21:49:59,014 - INFO - 模型 3 的数据预处理完成。
+2024-11-11 21:49:59,247 - INFO - 成功加载模型文件: final_report\approach1\without_cluster\lightgbm_models.pkl. 模型数量: 5
+2024-11-11 21:49:59,248 - INFO - 检查模型 1 的预处理器...
+2024-11-11 21:49:59,248 - INFO - 模型 1 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder']
+2024-11-11 21:49:59,249 - INFO - 检查模型 2 的预处理器...
+2024-11-11 21:49:59,249 - INFO - 模型 2 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder']
+2024-11-11 21:49:59,250 - INFO - 检查模型 3 的预处理器...
+2024-11-11 21:49:59,250 - INFO - 模型 3 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder']
+2024-11-11 21:49:59,250 - INFO - 检查模型 4 的预处理器...
+2024-11-11 21:49:59,251 - INFO - 模型 4 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder']
+2024-11-11 21:49:59,251 - INFO - 检查模型 5 的预处理器...
+2024-11-11 21:49:59,251 - INFO - 模型 5 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder']
+2024-11-11 21:49:59,252 - INFO - 模型 lightgbm 加载完成。模型数量: 5
+2024-11-11 21:49:59,321 - INFO - 模型 3 预测完成。
+2024-11-11 21:49:59,331 - INFO - 训练数据加载完成。数据形状: (25000, 42)
+2024-11-11 21:49:59,332 - INFO - 开始进行推理并计算误差。
+2024-11-11 21:49:59,345 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 21:49:59,421 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:49:59,431 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:49:59,431 - WARNING - 'scaler' 预处理器缺失，跳过标准化。
+2024-11-11 21:49:59,432 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 21:49:59,432 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 21:49:59,432 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 21:49:59,432 - INFO - 模型 1 的数据预处理完成。
+2024-11-11 21:49:59,445 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:49:59,446 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 21:49:59,446 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 21:49:59,446 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 21:49:59,447 - INFO - 模型 4 的数据预处理完成。
+2024-11-11 21:49:59,777 - INFO - 模型 4 预测完成。
+2024-11-11 21:49:59,841 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:49:59,858 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:49:59,859 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 21:49:59,859 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 21:49:59,860 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 21:49:59,860 - INFO - 模型 5 的数据预处理完成。
+2024-11-11 21:50:00,172 - INFO - 模型 5 预测完成。
+2024-11-11 21:50:00,173 - INFO - 推理和误差计算完成。
+2024-11-11 21:50:00,406 - INFO - 推理结果已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_gradient_boosting\gradient_boosting_inference.csv'。
+2024-11-11 21:50:00,407 - INFO - 开始聚类误差。
+2024-11-11 21:50:01,086 - INFO - 模型 1 预测完成。
+2024-11-11 21:50:01,149 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:50:01,150 - WARNING - 'scaler' 预处理器缺失，跳过标准化。
+2024-11-11 21:50:01,150 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 21:50:01,151 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 21:50:01,151 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 21:50:01,152 - INFO - 模型 2 的数据预处理完成。
+2024-11-11 21:50:02,788 - INFO - 模型 2 预测完成。
+2024-11-11 21:50:02,863 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:50:02,863 - WARNING - 'scaler' 预处理器缺失，跳过标准化。
+2024-11-11 21:50:02,863 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 21:50:02,864 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 21:50:02,864 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 21:50:02,865 - INFO - 模型 3 的数据预处理完成。
+2024-11-11 21:50:04,372 - INFO - 模型 3 预测完成。
+2024-11-11 21:50:04,421 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:50:04,422 - WARNING - 'scaler' 预处理器缺失，跳过标准化。
+2024-11-11 21:50:04,422 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 21:50:04,422 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 21:50:04,422 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 21:50:04,423 - INFO - 模型 4 的数据预处理完成。
+2024-11-11 21:50:05,385 - INFO - 聚类数量: 2, 轮廓系数: 0.9946
+2024-11-11 21:50:05,877 - INFO - 模型 4 预测完成。
+2024-11-11 21:50:05,928 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:50:05,928 - WARNING - 'scaler' 预处理器缺失，跳过标准化。
+2024-11-11 21:50:05,928 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 21:50:05,928 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 21:50:05,928 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 21:50:05,929 - INFO - 模型 5 的数据预处理完成。
+2024-11-11 21:50:06,816 - INFO - 聚类数量: 2, 轮廓系数: 0.9912
+2024-11-11 21:50:07,360 - INFO - 模型 5 预测完成。
+2024-11-11 21:50:07,362 - INFO - 推理和误差计算完成。
+2024-11-11 21:50:07,620 - INFO - 推理结果已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_lightgbm\lightgbm_inference.csv'。
+2024-11-11 21:50:07,620 - INFO - 开始聚类误差。
+2024-11-11 21:50:12,195 - INFO - 聚类数量: 3, 轮廓系数: 0.9603
+2024-11-11 21:50:13,731 - INFO - 聚类数量: 3, 轮廓系数: 0.9790
+2024-11-11 21:50:14,493 - INFO - 聚类数量: 2, 轮廓系数: 0.8907
+2024-11-11 21:50:18,756 - INFO - 聚类数量: 4, 轮廓系数: 0.9451
+2024-11-11 21:50:20,386 - INFO - 聚类数量: 4, 轮廓系数: 0.9401
+2024-11-11 21:50:21,093 - INFO - 聚类数量: 3, 轮廓系数: 0.8152
+2024-11-11 21:50:25,392 - INFO - 聚类数量: 5, 轮廓系数: 0.8372
+2024-11-11 21:50:26,955 - INFO - 聚类数量: 5, 轮廓系数: 0.9309
+2024-11-11 21:50:27,295 - INFO - 聚类数量: 4, 轮廓系数: 0.6517
+2024-11-11 21:50:32,369 - INFO - 聚类数量: 6, 轮廓系数: 0.7986
+2024-11-11 21:50:33,893 - INFO - 聚类数量: 5, 轮廓系数: 0.6189
+2024-11-11 21:50:34,004 - INFO - 聚类数量: 6, 轮廓系数: 0.9124
+2024-11-11 21:50:38,430 - INFO - 聚类数量: 7, 轮廓系数: 0.4765
+2024-11-11 21:50:40,340 - INFO - 聚类数量: 6, 轮廓系数: 0.5926
+2024-11-11 21:50:40,740 - INFO - 聚类数量: 7, 轮廓系数: 0.8897
+2024-11-11 21:50:44,936 - INFO - 聚类数量: 8, 轮廓系数: 0.5034
+2024-11-11 21:50:46,724 - INFO - 聚类数量: 7, 轮廓系数: 0.5758
+2024-11-11 21:50:47,667 - INFO - 聚类数量: 8, 轮廓系数: 0.8894
+2024-11-11 21:50:50,767 - INFO - 聚类数量: 9, 轮廓系数: 0.5297
+2024-11-11 21:50:52,470 - INFO - 聚类数量: 8, 轮廓系数: 0.5594
+2024-11-11 21:50:53,556 - INFO - 聚类数量: 9, 轮廓系数: 0.5006
+2024-11-11 21:50:56,514 - INFO - 聚类数量: 10, 轮廓系数: 0.5299
+2024-11-11 21:50:56,514 - INFO - 最佳聚类数量为: 2
+2024-11-11 21:50:56,726 - INFO - 轮廓系数图已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_catboost\cluster_analysis\silhouette_scores.png'。
+2024-11-11 21:50:56,937 - INFO - 'mistake' 列已聚类为 2 个簇。
+2024-11-11 21:50:56,937 - INFO - 开始误差分析。
+2024-11-11 21:50:56,958 - INFO - 聚类 0 分析完成。Top features: ['depreciation', 'dereg_value', 'inference_price', 'road_tax', 'engine_cap']
+2024-11-11 21:50:56,966 - INFO - 聚类 1 分析完成。Top features: ['manufactured', 'vehicle_type_bus_mini_bus', 'vehicle_type_hatchback', 'vehicle_type_luxury_sedan', 'vehicle_type_midsized_sedan']
+2024-11-11 21:50:56,966 - INFO - 开始生成热力图。
+2024-11-11 21:50:57,242 - INFO - 整体热力图已生成。
+2024-11-11 21:50:57,349 - INFO - 聚类 cluster_0 的热力图已生成。
+2024-11-11 21:50:57,484 - INFO - 聚类 cluster_1 的热力图已生成。
+2024-11-11 21:50:57,484 - INFO - 保存分析结果。
+2024-11-11 21:50:57,485 - INFO - 分析结果已保存为 JSON 文件: final_report/approach1/without_cluster/error_analysis/mistake_analysis_catboost\catboost_mistake_analysis.json
+2024-11-11 21:50:57,486 - INFO - 误差分析完成。
+2024-11-11 21:50:58,136 - INFO - 聚类数量: 9, 轮廓系数: 0.5547
+2024-11-11 21:50:59,522 - INFO - 聚类数量: 10, 轮廓系数: 0.5399
+2024-11-11 21:50:59,522 - INFO - 最佳聚类数量为: 2
+2024-11-11 21:50:59,749 - INFO - 轮廓系数图已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_gradient_boosting\cluster_analysis\silhouette_scores.png'。
+2024-11-11 21:50:59,970 - INFO - 'mistake' 列已聚类为 2 个簇。
+2024-11-11 21:50:59,971 - INFO - 开始误差分析。
+2024-11-11 21:50:59,994 - INFO - 聚类 0 分析完成。Top features: ['inference_price', 'depreciation', 'arf', 'omv', 'rare_exotic']
+2024-11-11 21:51:00,000 - INFO - 聚类 1 分析完成。Top features: ['vehicle_type_sports_car', 'imported_used_vehicle', 'vehicle_type_suv', 'almost_new_car', 'curb_weight']
+2024-11-11 21:51:00,000 - INFO - 开始生成热力图。
+2024-11-11 21:51:00,279 - INFO - 整体热力图已生成。
+2024-11-11 21:51:00,395 - INFO - 聚类 cluster_0 的热力图已生成。
+2024-11-11 21:51:00,548 - INFO - 聚类 cluster_1 的热力图已生成。
+2024-11-11 21:51:00,549 - INFO - 保存分析结果。
+2024-11-11 21:51:00,550 - INFO - 分析结果已保存为 JSON 文件: final_report/approach1/without_cluster/error_analysis/mistake_analysis_gradient_boosting\gradient_boosting_mistake_analysis.json
+2024-11-11 21:51:00,551 - INFO - 误差分析完成。
+2024-11-11 21:51:03,000 - INFO - 聚类数量: 10, 轮廓系数: 0.5545
+2024-11-11 21:51:03,001 - INFO - 最佳聚类数量为: 2
+2024-11-11 21:51:03,192 - INFO - 轮廓系数图已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_lightgbm\cluster_analysis\silhouette_scores.png'。
+2024-11-11 21:51:03,458 - INFO - 'mistake' 列已聚类为 2 个簇。
+2024-11-11 21:51:03,459 - INFO - 开始误差分析。
+2024-11-11 21:51:03,480 - INFO - 聚类 0 分析完成。Top features: ['inference_price', 'dereg_value', 'arf', 'power', 'omv']
+2024-11-11 21:51:03,489 - INFO - 聚类 1 分析完成。Top features: ['inference_price', 'arf', 'dereg_value', 'omv', 'depreciation']
+2024-11-11 21:51:03,490 - INFO - 开始生成热力图。
+2024-11-11 21:51:03,797 - INFO - 整体热力图已生成。
+2024-11-11 21:51:03,922 - INFO - 聚类 cluster_0 的热力图已生成。
+2024-11-11 21:51:04,024 - INFO - 聚类 cluster_1 的热力图已生成。
+2024-11-11 21:51:04,024 - INFO - 保存分析结果。
+2024-11-11 21:51:04,025 - INFO - 分析结果已保存为 JSON 文件: final_report/approach1/without_cluster/error_analysis/mistake_analysis_lightgbm\lightgbm_mistake_analysis.json
+2024-11-11 21:51:04,025 - INFO - 误差分析完成。
+2024-11-11 21:54:06,718 - INFO - 开始加载模型: final_report\approach1\without_cluster\lightgbm_models.pkl
+2024-11-11 21:54:06,722 - INFO - 开始加载模型: final_report\approach1\without_cluster\catboost_models.pkl
+2024-11-11 21:54:06,751 - INFO - 开始加载模型: final_report\approach1\without_cluster\xgboost_models.pkl
+2024-11-11 21:54:06,756 - INFO - 成功加载模型文件: final_report\approach1\without_cluster\catboost_models.pkl. 模型数量: 5
+2024-11-11 21:54:06,756 - INFO - 检查模型 1 的预处理器...
+2024-11-11 21:54:06,756 - INFO - 模型 1 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 21:54:06,756 - INFO - 检查模型 2 的预处理器...
+2024-11-11 21:54:06,757 - INFO - 模型 2 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 21:54:06,757 - INFO - 检查模型 3 的预处理器...
+2024-11-11 21:54:06,757 - INFO - 模型 3 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 21:54:06,757 - INFO - 检查模型 4 的预处理器...
+2024-11-11 21:54:06,757 - INFO - 模型 4 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 21:54:06,757 - INFO - 检查模型 5 的预处理器...
+2024-11-11 21:54:06,757 - INFO - 模型 5 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 21:54:06,757 - INFO - 模型 catboost 加载完成。模型数量: 5
+2024-11-11 21:54:06,760 - INFO - 开始加载模型: final_report\approach1\without_cluster\gradient_boosting_models.pkl
+2024-11-11 21:54:06,806 - INFO - 训练数据加载完成。数据形状: (25000, 42)
+2024-11-11 21:54:06,806 - INFO - 开始进行推理并计算误差。
+2024-11-11 21:54:06,811 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 21:54:06,857 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:54:06,862 - INFO - 成功加载模型文件: final_report\approach1\without_cluster\gradient_boosting_models.pkl. 模型数量: 5
+2024-11-11 21:54:06,863 - INFO - 检查模型 1 的预处理器...
+2024-11-11 21:54:06,863 - INFO - 模型 1 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 21:54:06,863 - INFO - 检查模型 2 的预处理器...
+2024-11-11 21:54:06,863 - INFO - 模型 2 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 21:54:06,863 - INFO - 检查模型 3 的预处理器...
+2024-11-11 21:54:06,863 - INFO - 模型 3 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 21:54:06,863 - INFO - 检查模型 4 的预处理器...
+2024-11-11 21:54:06,863 - INFO - 模型 4 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 21:54:06,863 - INFO - 检查模型 5 的预处理器...
+2024-11-11 21:54:06,863 - INFO - 模型 5 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 21:54:06,864 - INFO - 模型 gradient_boosting 加载完成。模型数量: 5
+2024-11-11 21:54:06,871 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:54:06,871 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 21:54:06,871 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 21:54:06,871 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 21:54:06,872 - INFO - 模型 1 的数据预处理完成。
+2024-11-11 21:54:06,884 - INFO - 模型 1 的预测完成。
+2024-11-11 21:54:06,913 - INFO - 训练数据加载完成。数据形状: (25000, 42)
+2024-11-11 21:54:06,913 - INFO - 开始进行推理并计算误差。
+2024-11-11 21:54:06,918 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 21:54:06,931 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:54:06,948 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:54:06,948 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 21:54:06,949 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 21:54:06,949 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 21:54:06,950 - INFO - 模型 2 的数据预处理完成。
+2024-11-11 21:54:06,956 - INFO - 模型 2 的预测完成。
+2024-11-11 21:54:06,970 - INFO - 成功加载模型文件: final_report\approach1\without_cluster\xgboost_models.pkl. 模型数量: 5
+2024-11-11 21:54:06,971 - INFO - 检查模型 1 的预处理器...
+2024-11-11 21:54:06,971 - INFO - 模型 1 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 21:54:06,971 - INFO - 检查模型 2 的预处理器...
+2024-11-11 21:54:06,972 - INFO - 模型 2 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 21:54:06,972 - INFO - 检查模型 3 的预处理器...
+2024-11-11 21:54:06,972 - INFO - 模型 3 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 21:54:06,972 - INFO - 检查模型 4 的预处理器...
+2024-11-11 21:54:06,972 - INFO - 模型 4 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 21:54:06,973 - INFO - 检查模型 5 的预处理器...
+2024-11-11 21:54:06,973 - INFO - 模型 5 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 21:54:06,973 - INFO - 模型 xgboost 加载完成。模型数量: 5
+2024-11-11 21:54:06,981 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:54:06,997 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:54:06,997 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 21:54:06,998 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 21:54:06,998 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 21:54:06,998 - INFO - 模型 1 的数据预处理完成。
+2024-11-11 21:54:07,017 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:54:07,025 - INFO - 训练数据加载完成。数据形状: (25000, 42)
+2024-11-11 21:54:07,026 - INFO - 开始进行推理并计算误差。
+2024-11-11 21:54:07,032 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 21:54:07,037 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:54:07,037 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 21:54:07,037 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 21:54:07,037 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 21:54:07,038 - INFO - 模型 3 的数据预处理完成。
+2024-11-11 21:54:07,045 - INFO - 模型 3 的预测完成。
+2024-11-11 21:54:07,093 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:54:07,119 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:54:07,121 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:54:07,121 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 21:54:07,122 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 21:54:07,122 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 21:54:07,123 - INFO - 模型 1 的数据预处理完成。
+2024-11-11 21:54:07,123 - ERROR - 模型 1 预测时出错: ('Expecting data to be a DMatrix object, got: ', <class 'pandas.core.frame.DataFrame'>)
+2024-11-11 21:54:07,123 - ERROR - 误差分析过程中发生错误: ('Expecting data to be a DMatrix object, got: ', <class 'pandas.core.frame.DataFrame'>)
+2024-11-11 21:54:07,134 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:54:07,135 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 21:54:07,135 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 21:54:07,136 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 21:54:07,136 - INFO - 模型 4 的数据预处理完成。
+2024-11-11 21:54:07,144 - INFO - 模型 4 的预测完成。
+2024-11-11 21:54:07,192 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:54:07,206 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:54:07,206 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 21:54:07,207 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 21:54:07,207 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 21:54:07,208 - INFO - 模型 5 的数据预处理完成。
+2024-11-11 21:54:07,215 - INFO - 模型 5 的预测完成。
+2024-11-11 21:54:07,217 - INFO - 推理和误差计算完成。
+2024-11-11 21:54:07,300 - INFO - 模型 1 的预测完成。
+2024-11-11 21:54:07,346 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:54:07,361 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:54:07,362 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 21:54:07,362 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 21:54:07,362 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 21:54:07,363 - INFO - 模型 2 的数据预处理完成。
+2024-11-11 21:54:07,428 - INFO - 推理结果已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_catboost\catboost_inference.csv'。
+2024-11-11 21:54:07,428 - INFO - 开始聚类误差。
+2024-11-11 21:54:07,614 - INFO - 模型 2 的预测完成。
+2024-11-11 21:54:07,673 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:54:07,688 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:54:07,688 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 21:54:07,689 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 21:54:07,689 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 21:54:07,689 - INFO - 模型 3 的数据预处理完成。
+2024-11-11 21:54:07,894 - INFO - 成功加载模型文件: final_report\approach1\without_cluster\lightgbm_models.pkl. 模型数量: 5
+2024-11-11 21:54:07,895 - INFO - 检查模型 1 的预处理器...
+2024-11-11 21:54:07,896 - INFO - 模型 1 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder']
+2024-11-11 21:54:07,896 - INFO - 检查模型 2 的预处理器...
+2024-11-11 21:54:07,897 - INFO - 模型 2 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder']
+2024-11-11 21:54:07,897 - INFO - 检查模型 3 的预处理器...
+2024-11-11 21:54:07,897 - INFO - 模型 3 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder']
+2024-11-11 21:54:07,897 - INFO - 检查模型 4 的预处理器...
+2024-11-11 21:54:07,898 - INFO - 模型 4 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder']
+2024-11-11 21:54:07,898 - INFO - 检查模型 5 的预处理器...
+2024-11-11 21:54:07,898 - INFO - 模型 5 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder']
+2024-11-11 21:54:07,898 - INFO - 模型 lightgbm 加载完成。模型数量: 5
+2024-11-11 21:54:07,947 - INFO - 训练数据加载完成。数据形状: (25000, 42)
+2024-11-11 21:54:07,948 - INFO - 开始进行推理并计算误差。
+2024-11-11 21:54:07,952 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 21:54:07,967 - INFO - 模型 3 的预测完成。
+2024-11-11 21:54:08,012 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:54:08,012 - WARNING - 'scaler' 预处理器缺失，跳过标准化。
+2024-11-11 21:54:08,013 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 21:54:08,013 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 21:54:08,014 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 21:54:08,014 - INFO - 模型 1 的数据预处理完成。
+2024-11-11 21:54:08,028 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:54:08,048 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:54:08,049 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 21:54:08,049 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 21:54:08,049 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 21:54:08,050 - INFO - 模型 4 的数据预处理完成。
+2024-11-11 21:54:08,344 - INFO - 模型 4 的预测完成。
+2024-11-11 21:54:08,405 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:54:08,424 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 21:54:08,425 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 21:54:08,425 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 21:54:08,426 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 21:54:08,426 - INFO - 模型 5 的数据预处理完成。
+2024-11-11 21:54:08,699 - INFO - 模型 5 的预测完成。
+2024-11-11 21:54:08,700 - INFO - 推理和误差计算完成。
+2024-11-11 21:54:08,893 - INFO - 推理结果已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_gradient_boosting\gradient_boosting_inference.csv'。
+2024-11-11 21:54:08,893 - INFO - 开始聚类误差。
+2024-11-11 21:54:09,427 - INFO - 模型 1 的预测完成。
+2024-11-11 21:54:09,482 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:54:09,483 - WARNING - 'scaler' 预处理器缺失，跳过标准化。
+2024-11-11 21:54:09,483 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 21:54:09,483 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 21:54:09,483 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 21:54:09,484 - INFO - 模型 2 的数据预处理完成。
+2024-11-11 21:54:10,970 - INFO - 模型 2 的预测完成。
+2024-11-11 21:54:11,020 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:54:11,020 - WARNING - 'scaler' 预处理器缺失，跳过标准化。
+2024-11-11 21:54:11,020 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 21:54:11,020 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 21:54:11,020 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 21:54:11,021 - INFO - 模型 3 的数据预处理完成。
+2024-11-11 21:54:12,430 - INFO - 模型 3 的预测完成。
+2024-11-11 21:54:12,477 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:54:12,477 - WARNING - 'scaler' 预处理器缺失，跳过标准化。
+2024-11-11 21:54:12,477 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 21:54:12,477 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 21:54:12,477 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 21:54:12,478 - INFO - 模型 4 的数据预处理完成。
+2024-11-11 21:54:13,020 - INFO - 聚类数量: 2, 轮廓系数: 0.9946
+2024-11-11 21:54:13,855 - INFO - 模型 4 的预测完成。
+2024-11-11 21:54:13,916 - INFO - 数值特征缺失值已填充。
+2024-11-11 21:54:13,917 - WARNING - 'scaler' 预处理器缺失，跳过标准化。
+2024-11-11 21:54:13,917 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 21:54:13,918 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 21:54:13,918 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 21:54:13,919 - INFO - 模型 5 的数据预处理完成。
+2024-11-11 21:54:14,498 - INFO - 聚类数量: 2, 轮廓系数: 0.9912
+2024-11-11 21:54:15,316 - INFO - 模型 5 的预测完成。
+2024-11-11 21:54:15,317 - INFO - 推理和误差计算完成。
+2024-11-11 21:54:15,510 - INFO - 推理结果已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_lightgbm\lightgbm_inference.csv'。
+2024-11-11 21:54:15,511 - INFO - 开始聚类误差。
+2024-11-11 21:54:18,686 - INFO - 聚类数量: 3, 轮廓系数: 0.9603
+2024-11-11 21:54:20,525 - INFO - 聚类数量: 3, 轮廓系数: 0.9790
+2024-11-11 21:54:21,747 - INFO - 聚类数量: 2, 轮廓系数: 0.8907
+2024-11-11 21:54:24,627 - INFO - 聚类数量: 4, 轮廓系数: 0.9451
+2024-11-11 21:54:26,538 - INFO - 聚类数量: 4, 轮廓系数: 0.9401
+2024-11-11 21:54:27,841 - INFO - 聚类数量: 3, 轮廓系数: 0.8152
+2024-11-11 21:54:30,669 - INFO - 聚类数量: 5, 轮廓系数: 0.8372
+2024-11-11 21:54:32,414 - INFO - 聚类数量: 5, 轮廓系数: 0.9309
+2024-11-11 21:54:33,811 - INFO - 聚类数量: 4, 轮廓系数: 0.6517
+2024-11-11 21:54:36,598 - INFO - 聚类数量: 6, 轮廓系数: 0.7986
+2024-11-11 21:54:38,381 - INFO - 聚类数量: 6, 轮廓系数: 0.9124
+2024-11-11 21:54:39,677 - INFO - 聚类数量: 5, 轮廓系数: 0.6189
+2024-11-11 21:54:42,185 - INFO - 聚类数量: 7, 轮廓系数: 0.4765
+2024-11-11 21:54:44,637 - INFO - 聚类数量: 7, 轮廓系数: 0.8897
+2024-11-11 21:54:45,596 - INFO - 聚类数量: 6, 轮廓系数: 0.5926
+2024-11-11 21:54:48,131 - INFO - 聚类数量: 8, 轮廓系数: 0.5034
+2024-11-11 21:54:51,046 - INFO - 聚类数量: 8, 轮廓系数: 0.8894
+2024-11-11 21:54:51,614 - INFO - 聚类数量: 7, 轮廓系数: 0.5758
+2024-11-11 21:54:54,360 - INFO - 聚类数量: 9, 轮廓系数: 0.5297
+2024-11-11 21:54:57,218 - INFO - 聚类数量: 9, 轮廓系数: 0.5006
+2024-11-11 21:54:57,633 - INFO - 聚类数量: 8, 轮廓系数: 0.5594
+2024-11-11 21:55:00,436 - INFO - 聚类数量: 10, 轮廓系数: 0.5299
+2024-11-11 21:55:00,437 - INFO - 最佳聚类数量为: 2
+2024-11-11 21:55:00,685 - INFO - 轮廓系数图已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_catboost\cluster_analysis\silhouette_scores.png'。
+2024-11-11 21:55:00,897 - INFO - 'mistake' 列已聚类为 2 个簇。
+2024-11-11 21:55:00,898 - INFO - 开始误差分析。
+2024-11-11 21:55:00,918 - INFO - 聚类 0 分析完成。Top features: ['depreciation', 'dereg_value', 'inference_price', 'road_tax', 'engine_cap']
+2024-11-11 21:55:00,928 - INFO - 聚类 1 分析完成。Top features: ['manufactured', 'vehicle_type_bus_mini_bus', 'vehicle_type_hatchback', 'vehicle_type_luxury_sedan', 'vehicle_type_midsized_sedan']
+2024-11-11 21:55:00,929 - INFO - 开始生成热力图。
+2024-11-11 21:55:01,213 - INFO - 整体热力图已生成。
+2024-11-11 21:55:01,336 - INFO - 聚类 cluster_0 的热力图已生成。
+2024-11-11 21:55:01,345 - WARNING - 聚类 cluster_1 的相关性矩阵包含 NaN，跳过热力图生成。
+2024-11-11 21:55:01,346 - INFO - 保存分析结果。
+2024-11-11 21:55:01,347 - INFO - 分析结果已保存为 JSON 文件: final_report/approach1/without_cluster/error_analysis/mistake_analysis_catboost\catboost_mistake_analysis.json
+2024-11-11 21:55:01,347 - INFO - 误差分析完成。
+2024-11-11 21:55:03,107 - INFO - 聚类数量: 10, 轮廓系数: 0.5399
+2024-11-11 21:55:03,109 - INFO - 最佳聚类数量为: 2
+2024-11-11 21:55:03,237 - INFO - 聚类数量: 9, 轮廓系数: 0.5547
+2024-11-11 21:55:03,346 - INFO - 轮廓系数图已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_gradient_boosting\cluster_analysis\silhouette_scores.png'。
+2024-11-11 21:55:03,570 - INFO - 'mistake' 列已聚类为 2 个簇。
+2024-11-11 21:55:03,570 - INFO - 开始误差分析。
+2024-11-11 21:55:03,588 - INFO - 聚类 0 分析完成。Top features: ['inference_price', 'depreciation', 'arf', 'omv', 'rare_exotic']
+2024-11-11 21:55:03,605 - INFO - 聚类 1 分析完成。Top features: ['vehicle_type_sports_car', 'imported_used_vehicle', 'vehicle_type_suv', 'almost_new_car', 'curb_weight']
+2024-11-11 21:55:03,606 - INFO - 开始生成热力图。
+2024-11-11 21:55:03,888 - INFO - 整体热力图已生成。
+2024-11-11 21:55:03,994 - INFO - 聚类 cluster_0 的热力图已生成。
+2024-11-11 21:55:04,109 - INFO - 聚类 cluster_1 的热力图已生成。
+2024-11-11 21:55:04,110 - INFO - 保存分析结果。
+2024-11-11 21:55:04,111 - INFO - 分析结果已保存为 JSON 文件: final_report/approach1/without_cluster/error_analysis/mistake_analysis_gradient_boosting\gradient_boosting_mistake_analysis.json
+2024-11-11 21:55:04,111 - INFO - 误差分析完成。
+2024-11-11 21:55:08,185 - INFO - 聚类数量: 10, 轮廓系数: 0.5545
+2024-11-11 21:55:08,185 - INFO - 最佳聚类数量为: 2
+2024-11-11 21:55:08,405 - INFO - 轮廓系数图已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_lightgbm\cluster_analysis\silhouette_scores.png'。
+2024-11-11 21:55:08,690 - INFO - 'mistake' 列已聚类为 2 个簇。
+2024-11-11 21:55:08,691 - INFO - 开始误差分析。
+2024-11-11 21:55:08,707 - INFO - 聚类 0 分析完成。Top features: ['inference_price', 'dereg_value', 'arf', 'power', 'omv']
+2024-11-11 21:55:08,714 - INFO - 聚类 1 分析完成。Top features: ['inference_price', 'arf', 'dereg_value', 'omv', 'depreciation']
+2024-11-11 21:55:08,715 - INFO - 开始生成热力图。
+2024-11-11 21:55:08,982 - INFO - 整体热力图已生成。
+2024-11-11 21:55:09,147 - INFO - 聚类 cluster_0 的热力图已生成。
+2024-11-11 21:55:09,247 - INFO - 聚类 cluster_1 的热力图已生成。
+2024-11-11 21:55:09,248 - INFO - 保存分析结果。
+2024-11-11 21:55:09,248 - INFO - 分析结果已保存为 JSON 文件: final_report/approach1/without_cluster/error_analysis/mistake_analysis_lightgbm\lightgbm_mistake_analysis.json
+2024-11-11 21:55:09,248 - INFO - 误差分析完成。
+2024-11-11 22:09:51,511 - INFO - 开始加载模型: final_report\approach1\without_cluster\catboost_models.pkl
+2024-11-11 22:09:51,530 - INFO - 开始加载模型: final_report\approach1\without_cluster\xgboost_models.pkl
+2024-11-11 22:09:51,530 - INFO - 开始加载模型: final_report\approach1\without_cluster\gradient_boosting_models.pkl
+2024-11-11 22:09:51,542 - INFO - 成功加载模型文件: final_report\approach1\without_cluster\catboost_models.pkl. 模型数量: 5
+2024-11-11 22:09:51,542 - INFO - 检查模型 1 的预处理器...
+2024-11-11 22:09:51,542 - INFO - 模型 1 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 22:09:51,542 - INFO - 检查模型 2 的预处理器...
+2024-11-11 22:09:51,542 - INFO - 模型 2 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 22:09:51,542 - INFO - 检查模型 3 的预处理器...
+2024-11-11 22:09:51,542 - INFO - 模型 3 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 22:09:51,543 - INFO - 检查模型 4 的预处理器...
+2024-11-11 22:09:51,543 - INFO - 模型 4 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 22:09:51,543 - INFO - 检查模型 5 的预处理器...
+2024-11-11 22:09:51,543 - INFO - 模型 5 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 22:09:51,543 - INFO - 模型 catboost 加载完成。模型数量: 5
+2024-11-11 22:09:51,594 - INFO - 训练数据加载完成。数据形状: (25000, 42)
+2024-11-11 22:09:51,595 - INFO - 开始进行推理并计算误差。
+2024-11-11 22:09:51,599 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 22:09:51,636 - INFO - 成功加载模型文件: final_report\approach1\without_cluster\gradient_boosting_models.pkl. 模型数量: 5
+2024-11-11 22:09:51,636 - INFO - 检查模型 1 的预处理器...
+2024-11-11 22:09:51,636 - INFO - 模型 1 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:09:51,636 - INFO - 检查模型 2 的预处理器...
+2024-11-11 22:09:51,637 - INFO - 模型 2 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:09:51,637 - INFO - 检查模型 3 的预处理器...
+2024-11-11 22:09:51,637 - INFO - 模型 3 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:09:51,637 - INFO - 检查模型 4 的预处理器...
+2024-11-11 22:09:51,637 - INFO - 模型 4 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:09:51,637 - INFO - 检查模型 5 的预处理器...
+2024-11-11 22:09:51,637 - INFO - 模型 5 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:09:51,637 - INFO - 模型 gradient_boosting 加载完成。模型数量: 5
+2024-11-11 22:09:51,649 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:09:51,663 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:09:51,663 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:09:51,663 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:09:51,664 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:09:51,664 - INFO - 模型 1 的数据预处理完成。
+2024-11-11 22:09:51,674 - INFO - 模型 1 (CatBoostRegressor) 的预测完成。
+2024-11-11 22:09:51,691 - INFO - 训练数据加载完成。数据形状: (25000, 42)
+2024-11-11 22:09:51,692 - INFO - 开始进行推理并计算误差。
+2024-11-11 22:09:51,699 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 22:09:51,726 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:09:51,745 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:09:51,745 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:09:51,745 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:09:51,746 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:09:51,746 - INFO - 模型 2 的数据预处理完成。
+2024-11-11 22:09:51,752 - INFO - 模型 2 (CatBoostRegressor) 的预测完成。
+2024-11-11 22:09:51,765 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:09:51,782 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:09:51,783 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:09:51,783 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:09:51,783 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:09:51,784 - INFO - 模型 1 的数据预处理完成。
+2024-11-11 22:09:51,792 - INFO - 成功加载模型文件: final_report\approach1\without_cluster\xgboost_models.pkl. 模型数量: 5
+2024-11-11 22:09:51,793 - INFO - 检查模型 1 的预处理器...
+2024-11-11 22:09:51,794 - INFO - 模型 1 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:09:51,795 - INFO - 检查模型 2 的预处理器...
+2024-11-11 22:09:51,795 - INFO - 模型 2 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:09:51,795 - INFO - 检查模型 3 的预处理器...
+2024-11-11 22:09:51,796 - INFO - 模型 3 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:09:51,796 - INFO - 检查模型 4 的预处理器...
+2024-11-11 22:09:51,796 - INFO - 模型 4 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:09:51,796 - INFO - 检查模型 5 的预处理器...
+2024-11-11 22:09:51,797 - INFO - 模型 5 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:09:51,797 - INFO - 模型 xgboost 加载完成。模型数量: 5
+2024-11-11 22:09:51,826 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:09:51,843 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:09:51,843 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:09:51,843 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:09:51,843 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:09:51,844 - INFO - 模型 3 的数据预处理完成。
+2024-11-11 22:09:51,849 - INFO - 模型 3 (CatBoostRegressor) 的预测完成。
+2024-11-11 22:09:51,860 - INFO - 训练数据加载完成。数据形状: (25000, 42)
+2024-11-11 22:09:51,861 - INFO - 开始进行推理并计算误差。
+2024-11-11 22:09:51,866 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 22:09:51,902 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:09:51,916 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:09:51,916 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:09:51,917 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:09:51,917 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:09:51,917 - INFO - 模型 4 的数据预处理完成。
+2024-11-11 22:09:51,924 - INFO - 模型 4 (CatBoostRegressor) 的预测完成。
+2024-11-11 22:09:51,932 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:09:51,954 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:09:51,954 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:09:51,955 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:09:51,955 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:09:51,955 - INFO - 模型 1 的数据预处理完成。
+2024-11-11 22:09:51,955 - ERROR - 在模型 1 处理过程中发生错误: ('Expecting data to be a DMatrix object, got: ', <class 'pandas.core.frame.DataFrame'>), 错误类型: TypeError
+2024-11-11 22:09:51,956 - ERROR - 误差分析过程中发生错误: ('Expecting data to be a DMatrix object, got: ', <class 'pandas.core.frame.DataFrame'>)
+2024-11-11 22:09:51,975 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:09:51,993 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:09:51,994 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:09:51,994 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:09:51,994 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:09:51,995 - INFO - 模型 5 的数据预处理完成。
+2024-11-11 22:09:52,003 - INFO - 模型 5 (CatBoostRegressor) 的预测完成。
+2024-11-11 22:09:52,004 - INFO - 推理和误差计算完成。处理了 5 个模型的预测。
+2024-11-11 22:09:52,076 - INFO - 模型 1 (GradientBoostingRegressor) 的预测完成。
+2024-11-11 22:09:52,131 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:09:52,144 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:09:52,145 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:09:52,145 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:09:52,145 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:09:52,146 - INFO - 模型 2 的数据预处理完成。
+2024-11-11 22:09:52,216 - INFO - 推理结果已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_catboost\catboost_inference.csv'。
+2024-11-11 22:09:52,217 - INFO - 开始聚类误差。
+2024-11-11 22:09:52,398 - INFO - 模型 2 (GradientBoostingRegressor) 的预测完成。
+2024-11-11 22:09:52,447 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:09:52,464 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:09:52,464 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:09:52,465 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:09:52,465 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:09:52,465 - INFO - 模型 3 的数据预处理完成。
+2024-11-11 22:09:52,721 - INFO - 成功加载模型文件: final_report\approach1\without_cluster\lightgbm_models.pkl. 模型数量: 5
+2024-11-11 22:09:52,721 - INFO - 检查模型 1 的预处理器...
+2024-11-11 22:09:52,721 - INFO - 模型 1 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder']
+2024-11-11 22:09:52,722 - INFO - 检查模型 2 的预处理器...
+2024-11-11 22:09:52,722 - INFO - 模型 2 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder']
+2024-11-11 22:09:52,722 - INFO - 检查模型 3 的预处理器...
+2024-11-11 22:09:52,723 - INFO - 模型 3 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder']
+2024-11-11 22:09:52,723 - INFO - 检查模型 4 的预处理器...
+2024-11-11 22:09:52,723 - INFO - 模型 4 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder']
+2024-11-11 22:09:52,723 - INFO - 检查模型 5 的预处理器...
+2024-11-11 22:09:52,723 - INFO - 模型 5 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder']
+2024-11-11 22:09:52,723 - INFO - 模型 lightgbm 加载完成。模型数量: 5
+2024-11-11 22:09:52,777 - INFO - 训练数据加载完成。数据形状: (25000, 42)
+2024-11-11 22:09:52,778 - INFO - 开始进行推理并计算误差。
+2024-11-11 22:09:52,782 - INFO - 模型 3 (GradientBoostingRegressor) 的预测完成。
+2024-11-11 22:09:52,787 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 22:09:52,838 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:09:52,843 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:09:52,843 - WARNING - 'scaler' 预处理器缺失，跳过标准化。
+2024-11-11 22:09:52,843 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:09:52,844 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:09:52,844 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:09:52,844 - INFO - 模型 1 的数据预处理完成。
+2024-11-11 22:09:52,860 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:09:52,860 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:09:52,861 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:09:52,861 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:09:52,861 - INFO - 模型 4 的数据预处理完成。
+2024-11-11 22:09:53,184 - INFO - 模型 4 (GradientBoostingRegressor) 的预测完成。
+2024-11-11 22:09:53,258 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:09:53,281 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:09:53,282 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:09:53,282 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:09:53,282 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:09:53,283 - INFO - 模型 5 的数据预处理完成。
+2024-11-11 22:09:53,613 - INFO - 模型 5 (GradientBoostingRegressor) 的预测完成。
+2024-11-11 22:09:53,615 - INFO - 推理和误差计算完成。处理了 5 个模型的预测。
+2024-11-11 22:09:53,860 - INFO - 推理结果已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_gradient_boosting\gradient_boosting_inference.csv'。
+2024-11-11 22:09:53,860 - INFO - 开始聚类误差。
+2024-11-11 22:09:54,438 - INFO - 模型 1 (Booster) 的预测完成。
+2024-11-11 22:09:54,516 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:09:54,516 - WARNING - 'scaler' 预处理器缺失，跳过标准化。
+2024-11-11 22:09:54,517 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:09:54,517 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:09:54,517 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:09:54,518 - INFO - 模型 2 的数据预处理完成。
+2024-11-11 22:09:56,305 - INFO - 模型 2 (Booster) 的预测完成。
+2024-11-11 22:09:56,390 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:09:56,390 - WARNING - 'scaler' 预处理器缺失，跳过标准化。
+2024-11-11 22:09:56,390 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:09:56,391 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:09:56,391 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:09:56,392 - INFO - 模型 3 的数据预处理完成。
+2024-11-11 22:09:57,972 - INFO - 模型 3 (Booster) 的预测完成。
+2024-11-11 22:09:58,045 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:09:58,046 - WARNING - 'scaler' 预处理器缺失，跳过标准化。
+2024-11-11 22:09:58,046 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:09:58,047 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:09:58,047 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:09:58,048 - INFO - 模型 4 的数据预处理完成。
+2024-11-11 22:09:59,101 - INFO - 聚类数量: 2, 轮廓系数: 0.9946
+2024-11-11 22:09:59,608 - INFO - 模型 4 (Booster) 的预测完成。
+2024-11-11 22:09:59,658 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:09:59,658 - WARNING - 'scaler' 预处理器缺失，跳过标准化。
+2024-11-11 22:09:59,658 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:09:59,658 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:09:59,659 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:09:59,660 - INFO - 模型 5 的数据预处理完成。
+2024-11-11 22:10:00,738 - INFO - 聚类数量: 2, 轮廓系数: 0.9912
+2024-11-11 22:10:01,119 - INFO - 模型 5 (Booster) 的预测完成。
+2024-11-11 22:10:01,120 - INFO - 推理和误差计算完成。处理了 5 个模型的预测。
+2024-11-11 22:10:01,337 - INFO - 推理结果已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_lightgbm\lightgbm_inference.csv'。
+2024-11-11 22:10:01,338 - INFO - 开始聚类误差。
+2024-11-11 22:10:05,753 - INFO - 聚类数量: 3, 轮廓系数: 0.9603
+2024-11-11 22:10:07,369 - INFO - 聚类数量: 3, 轮廓系数: 0.9790
+2024-11-11 22:10:08,236 - INFO - 聚类数量: 2, 轮廓系数: 0.8907
+2024-11-11 22:10:12,426 - INFO - 聚类数量: 4, 轮廓系数: 0.9451
+2024-11-11 22:10:14,005 - INFO - 聚类数量: 4, 轮廓系数: 0.9401
+2024-11-11 22:10:14,715 - INFO - 聚类数量: 3, 轮廓系数: 0.8152
+2024-11-11 22:10:19,086 - INFO - 聚类数量: 5, 轮廓系数: 0.8372
+2024-11-11 22:10:20,496 - INFO - 聚类数量: 5, 轮廓系数: 0.9309
+2024-11-11 22:10:20,833 - INFO - 聚类数量: 4, 轮廓系数: 0.6517
+2024-11-11 22:10:25,780 - INFO - 聚类数量: 6, 轮廓系数: 0.7986
+2024-11-11 22:10:27,120 - INFO - 聚类数量: 5, 轮廓系数: 0.6189
+2024-11-11 22:10:27,132 - INFO - 聚类数量: 6, 轮廓系数: 0.9124
+2024-11-11 22:10:32,020 - INFO - 聚类数量: 7, 轮廓系数: 0.4765
+2024-11-11 22:10:33,478 - INFO - 聚类数量: 6, 轮廓系数: 0.5926
+2024-11-11 22:10:33,807 - INFO - 聚类数量: 7, 轮廓系数: 0.8897
+2024-11-11 22:10:38,052 - INFO - 聚类数量: 8, 轮廓系数: 0.5034
+2024-11-11 22:10:39,518 - INFO - 聚类数量: 7, 轮廓系数: 0.5758
+2024-11-11 22:10:40,173 - INFO - 聚类数量: 8, 轮廓系数: 0.8894
+2024-11-11 22:10:44,293 - INFO - 聚类数量: 9, 轮廓系数: 0.5297
+2024-11-11 22:10:45,553 - INFO - 聚类数量: 8, 轮廓系数: 0.5594
+2024-11-11 22:10:46,230 - INFO - 聚类数量: 9, 轮廓系数: 0.5006
+2024-11-11 22:10:50,557 - INFO - 聚类数量: 10, 轮廓系数: 0.5299
+2024-11-11 22:10:50,557 - INFO - 最佳聚类数量为: 2
+2024-11-11 22:10:50,777 - INFO - 轮廓系数图已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_catboost\cluster_analysis\silhouette_scores.png'。
+2024-11-11 22:10:50,987 - INFO - 'mistake' 列已聚类为 2 个簇。
+2024-11-11 22:10:50,988 - INFO - 开始误差分析。
+2024-11-11 22:10:51,008 - INFO - 聚类 0 分析完成。Top features: ['depreciation', 'dereg_value', 'inference_price', 'road_tax', 'engine_cap']
+2024-11-11 22:10:51,018 - INFO - 聚类 1 分析完成。Top features: ['manufactured', 'vehicle_type_bus_mini_bus', 'vehicle_type_hatchback', 'vehicle_type_luxury_sedan', 'vehicle_type_midsized_sedan']
+2024-11-11 22:10:51,019 - INFO - 开始生成热力图。
+2024-11-11 22:10:51,328 - INFO - 整体热力图已生成。
+2024-11-11 22:10:51,462 - INFO - 聚类 cluster_0 的热力图已生成。
+2024-11-11 22:10:51,471 - WARNING - 聚类 cluster_1 的相关性矩阵包含 NaN，跳过热力图生成。
+2024-11-11 22:10:51,471 - INFO - 保存分析结果。
+2024-11-11 22:10:51,473 - INFO - 分析结果已保存为 JSON 文件: final_report/approach1/without_cluster/error_analysis/mistake_analysis_catboost\catboost_mistake_analysis.json
+2024-11-11 22:10:51,473 - INFO - 误差分析完成。
+2024-11-11 22:10:51,518 - INFO - 聚类数量: 9, 轮廓系数: 0.5547
+2024-11-11 22:10:52,250 - INFO - 聚类数量: 10, 轮廓系数: 0.5399
+2024-11-11 22:10:52,250 - INFO - 最佳聚类数量为: 2
+2024-11-11 22:10:52,519 - INFO - 轮廓系数图已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_gradient_boosting\cluster_analysis\silhouette_scores.png'。
+2024-11-11 22:10:52,735 - INFO - 'mistake' 列已聚类为 2 个簇。
+2024-11-11 22:10:52,735 - INFO - 开始误差分析。
+2024-11-11 22:10:52,754 - INFO - 聚类 0 分析完成。Top features: ['inference_price', 'depreciation', 'arf', 'omv', 'rare_exotic']
+2024-11-11 22:10:52,762 - INFO - 聚类 1 分析完成。Top features: ['vehicle_type_sports_car', 'imported_used_vehicle', 'vehicle_type_suv', 'almost_new_car', 'curb_weight']
+2024-11-11 22:10:52,762 - INFO - 开始生成热力图。
+2024-11-11 22:10:53,033 - INFO - 整体热力图已生成。
+2024-11-11 22:10:53,141 - INFO - 聚类 cluster_0 的热力图已生成。
+2024-11-11 22:10:53,257 - INFO - 聚类 cluster_1 的热力图已生成。
+2024-11-11 22:10:53,257 - INFO - 保存分析结果。
+2024-11-11 22:10:53,259 - INFO - 分析结果已保存为 JSON 文件: final_report/approach1/without_cluster/error_analysis/mistake_analysis_gradient_boosting\gradient_boosting_mistake_analysis.json
+2024-11-11 22:10:53,259 - INFO - 误差分析完成。
+2024-11-11 22:10:56,524 - INFO - 聚类数量: 10, 轮廓系数: 0.5545
+2024-11-11 22:10:56,524 - INFO - 最佳聚类数量为: 2
+2024-11-11 22:10:56,742 - INFO - 轮廓系数图已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_lightgbm\cluster_analysis\silhouette_scores.png'。
+2024-11-11 22:10:57,020 - INFO - 'mistake' 列已聚类为 2 个簇。
+2024-11-11 22:10:57,020 - INFO - 开始误差分析。
+2024-11-11 22:10:57,039 - INFO - 聚类 0 分析完成。Top features: ['inference_price', 'dereg_value', 'arf', 'power', 'omv']
+2024-11-11 22:10:57,048 - INFO - 聚类 1 分析完成。Top features: ['inference_price', 'arf', 'dereg_value', 'omv', 'depreciation']
+2024-11-11 22:10:57,049 - INFO - 开始生成热力图。
+2024-11-11 22:10:57,341 - INFO - 整体热力图已生成。
+2024-11-11 22:10:57,570 - INFO - 聚类 cluster_0 的热力图已生成。
+2024-11-11 22:10:57,691 - INFO - 聚类 cluster_1 的热力图已生成。
+2024-11-11 22:10:57,692 - INFO - 保存分析结果。
+2024-11-11 22:10:57,693 - INFO - 分析结果已保存为 JSON 文件: final_report/approach1/without_cluster/error_analysis/mistake_analysis_lightgbm\lightgbm_mistake_analysis.json
+2024-11-11 22:10:57,694 - INFO - 误差分析完成。
+2024-11-11 22:12:01,887 - INFO - 开始加载模型: final_report\approach1\without_cluster\catboost_models.pkl
+2024-11-11 22:12:01,890 - INFO - 开始加载模型: final_report\approach1\without_cluster\lightgbm_models.pkl
+2024-11-11 22:12:01,892 - INFO - 开始加载模型: final_report\approach1\without_cluster\gradient_boosting_models.pkl
+2024-11-11 22:12:01,902 - INFO - 开始加载模型: final_report\approach1\without_cluster\xgboost_models.pkl
+2024-11-11 22:12:01,921 - INFO - 成功加载模型文件: final_report\approach1\without_cluster\catboost_models.pkl. 模型数量: 5
+2024-11-11 22:12:01,921 - INFO - 检查模型 1 的预处理器...
+2024-11-11 22:12:01,922 - INFO - 模型 1 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 22:12:01,922 - INFO - 检查模型 2 的预处理器...
+2024-11-11 22:12:01,922 - INFO - 模型 2 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 22:12:01,922 - INFO - 检查模型 3 的预处理器...
+2024-11-11 22:12:01,923 - INFO - 模型 3 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 22:12:01,923 - INFO - 检查模型 4 的预处理器...
+2024-11-11 22:12:01,923 - INFO - 模型 4 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 22:12:01,923 - INFO - 检查模型 5 的预处理器...
+2024-11-11 22:12:01,923 - INFO - 模型 5 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 22:12:01,924 - INFO - 模型 catboost 加载完成。模型数量: 5
+2024-11-11 22:12:01,975 - INFO - 训练数据加载完成。数据形状: (25000, 42)
+2024-11-11 22:12:01,975 - INFO - 开始进行推理并计算误差。
+2024-11-11 22:12:01,980 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 22:12:01,991 - INFO - 成功加载模型文件: final_report\approach1\without_cluster\gradient_boosting_models.pkl. 模型数量: 5
+2024-11-11 22:12:01,991 - INFO - 检查模型 1 的预处理器...
+2024-11-11 22:12:01,991 - INFO - 模型 1 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:12:01,991 - INFO - 检查模型 2 的预处理器...
+2024-11-11 22:12:01,992 - INFO - 模型 2 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:12:01,992 - INFO - 检查模型 3 的预处理器...
+2024-11-11 22:12:01,992 - INFO - 模型 3 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:12:01,992 - INFO - 检查模型 4 的预处理器...
+2024-11-11 22:12:01,993 - INFO - 模型 4 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:12:01,993 - INFO - 检查模型 5 的预处理器...
+2024-11-11 22:12:01,993 - INFO - 模型 5 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:12:01,993 - INFO - 模型 gradient_boosting 加载完成。模型数量: 5
+2024-11-11 22:12:02,032 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:12:02,046 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:12:02,046 - INFO - 训练数据加载完成。数据形状: (25000, 42)
+2024-11-11 22:12:02,046 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:12:02,046 - INFO - 开始进行推理并计算误差。
+2024-11-11 22:12:02,046 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:12:02,046 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:12:02,047 - INFO - 模型 1 的数据预处理完成。
+2024-11-11 22:12:02,053 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 22:12:02,057 - INFO - 模型 1 (CatBoostRegressor) 的预测完成。
+2024-11-11 22:12:02,101 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:12:02,106 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:12:02,115 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:12:02,116 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:12:02,116 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:12:02,116 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:12:02,116 - INFO - 模型 1 的数据预处理完成。
+2024-11-11 22:12:02,121 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:12:02,121 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:12:02,121 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:12:02,121 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:12:02,122 - INFO - 模型 2 的数据预处理完成。
+2024-11-11 22:12:02,129 - INFO - 模型 2 (CatBoostRegressor) 的预测完成。
+2024-11-11 22:12:02,135 - INFO - 成功加载模型文件: final_report\approach1\without_cluster\xgboost_models.pkl. 模型数量: 5
+2024-11-11 22:12:02,135 - INFO - 检查模型 1 的预处理器...
+2024-11-11 22:12:02,135 - INFO - 模型 1 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:12:02,136 - INFO - 检查模型 2 的预处理器...
+2024-11-11 22:12:02,136 - INFO - 模型 2 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:12:02,136 - INFO - 检查模型 3 的预处理器...
+2024-11-11 22:12:02,136 - INFO - 模型 3 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:12:02,136 - INFO - 检查模型 4 的预处理器...
+2024-11-11 22:12:02,137 - INFO - 模型 4 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:12:02,137 - INFO - 检查模型 5 的预处理器...
+2024-11-11 22:12:02,137 - INFO - 模型 5 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:12:02,137 - INFO - 模型 xgboost 加载完成。模型数量: 5
+2024-11-11 22:12:02,175 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:12:02,203 - INFO - 训练数据加载完成。数据形状: (25000, 42)
+2024-11-11 22:12:02,203 - INFO - 开始进行推理并计算误差。
+2024-11-11 22:12:02,206 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:12:02,206 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:12:02,207 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:12:02,207 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:12:02,207 - INFO - 模型 3 的数据预处理完成。
+2024-11-11 22:12:02,209 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 22:12:02,214 - INFO - 模型 3 (CatBoostRegressor) 的预测完成。
+2024-11-11 22:12:02,261 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:12:02,267 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:12:02,276 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:12:02,276 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:12:02,276 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:12:02,277 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:12:02,277 - INFO - 模型 1 的数据预处理完成。
+2024-11-11 22:12:02,277 - ERROR - 在模型 1 处理过程中发生错误: ('Expecting data to be a DMatrix object, got: ', <class 'pandas.core.frame.DataFrame'>), 错误类型: TypeError
+2024-11-11 22:12:02,277 - ERROR - 模型类型: <class 'xgboost.core.Booster'>
+2024-11-11 22:12:02,277 - ERROR - 数据类型: <class 'pandas.core.frame.DataFrame'>
+2024-11-11 22:12:02,277 - ERROR - 误差分析过程中发生错误: ('Expecting data to be a DMatrix object, got: ', <class 'pandas.core.frame.DataFrame'>)
+2024-11-11 22:12:02,284 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:12:02,284 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:12:02,285 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:12:02,285 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:12:02,285 - INFO - 模型 4 的数据预处理完成。
+2024-11-11 22:12:02,293 - INFO - 模型 4 (CatBoostRegressor) 的预测完成。
+2024-11-11 22:12:02,341 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:12:02,356 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:12:02,356 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:12:02,356 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:12:02,357 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:12:02,357 - INFO - 模型 5 的数据预处理完成。
+2024-11-11 22:12:02,365 - INFO - 模型 5 (CatBoostRegressor) 的预测完成。
+2024-11-11 22:12:02,367 - INFO - 推理和误差计算完成。处理了 5 个模型的预测。
+2024-11-11 22:12:02,421 - INFO - 模型 1 (GradientBoostingRegressor) 的预测完成。
+2024-11-11 22:12:02,465 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:12:02,479 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:12:02,479 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:12:02,479 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:12:02,479 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:12:02,480 - INFO - 模型 2 的数据预处理完成。
+2024-11-11 22:12:02,566 - INFO - 推理结果已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_catboost\catboost_inference.csv'。
+2024-11-11 22:12:02,566 - INFO - 开始聚类误差。
+2024-11-11 22:12:02,732 - INFO - 模型 2 (GradientBoostingRegressor) 的预测完成。
+2024-11-11 22:12:02,792 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:12:02,805 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:12:02,805 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:12:02,805 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:12:02,805 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:12:02,806 - INFO - 模型 3 的数据预处理完成。
+2024-11-11 22:12:03,016 - INFO - 成功加载模型文件: final_report\approach1\without_cluster\lightgbm_models.pkl. 模型数量: 5
+2024-11-11 22:12:03,017 - INFO - 检查模型 1 的预处理器...
+2024-11-11 22:12:03,017 - INFO - 模型 1 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder']
+2024-11-11 22:12:03,017 - INFO - 检查模型 2 的预处理器...
+2024-11-11 22:12:03,017 - INFO - 模型 2 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder']
+2024-11-11 22:12:03,018 - INFO - 检查模型 3 的预处理器...
+2024-11-11 22:12:03,018 - INFO - 模型 3 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder']
+2024-11-11 22:12:03,018 - INFO - 检查模型 4 的预处理器...
+2024-11-11 22:12:03,018 - INFO - 模型 4 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder']
+2024-11-11 22:12:03,018 - INFO - 检查模型 5 的预处理器...
+2024-11-11 22:12:03,019 - INFO - 模型 5 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder']
+2024-11-11 22:12:03,019 - INFO - 模型 lightgbm 加载完成。模型数量: 5
+2024-11-11 22:12:03,067 - INFO - 训练数据加载完成。数据形状: (25000, 42)
+2024-11-11 22:12:03,068 - INFO - 开始进行推理并计算误差。
+2024-11-11 22:12:03,071 - INFO - 模型 3 (GradientBoostingRegressor) 的预测完成。
+2024-11-11 22:12:03,073 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 22:12:03,125 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:12:03,126 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:12:03,127 - WARNING - 'scaler' 预处理器缺失，跳过标准化。
+2024-11-11 22:12:03,127 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:12:03,127 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:12:03,127 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:12:03,127 - INFO - 模型 1 的数据预处理完成。
+2024-11-11 22:12:03,140 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:12:03,140 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:12:03,140 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:12:03,141 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:12:03,141 - INFO - 模型 4 的数据预处理完成。
+2024-11-11 22:12:03,415 - INFO - 模型 4 (GradientBoostingRegressor) 的预测完成。
+2024-11-11 22:12:03,466 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:12:03,484 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:12:03,485 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:12:03,485 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:12:03,486 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:12:03,486 - INFO - 模型 5 的数据预处理完成。
+2024-11-11 22:12:03,772 - INFO - 模型 5 (GradientBoostingRegressor) 的预测完成。
+2024-11-11 22:12:03,773 - INFO - 推理和误差计算完成。处理了 5 个模型的预测。
+2024-11-11 22:12:04,007 - INFO - 推理结果已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_gradient_boosting\gradient_boosting_inference.csv'。
+2024-11-11 22:12:04,007 - INFO - 开始聚类误差。
+2024-11-11 22:12:04,551 - INFO - 模型 1 (Booster) 的预测完成。
+2024-11-11 22:12:04,614 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:12:04,615 - WARNING - 'scaler' 预处理器缺失，跳过标准化。
+2024-11-11 22:12:04,615 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:12:04,615 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:12:04,615 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:12:04,616 - INFO - 模型 2 的数据预处理完成。
+2024-11-11 22:12:06,118 - INFO - 模型 2 (Booster) 的预测完成。
+2024-11-11 22:12:06,177 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:12:06,177 - WARNING - 'scaler' 预处理器缺失，跳过标准化。
+2024-11-11 22:12:06,177 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:12:06,178 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:12:06,178 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:12:06,179 - INFO - 模型 3 的数据预处理完成。
+2024-11-11 22:12:07,656 - INFO - 模型 3 (Booster) 的预测完成。
+2024-11-11 22:12:07,714 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:12:07,715 - WARNING - 'scaler' 预处理器缺失，跳过标准化。
+2024-11-11 22:12:07,715 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:12:07,715 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:12:07,715 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:12:07,716 - INFO - 模型 4 的数据预处理完成。
+2024-11-11 22:12:08,359 - INFO - 聚类数量: 2, 轮廓系数: 0.9946
+2024-11-11 22:12:09,180 - INFO - 模型 4 (Booster) 的预测完成。
+2024-11-11 22:12:09,239 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:12:09,240 - WARNING - 'scaler' 预处理器缺失，跳过标准化。
+2024-11-11 22:12:09,240 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:12:09,240 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:12:09,240 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:12:09,241 - INFO - 模型 5 的数据预处理完成。
+2024-11-11 22:12:09,896 - INFO - 聚类数量: 2, 轮廓系数: 0.9912
+2024-11-11 22:12:10,726 - INFO - 模型 5 (Booster) 的预测完成。
+2024-11-11 22:12:10,728 - INFO - 推理和误差计算完成。处理了 5 个模型的预测。
+2024-11-11 22:12:10,930 - INFO - 推理结果已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_lightgbm\lightgbm_inference.csv'。
+2024-11-11 22:12:10,931 - INFO - 开始聚类误差。
+2024-11-11 22:12:14,475 - INFO - 聚类数量: 3, 轮廓系数: 0.9603
+2024-11-11 22:12:16,398 - INFO - 聚类数量: 3, 轮廓系数: 0.9790
+2024-11-11 22:12:17,637 - INFO - 聚类数量: 2, 轮廓系数: 0.8907
+2024-11-11 22:12:20,746 - INFO - 聚类数量: 4, 轮廓系数: 0.9451
+2024-11-11 22:12:23,027 - INFO - 聚类数量: 4, 轮廓系数: 0.9401
+2024-11-11 22:12:24,346 - INFO - 聚类数量: 3, 轮廓系数: 0.8152
+2024-11-11 22:12:27,388 - INFO - 聚类数量: 5, 轮廓系数: 0.8372
+2024-11-11 22:12:29,649 - INFO - 聚类数量: 5, 轮廓系数: 0.9309
+2024-11-11 22:12:30,689 - INFO - 聚类数量: 4, 轮廓系数: 0.6517
+2024-11-11 22:12:33,831 - INFO - 聚类数量: 6, 轮廓系数: 0.7986
+2024-11-11 22:12:36,138 - INFO - 聚类数量: 6, 轮廓系数: 0.9124
+2024-11-11 22:12:36,689 - INFO - 聚类数量: 5, 轮廓系数: 0.6189
+2024-11-11 22:12:39,842 - INFO - 聚类数量: 7, 轮廓系数: 0.4765
+2024-11-11 22:12:42,579 - INFO - 聚类数量: 7, 轮廓系数: 0.8897
+2024-11-11 22:12:42,726 - INFO - 聚类数量: 6, 轮廓系数: 0.5926
+2024-11-11 22:12:45,841 - INFO - 聚类数量: 8, 轮廓系数: 0.5034
+2024-11-11 22:12:48,868 - INFO - 聚类数量: 7, 轮廓系数: 0.5758
+2024-11-11 22:12:49,127 - INFO - 聚类数量: 8, 轮廓系数: 0.8894
+2024-11-11 22:12:51,820 - INFO - 聚类数量: 9, 轮廓系数: 0.5297
+2024-11-11 22:12:54,690 - INFO - 聚类数量: 8, 轮廓系数: 0.5594
+2024-11-11 22:12:55,224 - INFO - 聚类数量: 9, 轮廓系数: 0.5006
+2024-11-11 22:12:57,764 - INFO - 聚类数量: 10, 轮廓系数: 0.5299
+2024-11-11 22:12:57,765 - INFO - 最佳聚类数量为: 2
+2024-11-11 22:12:58,054 - INFO - 轮廓系数图已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_catboost\cluster_analysis\silhouette_scores.png'。
+2024-11-11 22:12:58,260 - INFO - 'mistake' 列已聚类为 2 个簇。
+2024-11-11 22:12:58,260 - INFO - 开始误差分析。
+2024-11-11 22:12:58,279 - INFO - 聚类 0 分析完成。Top features: ['depreciation', 'dereg_value', 'inference_price', 'road_tax', 'engine_cap']
+2024-11-11 22:12:58,288 - INFO - 聚类 1 分析完成。Top features: ['manufactured', 'vehicle_type_bus_mini_bus', 'vehicle_type_hatchback', 'vehicle_type_luxury_sedan', 'vehicle_type_midsized_sedan']
+2024-11-11 22:12:58,289 - INFO - 开始生成热力图。
+2024-11-11 22:12:58,574 - INFO - 整体热力图已生成。
+2024-11-11 22:12:58,694 - INFO - 聚类 cluster_0 的热力图已生成。
+2024-11-11 22:12:58,700 - WARNING - 聚类 cluster_1 的相关性矩阵包含 NaN，跳过热力图生成。
+2024-11-11 22:12:58,701 - INFO - 保存分析结果。
+2024-11-11 22:12:58,702 - INFO - 分析结果已保存为 JSON 文件: final_report/approach1/without_cluster/error_analysis/mistake_analysis_catboost\catboost_mistake_analysis.json
+2024-11-11 22:12:58,702 - INFO - 误差分析完成。
+2024-11-11 22:13:00,214 - INFO - 聚类数量: 9, 轮廓系数: 0.5547
+2024-11-11 22:13:01,036 - INFO - 聚类数量: 10, 轮廓系数: 0.5399
+2024-11-11 22:13:01,036 - INFO - 最佳聚类数量为: 2
+2024-11-11 22:13:01,314 - INFO - 轮廓系数图已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_gradient_boosting\cluster_analysis\silhouette_scores.png'。
+2024-11-11 22:13:01,524 - INFO - 'mistake' 列已聚类为 2 个簇。
+2024-11-11 22:13:01,525 - INFO - 开始误差分析。
+2024-11-11 22:13:01,548 - INFO - 聚类 0 分析完成。Top features: ['inference_price', 'depreciation', 'arf', 'omv', 'rare_exotic']
+2024-11-11 22:13:01,555 - INFO - 聚类 1 分析完成。Top features: ['vehicle_type_sports_car', 'imported_used_vehicle', 'vehicle_type_suv', 'almost_new_car', 'curb_weight']
+2024-11-11 22:13:01,556 - INFO - 开始生成热力图。
+2024-11-11 22:13:01,885 - INFO - 整体热力图已生成。
+2024-11-11 22:13:02,011 - INFO - 聚类 cluster_0 的热力图已生成。
+2024-11-11 22:13:02,139 - INFO - 聚类 cluster_1 的热力图已生成。
+2024-11-11 22:13:02,139 - INFO - 保存分析结果。
+2024-11-11 22:13:02,140 - INFO - 分析结果已保存为 JSON 文件: final_report/approach1/without_cluster/error_analysis/mistake_analysis_gradient_boosting\gradient_boosting_mistake_analysis.json
+2024-11-11 22:13:02,141 - INFO - 误差分析完成。
+2024-11-11 22:13:05,105 - INFO - 聚类数量: 10, 轮廓系数: 0.5545
+2024-11-11 22:13:05,106 - INFO - 最佳聚类数量为: 2
+2024-11-11 22:13:05,299 - INFO - 轮廓系数图已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_lightgbm\cluster_analysis\silhouette_scores.png'。
+2024-11-11 22:13:05,583 - INFO - 'mistake' 列已聚类为 2 个簇。
+2024-11-11 22:13:05,583 - INFO - 开始误差分析。
+2024-11-11 22:13:05,602 - INFO - 聚类 0 分析完成。Top features: ['inference_price', 'dereg_value', 'arf', 'power', 'omv']
+2024-11-11 22:13:05,609 - INFO - 聚类 1 分析完成。Top features: ['inference_price', 'arf', 'dereg_value', 'omv', 'depreciation']
+2024-11-11 22:13:05,609 - INFO - 开始生成热力图。
+2024-11-11 22:13:05,915 - INFO - 整体热力图已生成。
+2024-11-11 22:13:06,102 - INFO - 聚类 cluster_0 的热力图已生成。
+2024-11-11 22:13:06,208 - INFO - 聚类 cluster_1 的热力图已生成。
+2024-11-11 22:13:06,208 - INFO - 保存分析结果。
+2024-11-11 22:13:06,209 - INFO - 分析结果已保存为 JSON 文件: final_report/approach1/without_cluster/error_analysis/mistake_analysis_lightgbm\lightgbm_mistake_analysis.json
+2024-11-11 22:13:06,209 - INFO - 误差分析完成。
+2024-11-11 22:15:31,352 - INFO - 开始加载模型: final_report\approach1\without_cluster\gradient_boosting_models.pkl
+2024-11-11 22:15:31,353 - INFO - 开始加载模型: final_report\approach1\without_cluster\lightgbm_models.pkl
+2024-11-11 22:15:31,354 - INFO - 开始加载模型: final_report\approach1\without_cluster\catboost_models.pkl
+2024-11-11 22:15:31,354 - INFO - 开始加载模型: final_report\approach1\without_cluster\xgboost_models.pkl
+2024-11-11 22:15:31,386 - INFO - 成功加载模型文件: final_report\approach1\without_cluster\catboost_models.pkl. 模型数量: 5
+2024-11-11 22:15:31,387 - INFO - 检查模型 1 的预处理器...
+2024-11-11 22:15:31,387 - INFO - 模型 1 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 22:15:31,387 - INFO - 检查模型 2 的预处理器...
+2024-11-11 22:15:31,388 - INFO - 模型 2 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 22:15:31,389 - INFO - 检查模型 3 的预处理器...
+2024-11-11 22:15:31,389 - INFO - 模型 3 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 22:15:31,389 - INFO - 检查模型 4 的预处理器...
+2024-11-11 22:15:31,389 - INFO - 模型 4 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 22:15:31,390 - INFO - 检查模型 5 的预处理器...
+2024-11-11 22:15:31,390 - INFO - 模型 5 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 22:15:31,390 - INFO - 模型 catboost 加载完成。模型数量: 5
+2024-11-11 22:15:31,440 - INFO - 训练数据加载完成。数据形状: (25000, 42)
+2024-11-11 22:15:31,441 - INFO - 开始进行推理并计算误差。
+2024-11-11 22:15:31,446 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 22:15:31,458 - INFO - 成功加载模型文件: final_report\approach1\without_cluster\gradient_boosting_models.pkl. 模型数量: 5
+2024-11-11 22:15:31,458 - INFO - 检查模型 1 的预处理器...
+2024-11-11 22:15:31,459 - INFO - 模型 1 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:15:31,459 - INFO - 检查模型 2 的预处理器...
+2024-11-11 22:15:31,459 - INFO - 模型 2 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:15:31,459 - INFO - 检查模型 3 的预处理器...
+2024-11-11 22:15:31,459 - INFO - 模型 3 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:15:31,460 - INFO - 检查模型 4 的预处理器...
+2024-11-11 22:15:31,460 - INFO - 模型 4 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:15:31,460 - INFO - 检查模型 5 的预处理器...
+2024-11-11 22:15:31,460 - INFO - 模型 5 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:15:31,460 - INFO - 模型 gradient_boosting 加载完成。模型数量: 5
+2024-11-11 22:15:31,500 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:15:31,510 - INFO - 训练数据加载完成。数据形状: (25000, 42)
+2024-11-11 22:15:31,511 - INFO - 开始进行推理并计算误差。
+2024-11-11 22:15:31,515 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:15:31,515 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:15:31,516 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:15:31,516 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:15:31,516 - INFO - 模型 1 的数据预处理完成。
+2024-11-11 22:15:31,516 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 22:15:31,516 - INFO - 当前模型类型: catboost.core.CatBoostRegressor
+2024-11-11 22:15:31,527 - INFO - 模型 1 预测完成
+2024-11-11 22:15:31,566 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:15:31,576 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:15:31,579 - INFO - 成功加载模型文件: final_report\approach1\without_cluster\xgboost_models.pkl. 模型数量: 5
+2024-11-11 22:15:31,580 - INFO - 检查模型 1 的预处理器...
+2024-11-11 22:15:31,580 - INFO - 模型 1 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:15:31,581 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:15:31,581 - INFO - 检查模型 2 的预处理器...
+2024-11-11 22:15:31,581 - INFO - 模型 2 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:15:31,581 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:15:31,581 - INFO - 检查模型 3 的预处理器...
+2024-11-11 22:15:31,582 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:15:31,582 - INFO - 模型 3 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:15:31,582 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:15:31,582 - INFO - 检查模型 4 的预处理器...
+2024-11-11 22:15:31,582 - INFO - 模型 1 的数据预处理完成。
+2024-11-11 22:15:31,583 - INFO - 模型 4 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:15:31,583 - INFO - 当前模型类型: sklearn.ensemble._gb.GradientBoostingRegressor
+2024-11-11 22:15:31,583 - INFO - 检查模型 5 的预处理器...
+2024-11-11 22:15:31,583 - INFO - 模型 5 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:15:31,583 - INFO - 模型 xgboost 加载完成。模型数量: 5
+2024-11-11 22:15:31,593 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:15:31,593 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:15:31,593 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:15:31,594 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:15:31,594 - INFO - 模型 2 的数据预处理完成。
+2024-11-11 22:15:31,595 - INFO - 当前模型类型: catboost.core.CatBoostRegressor
+2024-11-11 22:15:31,601 - INFO - 模型 2 预测完成
+2024-11-11 22:15:31,639 - INFO - 训练数据加载完成。数据形状: (25000, 42)
+2024-11-11 22:15:31,639 - INFO - 开始进行推理并计算误差。
+2024-11-11 22:15:31,646 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 22:15:31,648 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:15:31,663 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:15:31,664 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:15:31,664 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:15:31,664 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:15:31,665 - INFO - 模型 3 的数据预处理完成。
+2024-11-11 22:15:31,665 - INFO - 当前模型类型: catboost.core.CatBoostRegressor
+2024-11-11 22:15:31,671 - INFO - 模型 3 预测完成
+2024-11-11 22:15:31,716 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:15:31,731 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:15:31,732 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:15:31,733 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:15:31,733 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:15:31,733 - INFO - 模型 1 的数据预处理完成。
+2024-11-11 22:15:31,733 - INFO - 当前模型类型: xgboost.core.Booster
+2024-11-11 22:15:31,734 - INFO - 检测到XGBoost模型，使用numpy array进行预测...
+2024-11-11 22:15:31,738 - ERROR - XGBoost预测失败: ('Expecting data to be a DMatrix object, got: ', <class 'numpy.ndarray'>)
+2024-11-11 22:15:31,739 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:15:31,753 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:15:31,753 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:15:31,753 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:15:31,754 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:15:31,754 - INFO - 模型 4 的数据预处理完成。
+2024-11-11 22:15:31,754 - INFO - 当前模型类型: catboost.core.CatBoostRegressor
+2024-11-11 22:15:31,761 - INFO - 模型 4 预测完成
+2024-11-11 22:15:31,772 - ERROR - XGBoost DMatrix预测也失败: training data did not have the following fields: manufactured, vehicle_type_bus_mini_bus, vehicle_type_hatchback, vehicle_type_luxury_sedan, vehicle_type_midsized_sedan, vehicle_type_mpv, vehicle_type_others, vehicle_type_sports_car, vehicle_type_stationwagon, vehicle_type_suv, vehicle_type_truck, vehicle_type_van, transmission_type_auto, transmission_type_manual, almost_new_car, coe_car, consignment_car, direct_owner_sale, electric_cars, hybrid_cars, imported_used_vehicle, low_mileage_car, opc_car, parf_car, premium_ad_car, rare_exotic, sgcarmart_warranty_cars, sta_evaluated_car, vintage_cars, curb_weight, power, engine_cap, no_of_owners, depreciation, coe, road_tax, dereg_value, omv, arf, vehicle_age
+2024-11-11 22:15:31,773 - ERROR - 在模型 1 处理过程中发生错误: training data did not have the following fields: manufactured, vehicle_type_bus_mini_bus, vehicle_type_hatchback, vehicle_type_luxury_sedan, vehicle_type_midsized_sedan, vehicle_type_mpv, vehicle_type_others, vehicle_type_sports_car, vehicle_type_stationwagon, vehicle_type_suv, vehicle_type_truck, vehicle_type_van, transmission_type_auto, transmission_type_manual, almost_new_car, coe_car, consignment_car, direct_owner_sale, electric_cars, hybrid_cars, imported_used_vehicle, low_mileage_car, opc_car, parf_car, premium_ad_car, rare_exotic, sgcarmart_warranty_cars, sta_evaluated_car, vintage_cars, curb_weight, power, engine_cap, no_of_owners, depreciation, coe, road_tax, dereg_value, omv, arf, vehicle_age
+2024-11-11 22:15:31,774 - ERROR - 模型类型: <class 'xgboost.core.Booster'>
+2024-11-11 22:15:31,774 - ERROR - 数据类型: <class 'numpy.ndarray'>
+2024-11-11 22:15:31,775 - ERROR - 数据形状: (25000, 40)
+2024-11-11 22:15:31,775 - ERROR - 误差分析过程中发生错误: training data did not have the following fields: manufactured, vehicle_type_bus_mini_bus, vehicle_type_hatchback, vehicle_type_luxury_sedan, vehicle_type_midsized_sedan, vehicle_type_mpv, vehicle_type_others, vehicle_type_sports_car, vehicle_type_stationwagon, vehicle_type_suv, vehicle_type_truck, vehicle_type_van, transmission_type_auto, transmission_type_manual, almost_new_car, coe_car, consignment_car, direct_owner_sale, electric_cars, hybrid_cars, imported_used_vehicle, low_mileage_car, opc_car, parf_car, premium_ad_car, rare_exotic, sgcarmart_warranty_cars, sta_evaluated_car, vintage_cars, curb_weight, power, engine_cap, no_of_owners, depreciation, coe, road_tax, dereg_value, omv, arf, vehicle_age
+2024-11-11 22:15:31,813 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:15:31,827 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:15:31,827 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:15:31,827 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:15:31,828 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:15:31,828 - INFO - 模型 5 的数据预处理完成。
+2024-11-11 22:15:31,828 - INFO - 当前模型类型: catboost.core.CatBoostRegressor
+2024-11-11 22:15:31,836 - INFO - 模型 5 预测完成
+2024-11-11 22:15:31,837 - INFO - 推理和误差计算完成。处理了 5 个模型的预测。
+2024-11-11 22:15:31,884 - INFO - 模型 1 预测完成
+2024-11-11 22:15:31,938 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:15:31,950 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:15:31,951 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:15:31,951 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:15:31,951 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:15:31,952 - INFO - 模型 2 的数据预处理完成。
+2024-11-11 22:15:31,952 - INFO - 当前模型类型: sklearn.ensemble._gb.GradientBoostingRegressor
+2024-11-11 22:15:32,049 - INFO - 推理结果已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_catboost\catboost_inference.csv'。
+2024-11-11 22:15:32,050 - INFO - 开始聚类误差。
+2024-11-11 22:15:32,208 - INFO - 模型 2 预测完成
+2024-11-11 22:15:32,261 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:15:32,297 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:15:32,298 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:15:32,298 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:15:32,298 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:15:32,299 - INFO - 模型 3 的数据预处理完成。
+2024-11-11 22:15:32,299 - INFO - 当前模型类型: sklearn.ensemble._gb.GradientBoostingRegressor
+2024-11-11 22:15:32,595 - INFO - 模型 3 预测完成
+2024-11-11 22:15:32,599 - INFO - 成功加载模型文件: final_report\approach1\without_cluster\lightgbm_models.pkl. 模型数量: 5
+2024-11-11 22:15:32,600 - INFO - 检查模型 1 的预处理器...
+2024-11-11 22:15:32,600 - INFO - 模型 1 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder']
+2024-11-11 22:15:32,600 - INFO - 检查模型 2 的预处理器...
+2024-11-11 22:15:32,600 - INFO - 模型 2 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder']
+2024-11-11 22:15:32,600 - INFO - 检查模型 3 的预处理器...
+2024-11-11 22:15:32,601 - INFO - 模型 3 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder']
+2024-11-11 22:15:32,601 - INFO - 检查模型 4 的预处理器...
+2024-11-11 22:15:32,601 - INFO - 模型 4 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder']
+2024-11-11 22:15:32,601 - INFO - 检查模型 5 的预处理器...
+2024-11-11 22:15:32,601 - INFO - 模型 5 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder']
+2024-11-11 22:15:32,601 - INFO - 模型 lightgbm 加载完成。模型数量: 5
+2024-11-11 22:15:32,646 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:15:32,652 - INFO - 训练数据加载完成。数据形状: (25000, 42)
+2024-11-11 22:15:32,653 - INFO - 开始进行推理并计算误差。
+2024-11-11 22:15:32,658 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 22:15:32,662 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:15:32,662 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:15:32,662 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:15:32,662 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:15:32,663 - INFO - 模型 4 的数据预处理完成。
+2024-11-11 22:15:32,663 - INFO - 当前模型类型: sklearn.ensemble._gb.GradientBoostingRegressor
+2024-11-11 22:15:32,715 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:15:32,715 - WARNING - 'scaler' 预处理器缺失，跳过标准化。
+2024-11-11 22:15:32,715 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:15:32,716 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:15:32,716 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:15:32,716 - INFO - 模型 1 的数据预处理完成。
+2024-11-11 22:15:32,716 - INFO - 当前模型类型: lightgbm.basic.Booster
+2024-11-11 22:15:32,934 - INFO - 模型 4 预测完成
+2024-11-11 22:15:32,983 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:15:32,999 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:15:32,999 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:15:32,999 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:15:33,000 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:15:33,000 - INFO - 模型 5 的数据预处理完成。
+2024-11-11 22:15:33,000 - INFO - 当前模型类型: sklearn.ensemble._gb.GradientBoostingRegressor
+2024-11-11 22:15:33,265 - INFO - 模型 5 预测完成
+2024-11-11 22:15:33,266 - INFO - 推理和误差计算完成。处理了 5 个模型的预测。
+2024-11-11 22:15:33,470 - INFO - 推理结果已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_gradient_boosting\gradient_boosting_inference.csv'。
+2024-11-11 22:15:33,471 - INFO - 开始聚类误差。
+2024-11-11 22:15:34,104 - INFO - 模型 1 预测完成
+2024-11-11 22:15:34,193 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:15:34,193 - WARNING - 'scaler' 预处理器缺失，跳过标准化。
+2024-11-11 22:15:34,194 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:15:34,194 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:15:34,194 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:15:34,195 - INFO - 模型 2 的数据预处理完成。
+2024-11-11 22:15:34,195 - INFO - 当前模型类型: lightgbm.basic.Booster
+2024-11-11 22:15:35,655 - INFO - 模型 2 预测完成
+2024-11-11 22:15:35,699 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:15:35,700 - WARNING - 'scaler' 预处理器缺失，跳过标准化。
+2024-11-11 22:15:35,700 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:15:35,700 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:15:35,700 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:15:35,701 - INFO - 模型 3 的数据预处理完成。
+2024-11-11 22:15:35,701 - INFO - 当前模型类型: lightgbm.basic.Booster
+2024-11-11 22:15:37,153 - INFO - 模型 3 预测完成
+2024-11-11 22:15:37,203 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:15:37,203 - WARNING - 'scaler' 预处理器缺失，跳过标准化。
+2024-11-11 22:15:37,204 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:15:37,204 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:15:37,204 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:15:37,204 - INFO - 模型 4 的数据预处理完成。
+2024-11-11 22:15:37,205 - INFO - 当前模型类型: lightgbm.basic.Booster
+2024-11-11 22:15:37,710 - INFO - 聚类数量: 2, 轮廓系数: 0.9946
+2024-11-11 22:15:38,629 - INFO - 模型 4 预测完成
+2024-11-11 22:15:38,688 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:15:38,688 - WARNING - 'scaler' 预处理器缺失，跳过标准化。
+2024-11-11 22:15:38,689 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:15:38,689 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:15:38,689 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:15:38,690 - INFO - 模型 5 的数据预处理完成。
+2024-11-11 22:15:38,690 - INFO - 当前模型类型: lightgbm.basic.Booster
+2024-11-11 22:15:39,281 - INFO - 聚类数量: 2, 轮廓系数: 0.9912
+2024-11-11 22:15:40,194 - INFO - 模型 5 预测完成
+2024-11-11 22:15:40,196 - INFO - 推理和误差计算完成。处理了 5 个模型的预测。
+2024-11-11 22:15:40,414 - INFO - 推理结果已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_lightgbm\lightgbm_inference.csv'。
+2024-11-11 22:15:40,414 - INFO - 开始聚类误差。
+2024-11-11 22:15:43,672 - INFO - 聚类数量: 3, 轮廓系数: 0.9603
+2024-11-11 22:15:45,431 - INFO - 聚类数量: 3, 轮廓系数: 0.9790
+2024-11-11 22:15:46,704 - INFO - 聚类数量: 2, 轮廓系数: 0.8907
+2024-11-11 22:15:49,611 - INFO - 聚类数量: 4, 轮廓系数: 0.9451
+2024-11-11 22:15:51,713 - INFO - 聚类数量: 4, 轮廓系数: 0.9401
+2024-11-11 22:15:53,004 - INFO - 聚类数量: 3, 轮廓系数: 0.8152
+2024-11-11 22:15:55,848 - INFO - 聚类数量: 5, 轮廓系数: 0.8372
+2024-11-11 22:15:57,991 - INFO - 聚类数量: 5, 轮廓系数: 0.9309
+2024-11-11 22:15:59,015 - INFO - 聚类数量: 4, 轮廓系数: 0.6517
+2024-11-11 22:16:01,897 - INFO - 聚类数量: 6, 轮廓系数: 0.7986
+2024-11-11 22:16:04,066 - INFO - 聚类数量: 6, 轮廓系数: 0.9124
+2024-11-11 22:16:04,720 - INFO - 聚类数量: 5, 轮廓系数: 0.6189
+2024-11-11 22:16:07,583 - INFO - 聚类数量: 7, 轮廓系数: 0.4765
+2024-11-11 22:16:10,217 - INFO - 聚类数量: 7, 轮廓系数: 0.8897
+2024-11-11 22:16:10,355 - INFO - 聚类数量: 6, 轮廓系数: 0.5926
+2024-11-11 22:16:13,276 - INFO - 聚类数量: 8, 轮廓系数: 0.5034
+2024-11-11 22:16:16,162 - INFO - 聚类数量: 7, 轮廓系数: 0.5758
+2024-11-11 22:16:16,506 - INFO - 聚类数量: 8, 轮廓系数: 0.8894
+2024-11-11 22:16:19,081 - INFO - 聚类数量: 9, 轮廓系数: 0.5297
+2024-11-11 22:16:21,808 - INFO - 聚类数量: 8, 轮廓系数: 0.5594
+2024-11-11 22:16:22,350 - INFO - 聚类数量: 9, 轮廓系数: 0.5006
+2024-11-11 22:16:24,891 - INFO - 聚类数量: 10, 轮廓系数: 0.5299
+2024-11-11 22:16:24,891 - INFO - 最佳聚类数量为: 2
+2024-11-11 22:16:25,118 - INFO - 轮廓系数图已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_catboost\cluster_analysis\silhouette_scores.png'。
+2024-11-11 22:16:25,331 - INFO - 'mistake' 列已聚类为 2 个簇。
+2024-11-11 22:16:25,331 - INFO - 开始误差分析。
+2024-11-11 22:16:25,348 - INFO - 聚类 0 分析完成。Top features: ['depreciation', 'dereg_value', 'inference_price', 'road_tax', 'engine_cap']
+2024-11-11 22:16:25,354 - INFO - 聚类 1 分析完成。Top features: ['manufactured', 'vehicle_type_bus_mini_bus', 'vehicle_type_hatchback', 'vehicle_type_luxury_sedan', 'vehicle_type_midsized_sedan']
+2024-11-11 22:16:25,355 - INFO - 开始生成热力图。
+2024-11-11 22:16:25,640 - INFO - 整体热力图已生成。
+2024-11-11 22:16:25,764 - INFO - 聚类 cluster_0 的热力图已生成。
+2024-11-11 22:16:25,770 - WARNING - 聚类 cluster_1 的相关性矩阵包含 NaN，跳过热力图生成。
+2024-11-11 22:16:25,771 - INFO - 保存分析结果。
+2024-11-11 22:16:25,771 - INFO - 分析结果已保存为 JSON 文件: final_report/approach1/without_cluster/error_analysis/mistake_analysis_catboost\catboost_mistake_analysis.json
+2024-11-11 22:16:25,773 - INFO - 误差分析完成。
+2024-11-11 22:16:27,185 - INFO - 聚类数量: 9, 轮廓系数: 0.5547
+2024-11-11 22:16:28,081 - INFO - 聚类数量: 10, 轮廓系数: 0.5399
+2024-11-11 22:16:28,081 - INFO - 最佳聚类数量为: 2
+2024-11-11 22:16:28,311 - INFO - 轮廓系数图已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_gradient_boosting\cluster_analysis\silhouette_scores.png'。
+2024-11-11 22:16:28,547 - INFO - 'mistake' 列已聚类为 2 个簇。
+2024-11-11 22:16:28,547 - INFO - 开始误差分析。
+2024-11-11 22:16:28,568 - INFO - 聚类 0 分析完成。Top features: ['inference_price', 'depreciation', 'arf', 'omv', 'rare_exotic']
+2024-11-11 22:16:28,575 - INFO - 聚类 1 分析完成。Top features: ['vehicle_type_sports_car', 'imported_used_vehicle', 'vehicle_type_suv', 'almost_new_car', 'curb_weight']
+2024-11-11 22:16:28,576 - INFO - 开始生成热力图。
+2024-11-11 22:16:28,853 - INFO - 整体热力图已生成。
+2024-11-11 22:16:28,964 - INFO - 聚类 cluster_0 的热力图已生成。
+2024-11-11 22:16:29,074 - INFO - 聚类 cluster_1 的热力图已生成。
+2024-11-11 22:16:29,075 - INFO - 保存分析结果。
+2024-11-11 22:16:29,075 - INFO - 分析结果已保存为 JSON 文件: final_report/approach1/without_cluster/error_analysis/mistake_analysis_gradient_boosting\gradient_boosting_mistake_analysis.json
+2024-11-11 22:16:29,076 - INFO - 误差分析完成。
+2024-11-11 22:16:31,923 - INFO - 聚类数量: 10, 轮廓系数: 0.5545
+2024-11-11 22:16:31,923 - INFO - 最佳聚类数量为: 2
+2024-11-11 22:16:32,112 - INFO - 轮廓系数图已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_lightgbm\cluster_analysis\silhouette_scores.png'。
+2024-11-11 22:16:32,385 - INFO - 'mistake' 列已聚类为 2 个簇。
+2024-11-11 22:16:32,386 - INFO - 开始误差分析。
+2024-11-11 22:16:32,406 - INFO - 聚类 0 分析完成。Top features: ['inference_price', 'dereg_value', 'arf', 'power', 'omv']
+2024-11-11 22:16:32,415 - INFO - 聚类 1 分析完成。Top features: ['inference_price', 'arf', 'dereg_value', 'omv', 'depreciation']
+2024-11-11 22:16:32,415 - INFO - 开始生成热力图。
+2024-11-11 22:16:32,712 - INFO - 整体热力图已生成。
+2024-11-11 22:16:32,879 - INFO - 聚类 cluster_0 的热力图已生成。
+2024-11-11 22:16:32,977 - INFO - 聚类 cluster_1 的热力图已生成。
+2024-11-11 22:16:32,977 - INFO - 保存分析结果。
+2024-11-11 22:16:32,978 - INFO - 分析结果已保存为 JSON 文件: final_report/approach1/without_cluster/error_analysis/mistake_analysis_lightgbm\lightgbm_mistake_analysis.json
+2024-11-11 22:16:32,978 - INFO - 误差分析完成。
+2024-11-11 22:18:56,393 - INFO - 开始加载模型: final_report\approach1\without_cluster\xgboost_models.pkl
+2024-11-11 22:18:56,393 - INFO - 开始加载模型: final_report\approach1\without_cluster\gradient_boosting_models.pkl
+2024-11-11 22:18:56,396 - INFO - 开始加载模型: final_report\approach1\without_cluster\lightgbm_models.pkl
+2024-11-11 22:18:56,409 - INFO - 开始加载模型: final_report\approach1\without_cluster\catboost_models.pkl
+2024-11-11 22:18:56,442 - INFO - 成功加载模型文件: final_report\approach1\without_cluster\catboost_models.pkl. 模型数量: 5
+2024-11-11 22:18:56,442 - INFO - 检查模型 1 的预处理器...
+2024-11-11 22:18:56,443 - INFO - 模型 1 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 22:18:56,443 - INFO - 检查模型 2 的预处理器...
+2024-11-11 22:18:56,443 - INFO - 模型 2 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 22:18:56,443 - INFO - 检查模型 3 的预处理器...
+2024-11-11 22:18:56,443 - INFO - 模型 3 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 22:18:56,443 - INFO - 检查模型 4 的预处理器...
+2024-11-11 22:18:56,443 - INFO - 模型 4 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 22:18:56,444 - INFO - 检查模型 5 的预处理器...
+2024-11-11 22:18:56,444 - INFO - 模型 5 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 22:18:56,444 - INFO - 模型 catboost 加载完成。模型数量: 5
+2024-11-11 22:18:56,494 - INFO - 训练数据加载完成。数据形状: (25000, 42)
+2024-11-11 22:18:56,494 - INFO - 开始进行推理并计算误差。
+2024-11-11 22:18:56,499 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 22:18:56,500 - INFO - 成功加载模型文件: final_report\approach1\without_cluster\gradient_boosting_models.pkl. 模型数量: 5
+2024-11-11 22:18:56,500 - INFO - 检查模型 1 的预处理器...
+2024-11-11 22:18:56,500 - INFO - 模型 1 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:18:56,500 - INFO - 检查模型 2 的预处理器...
+2024-11-11 22:18:56,500 - INFO - 模型 2 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:18:56,501 - INFO - 检查模型 3 的预处理器...
+2024-11-11 22:18:56,501 - INFO - 模型 3 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:18:56,501 - INFO - 检查模型 4 的预处理器...
+2024-11-11 22:18:56,501 - INFO - 模型 4 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:18:56,501 - INFO - 检查模型 5 的预处理器...
+2024-11-11 22:18:56,501 - INFO - 模型 5 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:18:56,501 - INFO - 模型 gradient_boosting 加载完成。模型数量: 5
+2024-11-11 22:18:56,559 - INFO - 训练数据加载完成。数据形状: (25000, 42)
+2024-11-11 22:18:56,559 - INFO - 开始进行推理并计算误差。
+2024-11-11 22:18:56,559 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:18:56,563 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 22:18:56,574 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:18:56,575 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:18:56,575 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:18:56,575 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:18:56,575 - INFO - 模型 1 的数据预处理完成。
+2024-11-11 22:18:56,576 - INFO - 当前模型类型: catboost.core.CatBoostRegressor
+2024-11-11 22:18:56,586 - INFO - 模型 1 预测完成
+2024-11-11 22:18:56,613 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:18:56,615 - INFO - 成功加载模型文件: final_report\approach1\without_cluster\xgboost_models.pkl. 模型数量: 5
+2024-11-11 22:18:56,616 - INFO - 检查模型 1 的预处理器...
+2024-11-11 22:18:56,616 - INFO - 模型 1 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:18:56,616 - INFO - 检查模型 2 的预处理器...
+2024-11-11 22:18:56,616 - INFO - 模型 2 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:18:56,616 - INFO - 检查模型 3 的预处理器...
+2024-11-11 22:18:56,616 - INFO - 模型 3 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:18:56,617 - INFO - 检查模型 4 的预处理器...
+2024-11-11 22:18:56,617 - INFO - 模型 4 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:18:56,617 - INFO - 检查模型 5 的预处理器...
+2024-11-11 22:18:56,617 - INFO - 模型 5 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:18:56,618 - INFO - 模型 xgboost 加载完成。模型数量: 5
+2024-11-11 22:18:56,628 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:18:56,629 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:18:56,629 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:18:56,629 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:18:56,630 - INFO - 模型 1 的数据预处理完成。
+2024-11-11 22:18:56,630 - INFO - 当前模型类型: sklearn.ensemble._gb.GradientBoostingRegressor
+2024-11-11 22:18:56,642 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:18:56,670 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:18:56,670 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:18:56,671 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:18:56,671 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:18:56,671 - INFO - 模型 2 的数据预处理完成。
+2024-11-11 22:18:56,671 - INFO - 当前模型类型: catboost.core.CatBoostRegressor
+2024-11-11 22:18:56,677 - INFO - 模型 2 预测完成
+2024-11-11 22:18:56,678 - INFO - 训练数据加载完成。数据形状: (25000, 42)
+2024-11-11 22:18:56,679 - INFO - 开始进行推理并计算误差。
+2024-11-11 22:18:56,683 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 22:18:56,728 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:18:56,738 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:18:56,747 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:18:56,747 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:18:56,748 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:18:56,748 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:18:56,749 - INFO - 模型 3 的数据预处理完成。
+2024-11-11 22:18:56,749 - INFO - 当前模型类型: catboost.core.CatBoostRegressor
+2024-11-11 22:18:56,755 - INFO - 模型 3 预测完成
+2024-11-11 22:18:56,756 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:18:56,756 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:18:56,757 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:18:56,757 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:18:56,757 - INFO - 模型 1 的数据预处理完成。
+2024-11-11 22:18:56,757 - INFO - 当前模型类型: xgboost.core.Booster
+2024-11-11 22:18:56,758 - INFO - 检测到XGBoost模型，使用numpy array进行预测...
+2024-11-11 22:18:56,762 - ERROR - XGBoost预测失败: ('Expecting data to be a DMatrix object, got: ', <class 'numpy.ndarray'>)
+2024-11-11 22:18:56,800 - ERROR - XGBoost DMatrix预测也失败: training data did not have the following fields: manufactured, vehicle_type_bus_mini_bus, vehicle_type_hatchback, vehicle_type_luxury_sedan, vehicle_type_midsized_sedan, vehicle_type_mpv, vehicle_type_others, vehicle_type_sports_car, vehicle_type_stationwagon, vehicle_type_suv, vehicle_type_truck, vehicle_type_van, transmission_type_auto, transmission_type_manual, almost_new_car, coe_car, consignment_car, direct_owner_sale, electric_cars, hybrid_cars, imported_used_vehicle, low_mileage_car, opc_car, parf_car, premium_ad_car, rare_exotic, sgcarmart_warranty_cars, sta_evaluated_car, vintage_cars, curb_weight, power, engine_cap, no_of_owners, depreciation, coe, road_tax, dereg_value, omv, arf, vehicle_age
+2024-11-11 22:18:56,801 - ERROR - 在模型 1 处理过程中发生错误: training data did not have the following fields: manufactured, vehicle_type_bus_mini_bus, vehicle_type_hatchback, vehicle_type_luxury_sedan, vehicle_type_midsized_sedan, vehicle_type_mpv, vehicle_type_others, vehicle_type_sports_car, vehicle_type_stationwagon, vehicle_type_suv, vehicle_type_truck, vehicle_type_van, transmission_type_auto, transmission_type_manual, almost_new_car, coe_car, consignment_car, direct_owner_sale, electric_cars, hybrid_cars, imported_used_vehicle, low_mileage_car, opc_car, parf_car, premium_ad_car, rare_exotic, sgcarmart_warranty_cars, sta_evaluated_car, vintage_cars, curb_weight, power, engine_cap, no_of_owners, depreciation, coe, road_tax, dereg_value, omv, arf, vehicle_age
+2024-11-11 22:18:56,802 - ERROR - 模型类型: <class 'xgboost.core.Booster'>
+2024-11-11 22:18:56,802 - ERROR - 数据类型: <class 'numpy.ndarray'>
+2024-11-11 22:18:56,802 - ERROR - 数据形状: (25000, 40)
+2024-11-11 22:18:56,802 - ERROR - 误差分析过程中发生错误: training data did not have the following fields: manufactured, vehicle_type_bus_mini_bus, vehicle_type_hatchback, vehicle_type_luxury_sedan, vehicle_type_midsized_sedan, vehicle_type_mpv, vehicle_type_others, vehicle_type_sports_car, vehicle_type_stationwagon, vehicle_type_suv, vehicle_type_truck, vehicle_type_van, transmission_type_auto, transmission_type_manual, almost_new_car, coe_car, consignment_car, direct_owner_sale, electric_cars, hybrid_cars, imported_used_vehicle, low_mileage_car, opc_car, parf_car, premium_ad_car, rare_exotic, sgcarmart_warranty_cars, sta_evaluated_car, vintage_cars, curb_weight, power, engine_cap, no_of_owners, depreciation, coe, road_tax, dereg_value, omv, arf, vehicle_age
+2024-11-11 22:18:56,824 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:18:56,857 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:18:56,858 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:18:56,858 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:18:56,858 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:18:56,859 - INFO - 模型 4 的数据预处理完成。
+2024-11-11 22:18:56,860 - INFO - 当前模型类型: catboost.core.CatBoostRegressor
+2024-11-11 22:18:56,869 - INFO - 模型 4 预测完成
+2024-11-11 22:18:56,926 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:18:56,944 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:18:56,944 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:18:56,945 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:18:56,945 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:18:56,946 - INFO - 模型 5 的数据预处理完成。
+2024-11-11 22:18:56,946 - INFO - 当前模型类型: catboost.core.CatBoostRegressor
+2024-11-11 22:18:56,956 - INFO - 模型 5 预测完成
+2024-11-11 22:18:56,958 - INFO - 推理和误差计算完成。处理了 5 个模型的预测。
+2024-11-11 22:18:56,989 - INFO - 模型 1 预测完成
+2024-11-11 22:18:57,040 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:18:57,056 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:18:57,057 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:18:57,057 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:18:57,057 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:18:57,058 - INFO - 模型 2 的数据预处理完成。
+2024-11-11 22:18:57,058 - INFO - 当前模型类型: sklearn.ensemble._gb.GradientBoostingRegressor
+2024-11-11 22:18:57,170 - INFO - 推理结果已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_catboost\catboost_inference.csv'。
+2024-11-11 22:18:57,171 - INFO - 开始聚类误差。
+2024-11-11 22:18:57,317 - INFO - 模型 2 预测完成
+2024-11-11 22:18:57,359 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:18:57,373 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:18:57,373 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:18:57,373 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:18:57,374 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:18:57,374 - INFO - 模型 3 的数据预处理完成。
+2024-11-11 22:18:57,374 - INFO - 当前模型类型: sklearn.ensemble._gb.GradientBoostingRegressor
+2024-11-11 22:18:57,622 - INFO - 成功加载模型文件: final_report\approach1\without_cluster\lightgbm_models.pkl. 模型数量: 5
+2024-11-11 22:18:57,622 - INFO - 检查模型 1 的预处理器...
+2024-11-11 22:18:57,623 - INFO - 模型 1 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder']
+2024-11-11 22:18:57,623 - INFO - 检查模型 2 的预处理器...
+2024-11-11 22:18:57,623 - INFO - 模型 2 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder']
+2024-11-11 22:18:57,623 - INFO - 检查模型 3 的预处理器...
+2024-11-11 22:18:57,624 - INFO - 模型 3 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder']
+2024-11-11 22:18:57,624 - INFO - 检查模型 4 的预处理器...
+2024-11-11 22:18:57,624 - INFO - 模型 4 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder']
+2024-11-11 22:18:57,624 - INFO - 检查模型 5 的预处理器...
+2024-11-11 22:18:57,624 - INFO - 模型 5 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder']
+2024-11-11 22:18:57,625 - INFO - 模型 lightgbm 加载完成。模型数量: 5
+2024-11-11 22:18:57,653 - INFO - 模型 3 预测完成
+2024-11-11 22:18:57,674 - INFO - 训练数据加载完成。数据形状: (25000, 42)
+2024-11-11 22:18:57,675 - INFO - 开始进行推理并计算误差。
+2024-11-11 22:18:57,680 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 22:18:57,710 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:18:57,727 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:18:57,727 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:18:57,728 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:18:57,728 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:18:57,728 - INFO - 模型 4 的数据预处理完成。
+2024-11-11 22:18:57,728 - INFO - 当前模型类型: sklearn.ensemble._gb.GradientBoostingRegressor
+2024-11-11 22:18:57,737 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:18:57,737 - WARNING - 'scaler' 预处理器缺失，跳过标准化。
+2024-11-11 22:18:57,737 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:18:57,738 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:18:57,738 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:18:57,738 - INFO - 模型 1 的数据预处理完成。
+2024-11-11 22:18:57,739 - INFO - 当前模型类型: lightgbm.basic.Booster
+2024-11-11 22:18:57,998 - INFO - 模型 4 预测完成
+2024-11-11 22:18:58,048 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:18:58,063 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:18:58,064 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:18:58,064 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:18:58,064 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:18:58,065 - INFO - 模型 5 的数据预处理完成。
+2024-11-11 22:18:58,065 - INFO - 当前模型类型: sklearn.ensemble._gb.GradientBoostingRegressor
+2024-11-11 22:18:58,327 - INFO - 模型 5 预测完成
+2024-11-11 22:18:58,328 - INFO - 推理和误差计算完成。处理了 5 个模型的预测。
+2024-11-11 22:18:58,520 - INFO - 推理结果已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_gradient_boosting\gradient_boosting_inference.csv'。
+2024-11-11 22:18:58,521 - INFO - 开始聚类误差。
+2024-11-11 22:18:59,192 - INFO - 模型 1 预测完成
+2024-11-11 22:18:59,250 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:18:59,250 - WARNING - 'scaler' 预处理器缺失，跳过标准化。
+2024-11-11 22:18:59,251 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:18:59,251 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:18:59,251 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:18:59,251 - INFO - 模型 2 的数据预处理完成。
+2024-11-11 22:18:59,252 - INFO - 当前模型类型: lightgbm.basic.Booster
+2024-11-11 22:19:00,697 - INFO - 模型 2 预测完成
+2024-11-11 22:19:00,747 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:19:00,748 - WARNING - 'scaler' 预处理器缺失，跳过标准化。
+2024-11-11 22:19:00,748 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:19:00,748 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:19:00,748 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:19:00,749 - INFO - 模型 3 的数据预处理完成。
+2024-11-11 22:19:00,749 - INFO - 当前模型类型: lightgbm.basic.Booster
+2024-11-11 22:19:02,182 - INFO - 模型 3 预测完成
+2024-11-11 22:19:02,228 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:19:02,229 - WARNING - 'scaler' 预处理器缺失，跳过标准化。
+2024-11-11 22:19:02,229 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:19:02,229 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:19:02,229 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:19:02,230 - INFO - 模型 4 的数据预处理完成。
+2024-11-11 22:19:02,230 - INFO - 当前模型类型: lightgbm.basic.Booster
+2024-11-11 22:19:02,863 - INFO - 聚类数量: 2, 轮廓系数: 0.9946
+2024-11-11 22:19:03,614 - INFO - 模型 4 预测完成
+2024-11-11 22:19:03,668 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:19:03,669 - WARNING - 'scaler' 预处理器缺失，跳过标准化。
+2024-11-11 22:19:03,669 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:19:03,669 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:19:03,669 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:19:03,670 - INFO - 模型 5 的数据预处理完成。
+2024-11-11 22:19:03,670 - INFO - 当前模型类型: lightgbm.basic.Booster
+2024-11-11 22:19:04,264 - INFO - 聚类数量: 2, 轮廓系数: 0.9912
+2024-11-11 22:19:05,128 - INFO - 模型 5 预测完成
+2024-11-11 22:19:05,129 - INFO - 推理和误差计算完成。处理了 5 个模型的预测。
+2024-11-11 22:19:05,327 - INFO - 推理结果已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_lightgbm\lightgbm_inference.csv'。
+2024-11-11 22:19:05,328 - INFO - 开始聚类误差。
+2024-11-11 22:19:08,686 - INFO - 聚类数量: 3, 轮廓系数: 0.9603
+2024-11-11 22:19:10,436 - INFO - 聚类数量: 3, 轮廓系数: 0.9790
+2024-11-11 22:19:11,685 - INFO - 聚类数量: 2, 轮廓系数: 0.8907
+2024-11-11 22:19:14,643 - INFO - 聚类数量: 4, 轮廓系数: 0.9451
+2024-11-11 22:19:16,682 - INFO - 聚类数量: 4, 轮廓系数: 0.9401
+2024-11-11 22:19:17,955 - INFO - 聚类数量: 3, 轮廓系数: 0.8152
+2024-11-11 22:19:20,832 - INFO - 聚类数量: 5, 轮廓系数: 0.8372
+2024-11-11 22:19:22,915 - INFO - 聚类数量: 5, 轮廓系数: 0.9309
+2024-11-11 22:19:23,987 - INFO - 聚类数量: 4, 轮廓系数: 0.6517
+2024-11-11 22:19:26,936 - INFO - 聚类数量: 6, 轮廓系数: 0.7986
+2024-11-11 22:19:29,064 - INFO - 聚类数量: 6, 轮廓系数: 0.9124
+2024-11-11 22:19:29,737 - INFO - 聚类数量: 5, 轮廓系数: 0.6189
+2024-11-11 22:19:32,678 - INFO - 聚类数量: 7, 轮廓系数: 0.4765
+2024-11-11 22:19:35,229 - INFO - 聚类数量: 7, 轮廓系数: 0.8897
+2024-11-11 22:19:35,531 - INFO - 聚类数量: 6, 轮廓系数: 0.5926
+2024-11-11 22:19:38,453 - INFO - 聚类数量: 8, 轮廓系数: 0.5034
+2024-11-11 22:19:41,325 - INFO - 聚类数量: 7, 轮廓系数: 0.5758
+2024-11-11 22:19:41,386 - INFO - 聚类数量: 8, 轮廓系数: 0.8894
+2024-11-11 22:19:44,199 - INFO - 聚类数量: 9, 轮廓系数: 0.5297
+2024-11-11 22:19:47,134 - INFO - 聚类数量: 8, 轮廓系数: 0.5594
+2024-11-11 22:19:47,363 - INFO - 聚类数量: 9, 轮廓系数: 0.5006
+2024-11-11 22:19:50,043 - INFO - 聚类数量: 10, 轮廓系数: 0.5299
+2024-11-11 22:19:50,043 - INFO - 最佳聚类数量为: 2
+2024-11-11 22:19:50,260 - INFO - 轮廓系数图已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_catboost\cluster_analysis\silhouette_scores.png'。
+2024-11-11 22:19:50,473 - INFO - 'mistake' 列已聚类为 2 个簇。
+2024-11-11 22:19:50,473 - INFO - 开始误差分析。
+2024-11-11 22:19:50,493 - INFO - 聚类 0 分析完成。Top features: ['depreciation', 'dereg_value', 'inference_price', 'road_tax', 'engine_cap']
+2024-11-11 22:19:50,501 - INFO - 聚类 1 分析完成。Top features: ['manufactured', 'vehicle_type_bus_mini_bus', 'vehicle_type_hatchback', 'vehicle_type_luxury_sedan', 'vehicle_type_midsized_sedan']
+2024-11-11 22:19:50,502 - INFO - 开始生成热力图。
+2024-11-11 22:19:50,784 - INFO - 整体热力图已生成。
+2024-11-11 22:19:50,907 - INFO - 聚类 cluster_0 的热力图已生成。
+2024-11-11 22:19:50,914 - WARNING - 聚类 cluster_1 的相关性矩阵包含 NaN，跳过热力图生成。
+2024-11-11 22:19:50,914 - INFO - 保存分析结果。
+2024-11-11 22:19:50,915 - INFO - 分析结果已保存为 JSON 文件: final_report/approach1/without_cluster/error_analysis/mistake_analysis_catboost\catboost_mistake_analysis.json
+2024-11-11 22:19:50,915 - INFO - 误差分析完成。
+2024-11-11 22:19:52,507 - INFO - 聚类数量: 9, 轮廓系数: 0.5547
+2024-11-11 22:19:53,049 - INFO - 聚类数量: 10, 轮廓系数: 0.5399
+2024-11-11 22:19:53,050 - INFO - 最佳聚类数量为: 2
+2024-11-11 22:19:53,331 - INFO - 轮廓系数图已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_gradient_boosting\cluster_analysis\silhouette_scores.png'。
+2024-11-11 22:19:53,537 - INFO - 'mistake' 列已聚类为 2 个簇。
+2024-11-11 22:19:53,537 - INFO - 开始误差分析。
+2024-11-11 22:19:53,555 - INFO - 聚类 0 分析完成。Top features: ['inference_price', 'depreciation', 'arf', 'omv', 'rare_exotic']
+2024-11-11 22:19:53,563 - INFO - 聚类 1 分析完成。Top features: ['vehicle_type_sports_car', 'imported_used_vehicle', 'vehicle_type_suv', 'almost_new_car', 'curb_weight']
+2024-11-11 22:19:53,564 - INFO - 开始生成热力图。
+2024-11-11 22:19:53,843 - INFO - 整体热力图已生成。
+2024-11-11 22:19:53,976 - INFO - 聚类 cluster_0 的热力图已生成。
+2024-11-11 22:19:54,089 - INFO - 聚类 cluster_1 的热力图已生成。
+2024-11-11 22:19:54,089 - INFO - 保存分析结果。
+2024-11-11 22:19:54,090 - INFO - 分析结果已保存为 JSON 文件: final_report/approach1/without_cluster/error_analysis/mistake_analysis_gradient_boosting\gradient_boosting_mistake_analysis.json
+2024-11-11 22:19:54,090 - INFO - 误差分析完成。
+2024-11-11 22:19:57,308 - INFO - 聚类数量: 10, 轮廓系数: 0.5545
+2024-11-11 22:19:57,309 - INFO - 最佳聚类数量为: 2
+2024-11-11 22:19:57,507 - INFO - 轮廓系数图已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_lightgbm\cluster_analysis\silhouette_scores.png'。
+2024-11-11 22:19:57,778 - INFO - 'mistake' 列已聚类为 2 个簇。
+2024-11-11 22:19:57,779 - INFO - 开始误差分析。
+2024-11-11 22:19:57,798 - INFO - 聚类 0 分析完成。Top features: ['inference_price', 'dereg_value', 'arf', 'power', 'omv']
+2024-11-11 22:19:57,805 - INFO - 聚类 1 分析完成。Top features: ['inference_price', 'arf', 'dereg_value', 'omv', 'depreciation']
+2024-11-11 22:19:57,806 - INFO - 开始生成热力图。
+2024-11-11 22:19:58,074 - INFO - 整体热力图已生成。
+2024-11-11 22:19:58,237 - INFO - 聚类 cluster_0 的热力图已生成。
+2024-11-11 22:19:58,345 - INFO - 聚类 cluster_1 的热力图已生成。
+2024-11-11 22:19:58,346 - INFO - 保存分析结果。
+2024-11-11 22:19:58,347 - INFO - 分析结果已保存为 JSON 文件: final_report/approach1/without_cluster/error_analysis/mistake_analysis_lightgbm\lightgbm_mistake_analysis.json
+2024-11-11 22:19:58,347 - INFO - 误差分析完成。
+2024-11-11 22:22:12,994 - INFO - 开始加载模型: final_report\approach1\without_cluster\lightgbm_models.pkl
+2024-11-11 22:22:12,994 - INFO - 开始加载模型: final_report\approach1\without_cluster\xgboost_models.pkl
+2024-11-11 22:22:12,995 - INFO - 开始加载模型: final_report\approach1\without_cluster\gradient_boosting_models.pkl
+2024-11-11 22:22:12,996 - INFO - 开始加载模型: final_report\approach1\without_cluster\catboost_models.pkl
+2024-11-11 22:22:13,029 - INFO - 成功加载模型文件: final_report\approach1\without_cluster\catboost_models.pkl. 模型数量: 5
+2024-11-11 22:22:13,029 - INFO - 检查模型 1 的预处理器...
+2024-11-11 22:22:13,029 - INFO - 模型 1 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 22:22:13,029 - INFO - 检查模型 2 的预处理器...
+2024-11-11 22:22:13,029 - INFO - 模型 2 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 22:22:13,030 - INFO - 检查模型 3 的预处理器...
+2024-11-11 22:22:13,030 - INFO - 模型 3 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 22:22:13,030 - INFO - 检查模型 4 的预处理器...
+2024-11-11 22:22:13,030 - INFO - 模型 4 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 22:22:13,030 - INFO - 检查模型 5 的预处理器...
+2024-11-11 22:22:13,031 - INFO - 模型 5 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 22:22:13,031 - INFO - 模型 catboost 加载完成。模型数量: 5
+2024-11-11 22:22:13,085 - INFO - 训练数据加载完成。数据形状: (25000, 42)
+2024-11-11 22:22:13,085 - INFO - 开始进行推理并计算误差。
+2024-11-11 22:22:13,090 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 22:22:13,098 - INFO - 成功加载模型文件: final_report\approach1\without_cluster\gradient_boosting_models.pkl. 模型数量: 5
+2024-11-11 22:22:13,099 - INFO - 检查模型 1 的预处理器...
+2024-11-11 22:22:13,099 - INFO - 模型 1 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:22:13,099 - INFO - 检查模型 2 的预处理器...
+2024-11-11 22:22:13,099 - INFO - 模型 2 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:22:13,099 - INFO - 检查模型 3 的预处理器...
+2024-11-11 22:22:13,100 - INFO - 模型 3 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:22:13,100 - INFO - 检查模型 4 的预处理器...
+2024-11-11 22:22:13,100 - INFO - 模型 4 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:22:13,100 - INFO - 检查模型 5 的预处理器...
+2024-11-11 22:22:13,101 - INFO - 模型 5 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:22:13,101 - INFO - 模型 gradient_boosting 加载完成。模型数量: 5
+2024-11-11 22:22:13,147 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:22:13,153 - INFO - 训练数据加载完成。数据形状: (25000, 42)
+2024-11-11 22:22:13,153 - INFO - 开始进行推理并计算误差。
+2024-11-11 22:22:13,159 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 22:22:13,164 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:22:13,165 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:22:13,165 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:22:13,165 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:22:13,165 - INFO - 模型 1 的数据预处理完成。
+2024-11-11 22:22:13,210 - INFO - 成功加载模型文件: final_report\approach1\without_cluster\xgboost_models.pkl. 模型数量: 5
+2024-11-11 22:22:13,210 - INFO - 检查模型 1 的预处理器...
+2024-11-11 22:22:13,210 - INFO - 模型 1 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:22:13,210 - INFO - 检查模型 2 的预处理器...
+2024-11-11 22:22:13,211 - INFO - 模型 2 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:22:13,211 - INFO - 检查模型 3 的预处理器...
+2024-11-11 22:22:13,211 - INFO - 模型 3 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:22:13,211 - INFO - 检查模型 4 的预处理器...
+2024-11-11 22:22:13,211 - INFO - 模型 4 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:22:13,211 - INFO - 检查模型 5 的预处理器...
+2024-11-11 22:22:13,211 - INFO - 模型 5 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:22:13,211 - INFO - 模型 xgboost 加载完成。模型数量: 5
+2024-11-11 22:22:13,215 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:22:13,234 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:22:13,234 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:22:13,234 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:22:13,234 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:22:13,235 - INFO - 模型 1 的数据预处理完成。
+2024-11-11 22:22:13,263 - INFO - 训练数据加载完成。数据形状: (25000, 42)
+2024-11-11 22:22:13,263 - INFO - 开始进行推理并计算误差。
+2024-11-11 22:22:13,268 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 22:22:13,297 - ERROR - 在模型 1 处理过程中发生错误: Invalid data type=<class 'xgboost.core.DMatrix'> : must be list, numpy.ndarray, pandas.Series, pandas.DataFrame, scipy.sparse matrix, catboost.FeaturesData or catboost.Pool
+2024-11-11 22:22:13,297 - ERROR - 模型类型: <class 'catboost.core.CatBoostRegressor'>
+2024-11-11 22:22:13,298 - ERROR - 数据类型: <class 'pandas.core.frame.DataFrame'>
+2024-11-11 22:22:13,298 - ERROR - 数据形状: (25000, 40)
+2024-11-11 22:22:13,298 - ERROR - 误差分析过程中发生错误: Invalid data type=<class 'xgboost.core.DMatrix'> : must be list, numpy.ndarray, pandas.Series, pandas.DataFrame, scipy.sparse matrix, catboost.FeaturesData or catboost.Pool
+2024-11-11 22:22:13,328 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:22:13,344 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:22:13,345 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:22:13,345 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:22:13,345 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:22:13,345 - INFO - 模型 1 的数据预处理完成。
+2024-11-11 22:22:13,385 - ERROR - 在模型 1 处理过程中发生错误: training data did not have the following fields: manufactured, vehicle_type_bus_mini_bus, vehicle_type_hatchback, vehicle_type_luxury_sedan, vehicle_type_midsized_sedan, vehicle_type_mpv, vehicle_type_others, vehicle_type_sports_car, vehicle_type_stationwagon, vehicle_type_suv, vehicle_type_truck, vehicle_type_van, transmission_type_auto, transmission_type_manual, almost_new_car, coe_car, consignment_car, direct_owner_sale, electric_cars, hybrid_cars, imported_used_vehicle, low_mileage_car, opc_car, parf_car, premium_ad_car, rare_exotic, sgcarmart_warranty_cars, sta_evaluated_car, vintage_cars, curb_weight, power, engine_cap, no_of_owners, depreciation, coe, road_tax, dereg_value, omv, arf, vehicle_age
+2024-11-11 22:22:13,385 - ERROR - 模型类型: <class 'xgboost.core.Booster'>
+2024-11-11 22:22:13,386 - ERROR - 数据类型: <class 'pandas.core.frame.DataFrame'>
+2024-11-11 22:22:13,386 - ERROR - 数据形状: (25000, 40)
+2024-11-11 22:22:13,386 - ERROR - 误差分析过程中发生错误: training data did not have the following fields: manufactured, vehicle_type_bus_mini_bus, vehicle_type_hatchback, vehicle_type_luxury_sedan, vehicle_type_midsized_sedan, vehicle_type_mpv, vehicle_type_others, vehicle_type_sports_car, vehicle_type_stationwagon, vehicle_type_suv, vehicle_type_truck, vehicle_type_van, transmission_type_auto, transmission_type_manual, almost_new_car, coe_car, consignment_car, direct_owner_sale, electric_cars, hybrid_cars, imported_used_vehicle, low_mileage_car, opc_car, parf_car, premium_ad_car, rare_exotic, sgcarmart_warranty_cars, sta_evaluated_car, vintage_cars, curb_weight, power, engine_cap, no_of_owners, depreciation, coe, road_tax, dereg_value, omv, arf, vehicle_age
+2024-11-11 22:22:13,392 - ERROR - 在模型 1 处理过程中发生错误: float() argument must be a string or a real number, not 'DMatrix'
+2024-11-11 22:22:13,393 - ERROR - 模型类型: <class 'sklearn.ensemble._gb.GradientBoostingRegressor'>
+2024-11-11 22:22:13,393 - ERROR - 数据类型: <class 'pandas.core.frame.DataFrame'>
+2024-11-11 22:22:13,393 - ERROR - 数据形状: (25000, 40)
+2024-11-11 22:22:13,393 - ERROR - 误差分析过程中发生错误: float() argument must be a string or a real number, not 'DMatrix'
+2024-11-11 22:23:21,970 - INFO - 开始加载模型: final_report\approach1\without_cluster\catboost_models.pkl
+2024-11-11 22:23:21,971 - INFO - 开始加载模型: final_report\approach1\without_cluster\xgboost_models.pkl
+2024-11-11 22:23:21,973 - INFO - 开始加载模型: final_report\approach1\without_cluster\gradient_boosting_models.pkl
+2024-11-11 22:23:21,982 - INFO - 开始加载模型: final_report\approach1\without_cluster\lightgbm_models.pkl
+2024-11-11 22:23:22,003 - INFO - 成功加载模型文件: final_report\approach1\without_cluster\catboost_models.pkl. 模型数量: 5
+2024-11-11 22:23:22,003 - INFO - 检查模型 1 的预处理器...
+2024-11-11 22:23:22,003 - INFO - 模型 1 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 22:23:22,003 - INFO - 检查模型 2 的预处理器...
+2024-11-11 22:23:22,003 - INFO - 模型 2 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 22:23:22,003 - INFO - 检查模型 3 的预处理器...
+2024-11-11 22:23:22,004 - INFO - 模型 3 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 22:23:22,004 - INFO - 检查模型 4 的预处理器...
+2024-11-11 22:23:22,004 - INFO - 模型 4 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 22:23:22,004 - INFO - 检查模型 5 的预处理器...
+2024-11-11 22:23:22,004 - INFO - 模型 5 的预处理器包含键: ['num_imputer', 'scaler']
+2024-11-11 22:23:22,004 - INFO - 模型 catboost 加载完成。模型数量: 5
+2024-11-11 22:23:22,054 - INFO - 训练数据加载完成。数据形状: (25000, 42)
+2024-11-11 22:23:22,055 - INFO - 开始进行推理并计算误差。
+2024-11-11 22:23:22,060 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 22:23:22,079 - INFO - 成功加载模型文件: final_report\approach1\without_cluster\gradient_boosting_models.pkl. 模型数量: 5
+2024-11-11 22:23:22,080 - INFO - 检查模型 1 的预处理器...
+2024-11-11 22:23:22,080 - INFO - 模型 1 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:23:22,080 - INFO - 检查模型 2 的预处理器...
+2024-11-11 22:23:22,080 - INFO - 模型 2 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:23:22,080 - INFO - 检查模型 3 的预处理器...
+2024-11-11 22:23:22,080 - INFO - 模型 3 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:23:22,080 - INFO - 检查模型 4 的预处理器...
+2024-11-11 22:23:22,080 - INFO - 模型 4 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:23:22,080 - INFO - 检查模型 5 的预处理器...
+2024-11-11 22:23:22,080 - INFO - 模型 5 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:23:22,080 - INFO - 模型 gradient_boosting 加载完成。模型数量: 5
+2024-11-11 22:23:22,111 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:23:22,127 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:23:22,127 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:23:22,127 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:23:22,127 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:23:22,128 - INFO - 模型 1 的数据预处理完成。
+2024-11-11 22:23:22,128 - INFO - 处理模型类型: catboost
+2024-11-11 22:23:22,130 - INFO - 训练数据加载完成。数据形状: (25000, 42)
+2024-11-11 22:23:22,130 - INFO - 开始进行推理并计算误差。
+2024-11-11 22:23:22,138 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 22:23:22,139 - INFO - catboost模型预测完成
+2024-11-11 22:23:22,181 - INFO - 成功加载模型文件: final_report\approach1\without_cluster\xgboost_models.pkl. 模型数量: 5
+2024-11-11 22:23:22,182 - INFO - 检查模型 1 的预处理器...
+2024-11-11 22:23:22,183 - INFO - 模型 1 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:23:22,183 - INFO - 检查模型 2 的预处理器...
+2024-11-11 22:23:22,183 - INFO - 模型 2 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:23:22,183 - INFO - 检查模型 3 的预处理器...
+2024-11-11 22:23:22,184 - INFO - 模型 3 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:23:22,184 - INFO - 检查模型 4 的预处理器...
+2024-11-11 22:23:22,184 - INFO - 模型 4 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:23:22,184 - INFO - 检查模型 5 的预处理器...
+2024-11-11 22:23:22,184 - INFO - 模型 5 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder', 'scaler']
+2024-11-11 22:23:22,184 - INFO - 模型 xgboost 加载完成。模型数量: 5
+2024-11-11 22:23:22,191 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:23:22,192 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:23:22,221 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:23:22,222 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:23:22,222 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:23:22,222 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:23:22,223 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:23:22,223 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:23:22,223 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:23:22,223 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:23:22,223 - INFO - 模型 2 的数据预处理完成。
+2024-11-11 22:23:22,223 - INFO - 模型 1 的数据预处理完成。
+2024-11-11 22:23:22,223 - INFO - 处理模型类型: catboost
+2024-11-11 22:23:22,224 - INFO - 处理模型类型: sklearn
+2024-11-11 22:23:22,230 - INFO - catboost模型预测完成
+2024-11-11 22:23:22,250 - INFO - 训练数据加载完成。数据形状: (25000, 42)
+2024-11-11 22:23:22,251 - INFO - 开始进行推理并计算误差。
+2024-11-11 22:23:22,256 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 22:23:22,280 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:23:22,296 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:23:22,297 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:23:22,297 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:23:22,297 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:23:22,298 - INFO - 模型 3 的数据预处理完成。
+2024-11-11 22:23:22,298 - INFO - 处理模型类型: catboost
+2024-11-11 22:23:22,303 - INFO - catboost模型预测完成
+2024-11-11 22:23:22,313 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:23:22,334 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:23:22,335 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:23:22,335 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:23:22,335 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:23:22,336 - INFO - 模型 1 的数据预处理完成。
+2024-11-11 22:23:22,336 - INFO - 处理模型类型: xgboost
+2024-11-11 22:23:22,372 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:23:22,386 - ERROR - 在模型 1 处理过程中发生错误: training data did not have the following fields: manufactured, vehicle_type_bus_mini_bus, vehicle_type_hatchback, vehicle_type_luxury_sedan, vehicle_type_midsized_sedan, vehicle_type_mpv, vehicle_type_others, vehicle_type_sports_car, vehicle_type_stationwagon, vehicle_type_suv, vehicle_type_truck, vehicle_type_van, transmission_type_auto, transmission_type_manual, almost_new_car, coe_car, consignment_car, direct_owner_sale, electric_cars, hybrid_cars, imported_used_vehicle, low_mileage_car, opc_car, parf_car, premium_ad_car, rare_exotic, sgcarmart_warranty_cars, sta_evaluated_car, vintage_cars, curb_weight, power, engine_cap, no_of_owners, depreciation, coe, road_tax, dereg_value, omv, arf, vehicle_age
+2024-11-11 22:23:22,387 - ERROR - 模型类型: <class 'xgboost.core.Booster'>
+2024-11-11 22:23:22,387 - ERROR - 模型模块: xgboost.core
+2024-11-11 22:23:22,388 - ERROR - 数据类型: <class 'pandas.core.frame.DataFrame'>
+2024-11-11 22:23:22,388 - ERROR - 数据形状: (25000, 40)
+2024-11-11 22:23:22,388 - ERROR - 误差分析过程中发生错误: training data did not have the following fields: manufactured, vehicle_type_bus_mini_bus, vehicle_type_hatchback, vehicle_type_luxury_sedan, vehicle_type_midsized_sedan, vehicle_type_mpv, vehicle_type_others, vehicle_type_sports_car, vehicle_type_stationwagon, vehicle_type_suv, vehicle_type_truck, vehicle_type_van, transmission_type_auto, transmission_type_manual, almost_new_car, coe_car, consignment_car, direct_owner_sale, electric_cars, hybrid_cars, imported_used_vehicle, low_mileage_car, opc_car, parf_car, premium_ad_car, rare_exotic, sgcarmart_warranty_cars, sta_evaluated_car, vintage_cars, curb_weight, power, engine_cap, no_of_owners, depreciation, coe, road_tax, dereg_value, omv, arf, vehicle_age
+2024-11-11 22:23:22,389 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:23:22,389 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:23:22,389 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:23:22,390 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:23:22,391 - INFO - 模型 4 的数据预处理完成。
+2024-11-11 22:23:22,391 - INFO - 处理模型类型: catboost
+2024-11-11 22:23:22,399 - INFO - catboost模型预测完成
+2024-11-11 22:23:22,450 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:23:22,463 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:23:22,464 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:23:22,464 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:23:22,464 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:23:22,465 - INFO - 模型 5 的数据预处理完成。
+2024-11-11 22:23:22,465 - INFO - 处理模型类型: catboost
+2024-11-11 22:23:22,474 - INFO - catboost模型预测完成
+2024-11-11 22:23:22,476 - INFO - 推理和误差计算完成。处理了 5 个模型的预测。
+2024-11-11 22:23:22,527 - INFO - sklearn模型预测完成
+2024-11-11 22:23:22,575 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:23:22,588 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:23:22,589 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:23:22,589 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:23:22,589 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:23:22,590 - INFO - 模型 2 的数据预处理完成。
+2024-11-11 22:23:22,590 - INFO - 处理模型类型: sklearn
+2024-11-11 22:23:22,676 - INFO - 推理结果已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_catboost\catboost_inference.csv'。
+2024-11-11 22:23:22,676 - INFO - 开始聚类误差。
+2024-11-11 22:23:22,842 - INFO - sklearn模型预测完成
+2024-11-11 22:23:22,896 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:23:22,913 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:23:22,914 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:23:22,914 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:23:22,914 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:23:22,915 - INFO - 模型 3 的数据预处理完成。
+2024-11-11 22:23:22,915 - INFO - 处理模型类型: sklearn
+2024-11-11 22:23:23,139 - INFO - 成功加载模型文件: final_report\approach1\without_cluster\lightgbm_models.pkl. 模型数量: 5
+2024-11-11 22:23:23,139 - INFO - 检查模型 1 的预处理器...
+2024-11-11 22:23:23,139 - INFO - 模型 1 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder']
+2024-11-11 22:23:23,139 - INFO - 检查模型 2 的预处理器...
+2024-11-11 22:23:23,139 - INFO - 模型 2 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder']
+2024-11-11 22:23:23,140 - INFO - 检查模型 3 的预处理器...
+2024-11-11 22:23:23,140 - INFO - 模型 3 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder']
+2024-11-11 22:23:23,140 - INFO - 检查模型 4 的预处理器...
+2024-11-11 22:23:23,141 - INFO - 模型 4 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder']
+2024-11-11 22:23:23,141 - INFO - 检查模型 5 的预处理器...
+2024-11-11 22:23:23,141 - INFO - 模型 5 的预处理器包含键: ['num_imputer', 'cat_imputer', 'target_encoder']
+2024-11-11 22:23:23,141 - INFO - 模型 lightgbm 加载完成。模型数量: 5
+2024-11-11 22:23:23,179 - INFO - sklearn模型预测完成
+2024-11-11 22:23:23,191 - INFO - 训练数据加载完成。数据形状: (25000, 42)
+2024-11-11 22:23:23,192 - INFO - 开始进行推理并计算误差。
+2024-11-11 22:23:23,197 - INFO - 已移除 'Unnamed: 0' 列。
+2024-11-11 22:23:23,234 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:23:23,253 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:23:23,254 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:23:23,254 - WARNING - 'scaler' 预处理器缺失，跳过标准化。
+2024-11-11 22:23:23,254 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:23:23,255 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:23:23,255 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:23:23,255 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:23:23,255 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:23:23,255 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:23:23,255 - INFO - 模型 1 的数据预处理完成。
+2024-11-11 22:23:23,255 - INFO - 模型 4 的数据预处理完成。
+2024-11-11 22:23:23,256 - INFO - 处理模型类型: lightgbm
+2024-11-11 22:23:23,256 - INFO - 处理模型类型: sklearn
+2024-11-11 22:23:23,521 - INFO - sklearn模型预测完成
+2024-11-11 22:23:23,572 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:23:23,591 - INFO - 数值特征 ['curb_weight', 'power', 'engine_cap', 'depreciation'] 已标准化。
+2024-11-11 22:23:23,592 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:23:23,592 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:23:23,592 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:23:23,594 - INFO - 模型 5 的数据预处理完成。
+2024-11-11 22:23:23,594 - INFO - 处理模型类型: sklearn
+2024-11-11 22:23:23,907 - INFO - sklearn模型预测完成
+2024-11-11 22:23:23,908 - INFO - 推理和误差计算完成。处理了 5 个模型的预测。
+2024-11-11 22:23:24,110 - INFO - 推理结果已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_gradient_boosting\gradient_boosting_inference.csv'。
+2024-11-11 22:23:24,111 - INFO - 开始聚类误差。
+2024-11-11 22:23:24,665 - INFO - lightgbm模型预测完成
+2024-11-11 22:23:24,723 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:23:24,723 - WARNING - 'scaler' 预处理器缺失，跳过标准化。
+2024-11-11 22:23:24,724 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:23:24,724 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:23:24,724 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:23:24,724 - INFO - 模型 2 的数据预处理完成。
+2024-11-11 22:23:24,725 - INFO - 处理模型类型: lightgbm
+2024-11-11 22:23:26,211 - INFO - lightgbm模型预测完成
+2024-11-11 22:23:26,265 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:23:26,265 - WARNING - 'scaler' 预处理器缺失，跳过标准化。
+2024-11-11 22:23:26,265 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:23:26,266 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:23:26,266 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:23:26,267 - INFO - 模型 3 的数据预处理完成。
+2024-11-11 22:23:26,267 - INFO - 处理模型类型: lightgbm
+2024-11-11 22:23:27,654 - INFO - lightgbm模型预测完成
+2024-11-11 22:23:27,713 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:23:27,714 - WARNING - 'scaler' 预处理器缺失，跳过标准化。
+2024-11-11 22:23:27,714 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:23:27,714 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:23:27,714 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:23:27,715 - INFO - 模型 4 的数据预处理完成。
+2024-11-11 22:23:27,716 - INFO - 处理模型类型: lightgbm
+2024-11-11 22:23:28,306 - INFO - 聚类数量: 2, 轮廓系数: 0.9946
+2024-11-11 22:23:29,119 - INFO - lightgbm模型预测完成
+2024-11-11 22:23:29,183 - INFO - 数值特征缺失值已填充。
+2024-11-11 22:23:29,183 - WARNING - 'scaler' 预处理器缺失，跳过标准化。
+2024-11-11 22:23:29,184 - WARNING - 'cat_imputer' 预处理器缺失，跳过分类特征填充。
+2024-11-11 22:23:29,184 - WARNING - 'target_encoder' 预处理器缺失，跳过目标编码。
+2024-11-11 22:23:29,184 - WARNING - 'onehot_encoder' 预处理器缺失，跳过独热编码。
+2024-11-11 22:23:29,185 - INFO - 模型 5 的数据预处理完成。
+2024-11-11 22:23:29,185 - INFO - 处理模型类型: lightgbm
+2024-11-11 22:23:29,732 - INFO - 聚类数量: 2, 轮廓系数: 0.9912
+2024-11-11 22:23:30,590 - INFO - lightgbm模型预测完成
+2024-11-11 22:23:30,591 - INFO - 推理和误差计算完成。处理了 5 个模型的预测。
+2024-11-11 22:23:30,786 - INFO - 推理结果已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_lightgbm\lightgbm_inference.csv'。
+2024-11-11 22:23:30,786 - INFO - 开始聚类误差。
+2024-11-11 22:23:33,996 - INFO - 聚类数量: 3, 轮廓系数: 0.9603
+2024-11-11 22:23:35,912 - INFO - 聚类数量: 3, 轮廓系数: 0.9790
+2024-11-11 22:23:37,179 - INFO - 聚类数量: 2, 轮廓系数: 0.8907
+2024-11-11 22:23:40,003 - INFO - 聚类数量: 4, 轮廓系数: 0.9451
+2024-11-11 22:23:42,082 - INFO - 聚类数量: 4, 轮廓系数: 0.9401
+2024-11-11 22:23:43,403 - INFO - 聚类数量: 3, 轮廓系数: 0.8152
+2024-11-11 22:23:46,175 - INFO - 聚类数量: 5, 轮廓系数: 0.8372
+2024-11-11 22:23:48,024 - INFO - 聚类数量: 5, 轮廓系数: 0.9309
+2024-11-11 22:23:49,370 - INFO - 聚类数量: 4, 轮廓系数: 0.6517
+2024-11-11 22:23:52,175 - INFO - 聚类数量: 6, 轮廓系数: 0.7986
+2024-11-11 22:23:54,001 - INFO - 聚类数量: 6, 轮廓系数: 0.9124
+2024-11-11 22:23:55,267 - INFO - 聚类数量: 5, 轮廓系数: 0.6189
+2024-11-11 22:23:57,847 - INFO - 聚类数量: 7, 轮廓系数: 0.4765
+2024-11-11 22:24:00,382 - INFO - 聚类数量: 7, 轮廓系数: 0.8897
+2024-11-11 22:24:01,313 - INFO - 聚类数量: 6, 轮廓系数: 0.5926
+2024-11-11 22:24:03,892 - INFO - 聚类数量: 8, 轮廓系数: 0.5034
+2024-11-11 22:24:06,647 - INFO - 聚类数量: 8, 轮廓系数: 0.8894
+2024-11-11 22:24:06,986 - INFO - 聚类数量: 7, 轮廓系数: 0.5758
+2024-11-11 22:24:09,645 - INFO - 聚类数量: 9, 轮廓系数: 0.5297
+2024-11-11 22:24:12,475 - INFO - 聚类数量: 9, 轮廓系数: 0.5006
+2024-11-11 22:24:12,671 - INFO - 聚类数量: 8, 轮廓系数: 0.5594
+2024-11-11 22:24:15,387 - INFO - 聚类数量: 10, 轮廓系数: 0.5299
+2024-11-11 22:24:15,387 - INFO - 最佳聚类数量为: 2
+2024-11-11 22:24:15,598 - INFO - 轮廓系数图已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_catboost\cluster_analysis\silhouette_scores.png'。
+2024-11-11 22:24:15,822 - INFO - 'mistake' 列已聚类为 2 个簇。
+2024-11-11 22:24:15,823 - INFO - 开始误差分析。
+2024-11-11 22:24:15,852 - INFO - 聚类 0 分析完成。Top features: ['depreciation', 'dereg_value', 'inference_price', 'road_tax', 'engine_cap']
+2024-11-11 22:24:15,864 - INFO - 聚类 1 分析完成。Top features: ['manufactured', 'vehicle_type_bus_mini_bus', 'vehicle_type_hatchback', 'vehicle_type_luxury_sedan', 'vehicle_type_midsized_sedan']
+2024-11-11 22:24:15,865 - INFO - 开始生成热力图。
+2024-11-11 22:24:16,195 - INFO - 整体热力图已生成。
+2024-11-11 22:24:16,301 - INFO - 聚类 cluster_0 的热力图已生成。
+2024-11-11 22:24:16,307 - WARNING - 聚类 cluster_1 的相关性矩阵包含 NaN，跳过热力图生成。
+2024-11-11 22:24:16,308 - INFO - 保存分析结果。
+2024-11-11 22:24:16,308 - INFO - 分析结果已保存为 JSON 文件: final_report/approach1/without_cluster/error_analysis/mistake_analysis_catboost\catboost_mistake_analysis.json
+2024-11-11 22:24:16,309 - INFO - 误差分析完成。
+2024-11-11 22:24:18,228 - INFO - 聚类数量: 9, 轮廓系数: 0.5547
+2024-11-11 22:24:18,295 - INFO - 聚类数量: 10, 轮廓系数: 0.5399
+2024-11-11 22:24:18,295 - INFO - 最佳聚类数量为: 2
+2024-11-11 22:24:18,525 - INFO - 轮廓系数图已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_gradient_boosting\cluster_analysis\silhouette_scores.png'。
+2024-11-11 22:24:18,740 - INFO - 'mistake' 列已聚类为 2 个簇。
+2024-11-11 22:24:18,741 - INFO - 开始误差分析。
+2024-11-11 22:24:18,761 - INFO - 聚类 0 分析完成。Top features: ['inference_price', 'depreciation', 'arf', 'omv', 'rare_exotic']
+2024-11-11 22:24:18,768 - INFO - 聚类 1 分析完成。Top features: ['vehicle_type_sports_car', 'imported_used_vehicle', 'vehicle_type_suv', 'almost_new_car', 'curb_weight']
+2024-11-11 22:24:18,769 - INFO - 开始生成热力图。
+2024-11-11 22:24:19,039 - INFO - 整体热力图已生成。
+2024-11-11 22:24:19,151 - INFO - 聚类 cluster_0 的热力图已生成。
+2024-11-11 22:24:19,261 - INFO - 聚类 cluster_1 的热力图已生成。
+2024-11-11 22:24:19,262 - INFO - 保存分析结果。
+2024-11-11 22:24:19,262 - INFO - 分析结果已保存为 JSON 文件: final_report/approach1/without_cluster/error_analysis/mistake_analysis_gradient_boosting\gradient_boosting_mistake_analysis.json
+2024-11-11 22:24:19,263 - INFO - 误差分析完成。
+2024-11-11 22:24:22,999 - INFO - 聚类数量: 10, 轮廓系数: 0.5545
+2024-11-11 22:24:22,999 - INFO - 最佳聚类数量为: 2
+2024-11-11 22:24:23,196 - INFO - 轮廓系数图已保存为 'final_report/approach1/without_cluster/error_analysis/mistake_analysis_lightgbm\cluster_analysis\silhouette_scores.png'。
+2024-11-11 22:24:23,476 - INFO - 'mistake' 列已聚类为 2 个簇。
+2024-11-11 22:24:23,476 - INFO - 开始误差分析。
+2024-11-11 22:24:23,495 - INFO - 聚类 0 分析完成。Top features: ['inference_price', 'dereg_value', 'arf', 'power', 'omv']
+2024-11-11 22:24:23,501 - INFO - 聚类 1 分析完成。Top features: ['inference_price', 'arf', 'dereg_value', 'omv', 'depreciation']
+2024-11-11 22:24:23,502 - INFO - 开始生成热力图。
+2024-11-11 22:24:23,771 - INFO - 整体热力图已生成。
+2024-11-11 22:24:23,964 - INFO - 聚类 cluster_0 的热力图已生成。
+2024-11-11 22:24:24,075 - INFO - 聚类 cluster_1 的热力图已生成。
+2024-11-11 22:24:24,076 - INFO - 保存分析结果。
+2024-11-11 22:24:24,077 - INFO - 分析结果已保存为 JSON 文件: final_report/approach1/without_cluster/error_analysis/mistake_analysis_lightgbm\lightgbm_mistake_analysis.json
+2024-11-11 22:24:24,077 - INFO - 误差分析完成。
